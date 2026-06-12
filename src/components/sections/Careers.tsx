@@ -1,0 +1,134 @@
+"use client";
+
+import Image from "next/image";
+import Reveal from "@/components/anim/Reveal";
+
+const CARDS = [
+  { title: "Job Opportunities", img: "/figma/career-1.png" },
+  { title: "Job Value", img: "/figma/career-2.png" },
+  { title: "Life at MurliLeela", img: "/figma/career-3.png" },
+  { title: "Learn more", img: "/figma/career-4.png" },
+];
+
+export default function Careers() {
+  return (
+    <section id="careers" className="bg-paper">
+      <div className="frame" style={{ paddingTop: 72, paddingBottom: 80 }}>
+        <Reveal>
+          <p
+            data-reveal
+            className="font-sans"
+            style={{
+              fontSize: 18,
+              fontWeight: 700,
+              letterSpacing: "0.01em",
+              color: "rgba(0,0,0,0.7)",
+            }}
+          >
+            CAREERS
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-[48px] flex items-start justify-between gap-8">
+            <div>
+              <h2
+                data-reveal
+                className="font-sans font-bold text-ink"
+                style={{
+                  fontSize: 32,
+                  lineHeight: 1.15,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                One Company. Endless Opportunities.
+              </h2>
+              <p
+                data-reveal
+                className="mt-[20px]"
+                style={{
+                  fontSize: 16,
+                  lineHeight: 1.55,
+                  letterSpacing: "-0.01em",
+                  color: "rgba(0,0,0,0.66)",
+                  maxWidth: 640,
+                }}
+              >
+                Discover your next professional chapter at MurliLeela. We bring
+                together passionate minds across tech, trade, education, and
+                beyond to build solutions that matter.
+              </p>
+            </div>
+            <a
+              data-reveal
+              href="#contact"
+              className="inline-flex items-center justify-center bg-paper text-ink transition-colors hover:bg-ink hover:text-paper"
+              style={{
+                height: 49,
+                width: 165,
+                borderRadius: 4,
+                border: "1px solid rgba(0,0,0,0.66)",
+                fontSize: 16,
+                flexShrink: 0,
+              }}
+            >
+              Know more
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal
+          className="mt-[60px] grid"
+          stagger={0.08}
+          style={{
+            gridTemplateColumns: "500fr 283fr 283fr 283fr",
+            gap: 22,
+          }}
+        >
+          {CARDS.map((c) => (
+            <a
+              key={c.title}
+              href="#"
+              data-reveal
+              className="group relative block overflow-hidden"
+              style={{ height: 559 }}
+            >
+              <Image
+                src={c.img}
+                alt={c.title}
+                fill
+                sizes="(min-width: 1280px) 400px, 25vw"
+                className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+              {/* Gradient overlay 138px tall pinned to bottom */}
+              <div
+                className="absolute inset-x-0 bottom-0"
+                style={{
+                  height: 138,
+                  background:
+                    "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.92) 100%)",
+                }}
+              />
+              <div
+                className="absolute flex items-end justify-between"
+                style={{ left: 26, right: 26, bottom: 28, gap: 24 }}
+              >
+                <span
+                  className="font-sans font-bold text-paper"
+                  style={{ fontSize: 22, letterSpacing: "0.01em" }}
+                >
+                  {c.title}
+                </span>
+                <span className="grid h-6 w-6 place-items-center text-paper">
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
