@@ -60,7 +60,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
       <Header initialBg="#f7f7f7" position="fixed" />
 
       {/* Spacer for fixed header */}
-      <div aria-hidden style={{ height: 87 }} />
+      <div aria-hidden style={{ height: 70 }} />
 
       {/* HERO */}
       <section

@@ -42,7 +42,7 @@ export default function PharmaPage() {
   return (
     <main className="relative bg-white">
       <Header initialBg={CLINICAL} position="fixed" />
-      <div aria-hidden style={{ height: 87 }} />
+      <div aria-hidden style={{ height: 70 }} />
 
       {/* HERO — clinical precision */}
       <section className="relative overflow-hidden" style={{ background: CLINICAL }}>

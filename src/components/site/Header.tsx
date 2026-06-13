@@ -155,7 +155,7 @@ export default function Header({
       >
         <div
           className="relative mx-auto flex items-center"
-          style={{ height: 87, maxWidth: 1440, paddingInline: 120 }}
+          style={{ height: 70, maxWidth: 1440, paddingInline: 120 }}
         >
           {/* Logo */}
           <Link href="/" aria-label="MurliLeela home" className="flex items-center">
@@ -165,7 +165,7 @@ export default function Header({
               width={118}
               height={52}
               priority
-              style={{ width: 118, height: 51.898, objectFit: "cover" }}
+              style={{ width: 104, height: 45.76, objectFit: "cover" }}
             />
           </Link>
 

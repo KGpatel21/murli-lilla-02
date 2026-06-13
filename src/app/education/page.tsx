@@ -56,7 +56,7 @@ export default function EducationPage() {
   return (
     <main className="relative bg-white">
       <Header initialBg={PAPER} position="fixed" />
-      <div aria-hidden style={{ height: 87 }} />
+      <div aria-hidden style={{ height: 70 }} />
 
       {/* HERO — warm academic */}
       <section className="relative overflow-hidden" style={{ background: PAPER }}>

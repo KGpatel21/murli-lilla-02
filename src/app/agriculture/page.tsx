@@ -47,7 +47,7 @@ export default function AgriculturePage() {
   return (
     <main className="relative bg-white">
       <Header initialBg={FIELD} position="fixed" />
-      <div aria-hidden style={{ height: 87 }} />
+      <div aria-hidden style={{ height: 70 }} />
 
       {/* HERO — horizon */}
       <section className="relative overflow-hidden" style={{ background: FIELD }}>
