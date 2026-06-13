@@ -237,18 +237,6 @@ html.js-on .split-line > span:not(.is-in) {
   }
 }
 
-/* Slow cinematic zoom for hero media */
-@keyframes heroKenBurns {
-  from { transform: scale(1) translateY(0); }
-  to { transform: scale(1.07) translateY(-1.5%); }
-}
-.hero-kenburns {
-  animation: heroKenBurns 18s cubic-bezier(0.25, 0.1, 0.25, 1) both;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-kenburns { animation: none; }
-}
 
 /* Technology capability rows */
 .tech-row {
@@ -277,17 +265,3 @@ html.js-on .split-line > span:not(.is-in) {
   .tech-row > :nth-child(4) { grid-area: body; }
 }
 
-/* Hero slide progress fill — duration matches SLIDE_MS */
-@keyframes heroProgress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-.hero-progress-fill {
-  animation: heroProgress 7000ms linear both;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-progress-fill {
-    animation: none;
-    width: 100%;
-  }
-}
