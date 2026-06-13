@@ -108,7 +108,7 @@ const THUMB_SHOW_AT = 10000;// show thumbnails again after 10s
 export default function Hero() {
   const root = useRef<HTMLElement | null>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const ringRef = useRef<SVGCircleElement | null>(null);
+  const progressRef = useRef<HTMLSpanElement | null>(null);
   const masterRef = useRef<gsap.core.Timeline | null>(null);
   const indexRef = useRef(0);
   const reduced = useRef(false);
@@ -181,24 +181,15 @@ export default function Hero() {
     return tl;
   }, []);
 
-  /* ── Circular progress ring (top-right) ── */
-  const RING_LEN = 2 * Math.PI * 20; // r=20
-  const animateRing = useCallback(
-    (duration: number) => {
-      const ring = ringRef.current;
-      if (!ring) return gsap.timeline();
-      gsap.killTweensOf(ring);
-      const tl = gsap.timeline();
-      tl.fromTo(
-        ring,
-        { strokeDashoffset: RING_LEN },
-        { strokeDashoffset: 0, duration, ease: "none" },
-        0
-      );
-      return tl;
-    },
-    [RING_LEN]
-  );
+  /* ── Single progress line (between prev/next) ── */
+  const animateProgress = useCallback((duration: number) => {
+    const bar = progressRef.current;
+    if (!bar) return gsap.timeline();
+    gsap.killTweensOf(bar);
+    const tl = gsap.timeline();
+    tl.fromTo(bar, { width: "0%" }, { width: "100%", duration, ease: "none" }, 0);
+    return tl;
+  }, []);
 
   /* ── Thumbnail visibility schedule (3s hide, 10s show) ── */
   const scheduleThumbs = useCallback(() => {
@@ -238,10 +229,10 @@ export default function Hero() {
         master.add(playTextIn(0.05), 0);
       }
 
-      master.add(animateRing(SLIDE_MS / 1000), 0.12);
+      master.add(animateProgress(SLIDE_MS / 1000), 0.12);
       master.to({}, { duration: SLIDE_MS / 1000 - 0.12 }, 0.12);
     },
-    [playTextOut, transitionImages, animateRing, playTextIn, scheduleThumbs]
+    [playTextOut, transitionImages, animateProgress, playTextIn, scheduleThumbs]
   );
 
   /* Re-run text entrance after each swap render */
@@ -273,7 +264,7 @@ export default function Hero() {
         lines?.forEach((el) => el.classList.add("is-in"));
         gsap.set(lines ?? [], { y: 0 });
         gsap.set(root.current?.querySelectorAll("[data-hero-fade]") ?? [], { autoAlpha: 1 });
-        if (ringRef.current) gsap.set(ringRef.current, { strokeDashoffset: 0 });
+        if (progressRef.current) gsap.set(progressRef.current, { width: "100%" });
         return;
       }
 
@@ -284,7 +275,7 @@ export default function Hero() {
         boot.to(firstImg, { scale: DRIFT_SCALE, duration: (SLIDE_MS - SETTLE_S * 1000) / 1000, ease: "none" }, SETTLE_S);
       }
       boot.add(playTextIn(0), 0);
-      boot.add(animateRing(SLIDE_MS / 1000), 0);
+      boot.add(animateProgress(SLIDE_MS / 1000), 0);
       boot.to({}, { duration: SLIDE_MS / 1000 }, 0);
       masterRef.current = boot;
       booted.current = true;
@@ -327,7 +318,12 @@ export default function Hero() {
   const thumbs = upcoming(display);
 
   return (
-    <section ref={root} id="top" className="relative isolate" style={{ height: 976 }}>
+    <section
+      ref={root}
+      id="top"
+      className="relative isolate w-full"
+      style={{ height: "100svh", minHeight: 760, maxHeight: 1100 }}
+    >
       {/* Slide backgrounds */}
       <div className="hero-bg absolute inset-0 -z-10 overflow-hidden">
         {SLIDES.map((s, i) => (
@@ -397,7 +393,7 @@ export default function Hero() {
         <div
           className="absolute hidden lg:flex"
           style={{
-            top: 569,
+            bottom: 132,
             right: 120,
             gap: 10,
             pointerEvents: thumbsVisible ? "auto" : "none",
@@ -426,90 +422,49 @@ export default function Hero() {
         </div>
 
         {/* Stats bar (unchanged) */}
-        <div className="absolute" style={{ top: 586, left: 120, pointerEvents: "auto" }}>
+        <div className="absolute" style={{ bottom: 132, left: 120, pointerEvents: "auto" }}>
           <StatsBar />
         </div>
 
-        {/* Bottom control bar — progress line (left) + prev/next + timer (right) */}
+        {/* Bottom control bar — Prev · single thin progress line · Next */}
         <div
           className="absolute hidden items-center md:flex"
-          style={{ top: 860, left: 120, right: 120, gap: 24, pointerEvents: "auto" }}
+          style={{ bottom: 64, left: 120, right: 120, gap: 24, pointerEvents: "auto" }}
         >
-          {/* Slide segments */}
-          <div className="flex flex-1 items-center" style={{ height: 12, gap: 8 }} role="tablist" aria-label="Hero slides">
-            {SLIDES.map((s, i) => (
-              <button
-                key={s.image}
-                role="tab"
-                aria-selected={i === display}
-                aria-label={`Slide ${i + 1}: ${s.eyebrow}`}
-                onClick={() => goTo(i)}
-                className="group relative h-full flex-1"
-                style={{ cursor: "pointer" }}
-              >
-                <span className="absolute inset-x-0 overflow-hidden rounded-full bg-snow-40 transition-colors duration-200 group-hover:bg-snow-40/80" style={{ top: 3, height: 6 }}>
-                  <span
-                    className="absolute inset-y-0 left-0 rounded-full bg-paper transition-[width] duration-300"
-                    style={{ width: i < display ? "100%" : i === display ? "100%" : "0%", opacity: i === display ? 1 : i < display ? 0.45 : 1 }}
-                  />
-                </span>
-              </button>
-            ))}
-          </div>
-
-          {/* Prev / Next */}
-          <div className="flex items-center" style={{ gap: 12 }}>
-            <button
-              type="button"
-              onClick={() => goTo(indexRef.current - 1)}
-              aria-label="Previous slide"
-              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-              style={{ width: 46, height: 46 }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 5l-7 7 7 7" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={() => goTo(indexRef.current + 1)}
-              aria-label="Next slide"
-              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-              style={{ width: 46, height: 46 }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Circular countdown timer — top-right corner */}
-        <div
-          className="absolute hidden md:block"
-          style={{ top: 150, right: 120, pointerEvents: "auto" }}
-          aria-hidden
-        >
-          <div className="relative grid place-items-center" style={{ width: 56, height: 56 }}>
-            <svg width="56" height="56" viewBox="0 0 56 56" className="-rotate-90">
-              <circle cx="28" cy="28" r="20" fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="2.5" />
-              <circle
-                ref={ringRef}
-                cx="28"
-                cy="28"
-                r="20"
-                fill="none"
-                stroke="#ffffff"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeDasharray={RING_LEN}
-                strokeDashoffset={RING_LEN}
-              />
+          {/* Previous */}
+          <button
+            type="button"
+            onClick={() => goTo(indexRef.current - 1)}
+            aria-label="Previous slide"
+            className="grid shrink-0 place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
+            style={{ width: 46, height: 46 }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 5l-7 7 7 7" />
             </svg>
-            <span className="absolute font-condensed text-paper" style={{ fontSize: 13, letterSpacing: "0.06em" }}>
-              {String(display + 1).padStart(2, "0")}
-            </span>
+          </button>
+
+          {/* Single progress line */}
+          <div className="relative flex-1 overflow-hidden rounded-full" style={{ height: 2, background: "rgba(255,255,255,0.25)" }}>
+            <span
+              ref={progressRef}
+              className="absolute inset-y-0 left-0 rounded-full bg-paper"
+              style={{ width: "0%" }}
+            />
           </div>
+
+          {/* Next */}
+          <button
+            type="button"
+            onClick={() => goTo(indexRef.current + 1)}
+            aria-label="Next slide"
+            className="grid shrink-0 place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
+            style={{ width: 46, height: 46 }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
