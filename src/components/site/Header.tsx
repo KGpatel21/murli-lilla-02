@@ -193,7 +193,8 @@ export default function Header({
                     style={{
                       gap: 8,
                       fontSize: 16,
-                      color: isOpen ? "#000" : "rgba(0,0,0,0.66)",
+                      fontWeight: 600,
+                      color: isOpen ? "#000" : "rgba(0,0,0,0.78)",
                       transition: `color 200ms ${EASE}`,
                       whiteSpace: "nowrap",
                     }}
@@ -576,7 +577,7 @@ export default function Header({
                   style={{
                     padding: "14px 8px",
                     fontSize: 16,
-                    fontWeight: 500,
+                    fontWeight: 600,
                     color: "#000",
                   }}
                 >

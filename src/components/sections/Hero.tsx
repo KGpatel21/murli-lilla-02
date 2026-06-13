@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCallback, useEffect, useRef, useState } from "react";
-import StatsBar from "./StatsBar";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -349,53 +348,49 @@ export default function Hero() {
         tabIndex={-1}
       />
 
-      <div className="frame relative h-full" style={{ pointerEvents: "none" }}>
-        {/* Eyebrow */}
-        <p
-          data-hero-fade
-          className="absolute inline-flex h-[33px] items-center gap-2 rounded-[36px] border border-snow-40 px-4 text-[14px] font-normal text-paper"
-          style={{ top: 157, left: 120, pointerEvents: "auto" }}
+      <div className="frame relative flex h-full flex-col" style={{ pointerEvents: "none" }}>
+        {/* Content column — anchored lower-left (cinematic), responsive */}
+        <div
+          className="hero-content"
+          style={{ pointerEvents: "auto" }}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-          {slide.eyebrow}
-        </p>
-
-        {/* Headline */}
-        <h1
-          className="absolute font-sans font-bold text-paper"
-          style={{ top: 210, left: 120, width: 803, maxWidth: "calc(100% - 240px)", fontSize: 52, lineHeight: 1.1, letterSpacing: "0.01em", pointerEvents: "auto" }}
-        >
-          <span className="hero-line block split-line"><span>{l1}</span></span>
-          {l2 && <span className="hero-line block split-line"><span>{l2}</span></span>}
-        </h1>
-
-        {/* Description */}
-        <p
-          data-hero-fade
-          className="absolute text-snow-70"
-          style={{ top: 370, left: 120, width: 677, maxWidth: "calc(100% - 240px)", fontSize: 16, lineHeight: 1.55, pointerEvents: "auto" }}
-        >
-          {slide.description}
-        </p>
-
-        {/* CTA — single button (Get in touch removed) */}
-        <div data-hero-fade className="absolute flex items-center" style={{ top: 449, left: 120, pointerEvents: "auto" }}>
-          <a
-            href={slide.link}
-            className="inline-flex items-center justify-center rounded-[6px] bg-paper text-[16px] font-normal text-ink transition-colors hover:bg-paper/85"
-            style={{ height: 42, width: 154 }}
+          {/* Eyebrow */}
+          <p
+            data-hero-fade
+            className="inline-flex items-center gap-2 self-start rounded-[36px] border border-snow-40 text-paper"
+            style={{ height: 33, paddingInline: 16, fontSize: 14 }}
           >
-            {slide.cta}
-          </a>
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+            {slide.eyebrow}
+          </p>
+
+          {/* Headline */}
+          <h1 className="hero-headline font-sans font-bold text-paper">
+            <span className="hero-line block split-line"><span>{l1}</span></span>
+            {l2 && <span className="hero-line block split-line"><span>{l2}</span></span>}
+          </h1>
+
+          {/* Description */}
+          <p data-hero-fade className="hero-desc text-snow-70">
+            {slide.description}
+          </p>
+
+          {/* CTA — single button */}
+          <div data-hero-fade>
+            <a
+              href={slide.link}
+              className="inline-flex items-center justify-center rounded-[6px] bg-paper font-normal text-ink transition-colors hover:bg-paper/85"
+              style={{ height: 44, paddingInline: 28, fontSize: 16 }}
+            >
+              {slide.cta}
+            </a>
+          </div>
         </div>
 
-        {/* Thumbnails — upcoming divisions, selectable; visibility on 3s/10s schedule */}
+        {/* Thumbnails — upcoming divisions; visibility on 3s/10s schedule */}
         <div
-          className="absolute hidden lg:flex"
+          className="hero-thumbs absolute hidden lg:flex"
           style={{
-            bottom: 132,
-            right: 120,
-            gap: 10,
             pointerEvents: thumbsVisible ? "auto" : "none",
             opacity: thumbsVisible ? 1 : 0,
             transform: thumbsVisible ? "translateY(0)" : "translateY(12px)",
@@ -408,12 +403,11 @@ export default function Hero() {
               type="button"
               onClick={() => goTo(idx)}
               aria-label={`Go to ${SLIDES[idx].eyebrow}`}
-              className="group relative overflow-hidden rounded-[2px] transition-transform duration-300 hover:-translate-y-1"
-              style={{ width: 185, height: 270 }}
+              className="hero-thumb group relative overflow-hidden rounded-[3px] transition-transform duration-300 hover:-translate-y-1"
             >
-              <Image src={SLIDES[idx].image} alt="" fill sizes="185px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-              <span className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.65),transparent_55%)]" />
-              <span className="absolute inset-x-0 bottom-0 p-3 text-left text-[12px] font-medium leading-tight text-paper">
+              <Image src={SLIDES[idx].image} alt="" fill sizes="170px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <span className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.7),transparent_55%)]" />
+              <span className="absolute inset-x-0 bottom-0 p-3 text-left text-[12px] font-semibold leading-tight text-paper">
                 {SLIDES[idx].eyebrow.split(" · ")[0]}
               </span>
               <span className="absolute inset-0 border border-white/0 transition-colors duration-300 group-hover:border-white/60" />
@@ -421,31 +415,10 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Stats bar (unchanged) */}
-        <div className="absolute" style={{ bottom: 132, left: 120, pointerEvents: "auto" }}>
-          <StatsBar />
-        </div>
-
-        {/* Bottom control bar — Prev · single thin progress line · Next */}
-        <div
-          className="absolute hidden items-center md:flex"
-          style={{ bottom: 64, left: 120, right: 120, gap: 24, pointerEvents: "auto" }}
-        >
-          {/* Previous */}
-          <button
-            type="button"
-            onClick={() => goTo(indexRef.current - 1)}
-            aria-label="Previous slide"
-            className="grid shrink-0 place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-            style={{ width: 46, height: 46 }}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 5l-7 7 7 7" />
-            </svg>
-          </button>
-
-          {/* Single progress line */}
-          <div className="relative flex-1 overflow-hidden rounded-full" style={{ height: 2, background: "rgba(255,255,255,0.25)" }}>
+        {/* Bottom control bar — Prev · thin progress line · Next (Adani-style) */}
+        <div className="hero-controls absolute hidden items-center md:flex" style={{ pointerEvents: "auto" }}>
+          {/* Thin progress line */}
+          <div className="relative flex-1 overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
             <span
               ref={progressRef}
               className="absolute inset-y-0 left-0 rounded-full bg-paper"
@@ -453,18 +426,31 @@ export default function Hero() {
             />
           </div>
 
-          {/* Next */}
-          <button
-            type="button"
-            onClick={() => goTo(indexRef.current + 1)}
-            aria-label="Next slide"
-            className="grid shrink-0 place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-            style={{ width: 46, height: 46 }}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {/* Prev / Next — compact circular controls */}
+          <div className="flex shrink-0 items-center" style={{ gap: 12, marginLeft: 28 }}>
+            <button
+              type="button"
+              onClick={() => goTo(indexRef.current - 1)}
+              aria-label="Previous slide"
+              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
+              style={{ width: 40, height: 40 }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 5l-7 7 7 7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => goTo(indexRef.current + 1)}
+              aria-label="Next slide"
+              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
+              style={{ width: 40, height: 40 }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

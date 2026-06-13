@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "@/components/anim/Reveal";
+import AboutStats from "./AboutStats";
 
 const PILLARS = [
   {
@@ -46,6 +47,9 @@ export default function About() {
             ABOUT THE COMPANY
           </p>
         </Reveal>
+
+        {/* Relocated statistics strip */}
+        <AboutStats />
 
         {/* Two-column grid: 596px quote card + 591px right column */}
         <div

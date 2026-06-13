@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${robotoCondensed.variable} antialiased`}
     >
-      <body className="min-h-screen bg-paper text-ink">
+      <body className="min-h-screen overflow-x-clip bg-paper text-ink">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

@@ -265,3 +265,94 @@ html.js-on .split-line > span:not(.is-in) {
   .tech-row > :nth-child(4) { grid-area: body; }
 }
 
+
+/* ── About-section statistics strip ── */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 64px;
+}
+.about-stat {
+  padding-block: 30px;
+  padding-right: 24px;
+}
+@media (max-width: 767px) {
+  .about-stats-grid { grid-template-columns: 1fr 1fr; }
+  .about-stat { padding-block: 24px; }
+  .about-stat span:first-child { font-size: 36px !important; }
+}
+
+/* ── Hero content layout (cinematic lower-left, fully responsive) ── */
+.hero-content {
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  max-width: 760px;
+}
+.hero-headline {
+  margin: 0;
+  font-size: clamp(30px, 4.4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+}
+.hero-desc {
+  margin: 0;
+  max-width: 560px;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.55;
+}
+.hero-thumbs {
+  right: 120px;
+  bottom: 150px;
+  gap: 12px;
+}
+.hero-thumb {
+  width: 170px;
+  height: 248px;
+}
+.hero-controls {
+  left: 120px;
+  right: 120px;
+  bottom: 56px;
+}
+@media (max-width: 1279px) {
+  .hero-content { left: 64px; right: 64px; bottom: 130px; }
+  .hero-controls { left: 64px; right: 64px; }
+  .hero-thumbs { right: 64px; }
+}
+@media (max-width: 1023px) {
+  .hero-content { bottom: 120px; gap: 18px; max-width: 620px; }
+  .hero-controls { left: 48px; right: 48px; bottom: 48px; }
+}
+@media (max-width: 767px) {
+  .hero-content { left: 24px; right: 24px; bottom: 88px; gap: 16px; max-width: none; }
+  .hero-headline { font-size: clamp(28px, 8vw, 40px); }
+  .hero-desc { font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .hero-content { left: 18px; right: 18px; bottom: 76px; }
+  .hero-headline { font-size: 26px; }
+}
+@media (min-width: 1920px) {
+  .hero-content, .hero-controls {
+    left: max(120px, calc((100vw - 1680px) / 2));
+    right: max(120px, calc((100vw - 1680px) / 2));
+  }
+  .hero-thumbs { right: max(120px, calc((100vw - 1680px) / 2)); }
+}
+
+/* Global horizontal-overflow guard (prevents off-screen cards causing x-scroll) */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* On very short viewports the hero content can exceed height — allow it to sit higher */
+@media (max-height: 680px) {
+  .hero-content { bottom: 64px; gap: 12px; }
+  .hero-headline { font-size: clamp(24px, 6vw, 34px); }
+}
