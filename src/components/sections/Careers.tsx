@@ -61,7 +61,7 @@ export default function Careers() {
             </div>
             <a
               data-reveal
-              href="#contact"
+              href="/careers#enquiry"
               className="inline-flex items-center justify-center bg-paper text-ink transition-colors hover:bg-ink hover:text-paper"
               style={{
                 height: 49,

@@ -51,7 +51,7 @@ export default function TrustCharityPage() {
   return (
     <main className="relative bg-white">
       <Header initialBg={WARM} position="fixed" />
-      <div aria-hidden style={{ height: 70 }} />
+      <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — warm, humane */}
       <section className="relative overflow-hidden" style={{ background: WARM }}>

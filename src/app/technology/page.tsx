@@ -63,7 +63,7 @@ export default function TechnologyPage() {
   return (
     <main className="relative bg-white">
       <Header initialBg="#f7f7f7" position="fixed" />
-      <div aria-hidden style={{ height: 70 }} />
+      <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — dark digital */}
       <section

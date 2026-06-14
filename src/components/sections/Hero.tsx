@@ -27,7 +27,7 @@ const SLIDES: HeroSlide[] = [
     eyebrow: "Pratik Petro · Energy & Bitumen",
     headline: "Energy That Moves\na Nation's Industry.",
     description:
-      "Bitumen import, storage, and petroleum distribution — delivered with the reliability India's infrastructure builders depend on.",
+      "Bitumen and petroleum trading, supply, and distribution — delivered with the reliability India's infrastructure builders depend on.",
     cta: "Know More",
     link: "/pratik-petro",
   },
@@ -321,7 +321,7 @@ export default function Hero() {
       ref={root}
       id="top"
       className="relative isolate w-full"
-      style={{ height: "100svh", minHeight: 760, maxHeight: 1100 }}
+      style={{ height: "100svh", maxHeight: "100svh" }}
     >
       {/* Slide backgrounds */}
       <div className="hero-bg absolute inset-0 -z-10 overflow-hidden">

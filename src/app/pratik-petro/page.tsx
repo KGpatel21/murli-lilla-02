@@ -7,7 +7,7 @@ import Footer from "@/components/site/Footer";
 export const metadata: Metadata = {
   title: "Pratik Petro — Bitumen & Petroleum Products | MurliLeela",
   description:
-    "MurliLeela's Pratik Petro division specialises in the import, supply, and distribution of high-grade bitumen and petroleum products for road construction, waterproofing, and industrial applications across India.",
+    "MurliLeela's Pratik Petro division specialises in the trading, supply, and distribution of high-grade bitumen and petroleum products for road construction, waterproofing, and industrial applications across India.",
 };
 
 const BULLETS = [
@@ -132,7 +132,7 @@ export default function PratikPetroPage() {
                 margin: 0,
               }}
             >
-              Petroleum products, bitumen import &amp; export, and industrial
+              Petroleum products, bitumen trading &amp; supply, and industrial
               solutions powering infrastructure across India.
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function PratikPetroPage() {
                     Products
                   </p>
                   <p style={{ fontSize: 18, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.36px", margin: 0, minWidth: "100%" }}>
-                    MurliLeela&apos;s Pratik Petro division specialises in the import, supply, and distribution of high-grade bitumen and petroleum products for road construction, waterproofing, and industrial applications across India.
+                    MurliLeela&apos;s Pratik Petro division specialises in the trading, supply, and distribution of high-grade bitumen and petroleum products for road construction, waterproofing, and industrial applications across India.
                   </p>
                 </div>
 

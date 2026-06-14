@@ -43,27 +43,53 @@ export default function Reveal({
 
     gsap.set(targets, { y, opacity: 0 });
 
+    const reveal = () => {
+      targets.forEach((el) => el.classList.add("is-in"));
+      gsap.to(targets, {
+        y: 0,
+        opacity: 1,
+        duration: 1.05,
+        ease: "expo.out",
+        stagger,
+        delay,
+      });
+    };
+
+    // If the section is already within (or above) the viewport on mount, reveal now.
+    const rect = root.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) {
+      reveal();
+      return;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          io.disconnect();
-          targets.forEach((el) => el.classList.add("is-in"));
-          gsap.to(targets, {
-            y: 0,
-            opacity: 1,
-            duration: 1.05,
-            ease: "expo.out",
-            stagger,
-            delay,
-          });
+          // Reveal when intersecting, or if the section has already been
+          // scrolled into/past the viewport (catches fast scrolls on mobile).
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+            io.disconnect();
+            reveal();
+          }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     io.observe(root);
 
-    return () => io.disconnect();
+    // Safety net: if anything is still hidden shortly after load, reveal it.
+    const fallback = window.setTimeout(() => {
+      const r = root.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) {
+        io.disconnect();
+        reveal();
+      }
+    }, 1200);
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [delay, stagger, y]);
 
   const Tag = as as React.ElementType;

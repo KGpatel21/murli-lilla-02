@@ -15,8 +15,8 @@ const COMPANY = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/#about" },
   { label: "Investor relations", href: "/#investor" },
-  { label: "Careers", href: "/#careers" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/careers#enquiry" },
 ];
 
 const SOCIAL_PATHS: Record<string, string> = {
@@ -54,7 +54,6 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-clip text-white" style={{ background: "#000000" }}>
       {/* Brand accent rule */}
-      <div aria-hidden style={{ height: 3, background: "#a30000" }} />
 
       <div className="frame" style={{ paddingTop: 72, paddingBottom: 0 }}>
         {/* Top: brand + link columns */}

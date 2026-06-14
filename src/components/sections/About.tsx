@@ -14,7 +14,7 @@ const PILLARS = [
     n: "02",
     title: "Global Reach",
     body:
-      "Exporting furniture to Canada, Europe, and the US while importing and distributing petroleum products across India.",
+      "Exporting furniture to Canada, Europe, and the US while trading and distributing petroleum products across India.",
   },
   {
     n: "03",

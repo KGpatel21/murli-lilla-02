@@ -8,7 +8,7 @@ import LineIcon from "@/components/site/LineIcon";
 export const metadata: Metadata = {
   title: "Education — Early-Childhood Learning Network | MurliLeela",
   description:
-    "MurliLeela Education is building a network of early-childhood learning centres across India — combining structured curriculum, trained educators, and safe, modern campuses.",
+    "MurliLeela Education extends the Kidzys early-learning ecosystem — already present at Zundal — into a wider network of modern, structured early-childhood centres across the region.",
 };
 
 const ACCENT = "#b8753a";
@@ -44,7 +44,7 @@ const APPROACH = [
   },
   {
     k: "Franchise with standards",
-    v: "Partner-operated centres run on a common curriculum, training, and quality-audit framework — so every campus delivers the same standard.",
+    v: "Built on the Kidzys ecosystem, centres run on a common curriculum, training, and quality-audit framework — so every campus delivers the same standard.",
   },
   {
     k: "Parents as partners",
@@ -56,7 +56,7 @@ export default function EducationPage() {
   return (
     <main className="relative bg-white">
       <Header initialBg={PAPER} position="fixed" />
-      <div aria-hidden style={{ height: 70 }} />
+      <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — warm academic */}
       <section className="relative overflow-hidden" style={{ background: PAPER }}>
@@ -120,8 +120,9 @@ export default function EducationPage() {
                 marginTop: 24,
               }}
             >
-              We are building a network of early-childhood learning centres that hold
-              themselves to institutional standards — structured curriculum, certified
+              Anchored by the established Kidzys presence at Zundal, we are extending a
+              network of early-childhood learning centres that hold themselves to
+              institutional standards — structured curriculum, certified
               educators, and campuses designed around children's safety and curiosity.
             </p>
           </Reveal>

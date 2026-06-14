@@ -14,7 +14,7 @@ const VERTICALS: Vertical[] = [
   {
     n: "01",
     title: "Pratik Petro",
-    body: "Bitumen import, petroleum products trading and distribution with nationwide logistics capabilities.",
+    body: "Bitumen and petroleum products trading, supply, and distribution with nationwide logistics capabilities.",
     href: "/pratik-petro",
   },
   {

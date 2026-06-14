@@ -356,3 +356,23 @@ html, body {
   .hero-content { bottom: 64px; gap: 12px; }
   .hero-headline { font-size: clamp(24px, 6vw, 34px); }
 }
+
+/* ── Careers enquiry layout ── */
+.career-enquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px;
+  align-items: start;
+}
+.career-form {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+@media (max-width: 1023px) {
+  .career-enquiry-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 519px) {
+  .career-form { grid-template-columns: 1fr; }
+  .career-form .col-span-2 { grid-column: span 1 / span 1; }
+}

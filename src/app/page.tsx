@@ -5,7 +5,6 @@ import About from "@/components/sections/About";
 import Verticals from "@/components/sections/Verticals";
 import WhyMurliLeela from "@/components/sections/WhyMurliLeela";
 import Careers from "@/components/sections/Careers";
-import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
         <Verticals />
         <WhyMurliLeela />
         <Careers />
-        <Contact />
       </main>
       <Footer />
     </>

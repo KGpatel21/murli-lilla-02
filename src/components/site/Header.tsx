@@ -35,7 +35,7 @@ const NAV: NavItem[] = [
     href: "/#business",
     variant: "mega",
     items: [
-      { label: "Pratik Petro", href: "/pratik-petro", description: "Bitumen import and petroleum supply", icon: "petro" },
+      { label: "Pratik Petro", href: "/pratik-petro", description: "Bitumen and petroleum trading & supply", icon: "petro" },
       { label: "Furniture", href: "/furniture", description: "Premium furniture export — Canada, EU, US", icon: "furniture" },
       { label: "Real Estate", href: "/real-estate", description: "Property development and asset management", icon: "realestate" },
       { label: "Technology", href: "/technology", description: "Enterprise platforms, AI and automation", icon: "technology" },
@@ -55,7 +55,7 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "Careers", href: "/#careers" },
-  { label: "Contact Us", href: "/#contact" },
+  { label: "Contact Us", href: "/careers#enquiry" },
 ];
 
 const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
@@ -155,7 +155,7 @@ export default function Header({
       >
         <div
           className="relative mx-auto flex items-center"
-          style={{ height: 70, maxWidth: 1440, paddingInline: 120 }}
+          style={{ height: 56, maxWidth: 1440, paddingInline: 120 }}
         >
           {/* Logo */}
           <Link href="/" aria-label="MurliLeela home" className="flex items-center">
@@ -165,7 +165,7 @@ export default function Header({
               width={118}
               height={52}
               priority
-              style={{ width: 104, height: 45.76, objectFit: "cover" }}
+              style={{ width: 92, height: 40.5, objectFit: "cover" }}
             />
           </Link>
 
@@ -334,7 +334,7 @@ export default function Header({
               </svg>
             </button>
             <Link
-              href="/#contact"
+              href="/careers#enquiry"
               className="hidden items-center justify-center text-white sm:inline-flex"
               style={{
                 background: "#000",
@@ -626,7 +626,7 @@ export default function Header({
               </div>
             ))}
             <Link
-              href="/#contact"
+              href="/careers#enquiry"
               onClick={() => setMobileOpen(false)}
               className="mt-6 inline-flex h-[46px] items-center justify-center text-white"
               style={{ background: "#000", borderRadius: 6, fontSize: 16 }}
