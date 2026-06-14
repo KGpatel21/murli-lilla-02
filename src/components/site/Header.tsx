@@ -154,8 +154,8 @@ export default function Header({
         }}
       >
         <div
-          className="relative mx-auto flex items-center"
-          style={{ height: 56, maxWidth: 1440, paddingInline: 120 }}
+          className="header-bar relative mx-auto flex items-center"
+          style={{ height: 56, maxWidth: 1440 }}
         >
           {/* Logo */}
           <Link href="/" aria-label="MurliLeela home" className="flex items-center">
@@ -362,7 +362,8 @@ export default function Header({
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="grid h-10 w-10 place-items-center text-black lg:hidden"
+              className="grid h-11 w-11 place-items-center text-black lg:hidden"
+              style={{ marginRight: -8 }}
             >
               <svg
                 width={24}
@@ -606,15 +607,15 @@ export default function Header({
                           onClick={() => setMobileOpen(false)}
                           className="flex items-center"
                           style={{
-                            gap: 10,
-                            padding: "8px 8px",
-                            fontSize: 13.5,
+                            gap: 12,
+                            padding: "11px 8px",
+                            fontSize: 15,
                             color: "rgba(0,0,0,0.6)",
                           }}
                         >
                           {child.icon && (
                             <span style={{ color: "rgba(0,0,0,0.45)" }}>
-                              <LineIcon name={child.icon} size={16} />
+                              <LineIcon name={child.icon} size={18} />
                             </span>
                           )}
                           {child.label}

@@ -63,6 +63,7 @@ export default function PratikPetroPage() {
     >
       <Header initialBg="#f7f7f7" position="absolute" />
 
+      <div className="petro-desktop">
       <div
         className="relative mx-auto"
         style={{ width: 1440, maxWidth: "100%", height: 2509 }}
@@ -195,25 +196,25 @@ export default function PratikPetroPage() {
                 >
                   <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
                     <div className="absolute flex flex-col items-start" style={{ left: 15, top: "50%", transform: "translateY(-50%)", gap: 8, width: 166 }}>
-                      <p style={{ fontSize: 10, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>PRIMARY PRODUCT</p>
+                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>PRIMARY PRODUCT</p>
                       <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>Bitumen 60/70 &amp; 80/100</p>
                     </div>
                   </div>
                   <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
                     <div className="absolute flex flex-col items-start" style={{ left: 15, top: 15, gap: 8, width: 87 }}>
-                      <p style={{ fontSize: 10, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>SUPPLY FORMAT</p>
+                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>SUPPLY FORMAT</p>
                       <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>Bulk &amp; Drum</p>
                     </div>
                   </div>
                   <div className="relative overflow-clip" style={{ background: "#ffffff", borderRadius: 5 }}>
                     <div className="absolute flex flex-col items-start" style={{ left: 16, top: "50%", transform: "translateY(-50%)", gap: 8, width: 94 }}>
-                      <p style={{ fontSize: 10, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>MIN. ORDER</p>
+                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>MIN. ORDER</p>
                       <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>As per inquiry</p>
                     </div>
                   </div>
                   <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
                     <div className="absolute flex flex-col items-start" style={{ left: 15, top: 15, gap: 8, width: 130 }}>
-                      <p style={{ fontSize: 10, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>COMLIANCE</p>
+                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>COMPLIANCE</p>
                       <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>IS 73:2013 | ASTM</p>
                     </div>
                   </div>
@@ -305,6 +306,116 @@ export default function PratikPetroPage() {
         <div style={{ ...fullWidthBreakOut, top: 2000 }}>
           <Footer />
         </div>
+      </div>
+      </div>
+
+      {/* ════════ MOBILE / TABLET LAYOUT ════════ */}
+      <div className="petro-mobile">
+        <div aria-hidden style={{ height: 56 }} />
+        <div className="frame" style={{ paddingTop: 28 }}>
+          <div className="flex items-center" style={{ gap: 10, fontSize: 13, color: "rgba(0,0,0,0.6)" }}>
+            <Link href="/" className="hover:text-black">Home</Link>
+            <span>/</span>
+            <Link href="/#business" className="hover:text-black">Businesses</Link>
+            <span>/</span>
+            <span style={{ color: "#000" }}>Pratik Petro</span>
+          </div>
+          <h1 style={{ fontWeight: 700, fontSize: "clamp(34px, 11vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
+            Pratik Petro
+          </h1>
+          <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.55)", margin: "14px 0 0", maxWidth: 520 }}>
+            Petroleum products, bitumen trading &amp; supply, and industrial
+            solutions powering infrastructure across India.
+          </p>
+        </div>
+
+        {/* Hero image */}
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", marginTop: 20 }}>
+          <Image src="/figma/353/hero.png" alt="Petroleum operations" fill sizes="100vw" style={{ objectFit: "cover" }} />
+        </div>
+
+        {/* Teal spec section */}
+        <section style={{ background: "#5aa6a8", padding: "40px 0" }}>
+          <div className="frame">
+            <span className="inline-flex items-center" style={{ gap: 8, background: "#fff", borderRadius: 18, padding: "6px 14px", fontSize: 12, color: "rgba(0,0,0,0.8)" }}>
+              <span className="rounded-full inline-block" style={{ width: 5, height: 5, background: "rgba(0,0,0,0.8)" }} />
+              Petroleum Division
+            </span>
+            <h2 style={{ fontWeight: 700, fontSize: "clamp(28px, 8vw, 40px)", color: "#fff", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
+              Bitumen &amp; Petroleum Products
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,0.85)", margin: "14px 0 0" }}>
+              MurliLeela&apos;s Pratik Petro division specialises in the trading,
+              supply, and distribution of high-grade bitumen and petroleum
+              products for road construction, waterproofing, and industrial
+              applications across India.
+            </p>
+
+            <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", borderRadius: 8, overflow: "hidden", marginTop: 22, background: "#fff" }}>
+              <Image src="/figma/353/tanks.png" alt="Storage tanks" fill sizes="100vw" style={{ objectFit: "cover" }} />
+            </div>
+
+            {/* Spec cards 2x2 */}
+            <div className="petro-spec-grid">
+              {[
+                { l: "PRIMARY PRODUCT", v: "Bitumen 60/70 & 80/100" },
+                { l: "SUPPLY FORMAT", v: "Bulk & Drum" },
+                { l: "MIN. ORDER", v: "As per inquiry" },
+                { l: "COMPLIANCE", v: "IS 73:2013 | ASTM" },
+              ].map((s) => (
+                <div key={s.l} style={{ background: "#fff", borderRadius: 8, padding: "16px 18px" }}>
+                  <p style={{ fontSize: 11, color: "rgba(0,0,0,0.55)", letterSpacing: "0.04em", margin: 0 }}>{s.l}</p>
+                  <p style={{ fontSize: 15, color: "#000", margin: "6px 0 0", fontWeight: 500 }}>{s.v}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Bullets */}
+            <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
+              {BULLETS.map((bl) => (
+                <div key={bl} className="flex items-start" style={{ gap: 11 }}>
+                  <span className="rounded-full inline-block shrink-0" style={{ width: 7, height: 7, background: "#fff", marginTop: 7 }} />
+                  <p style={{ fontSize: 15, lineHeight: 1.5, color: "rgba(255,255,255,0.9)", margin: 0 }}>{bl}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Product range */}
+        <div className="frame" style={{ paddingTop: 40, paddingBottom: 16 }}>
+          <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.14em", color: "rgba(0,0,0,0.6)", margin: 0 }}>PRODUCT RANGE</p>
+          <h2 style={{ fontWeight: 700, fontSize: "clamp(26px, 7vw, 34px)", color: "#000", margin: "10px 0 24px", letterSpacing: "-0.01em" }}>What we Supply</h2>
+          <div className="petro-products">
+            {PRODUCTS.map((pr) => (
+              <div key={pr.title} style={{ border: "1px solid rgba(0,0,0,0.15)", borderRadius: 10, padding: 22 }}>
+                <div className="grid place-items-center" style={{ width: 52, height: 52, borderRadius: 6, background: pr.bg, fontSize: 28 }}>{pr.icon}</div>
+                <p style={{ fontSize: 19, color: "#000", margin: "18px 0 0", fontWeight: 600 }}>{pr.title}</p>
+                <p style={{ fontSize: 14, color: "rgba(0,0,0,0.6)", margin: "4px 0 0" }}>{pr.code}</p>
+                <div style={{ height: 1, background: "rgba(0,0,0,0.12)", margin: "16px 0" }} />
+                <p style={{ fontSize: 14, lineHeight: 1.5, color: "rgba(0,0,0,0.55)", margin: 0 }}>{pr.body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Quote CTA */}
+          <div style={{ marginTop: 32, background: "#f4f4f4", borderRadius: 12, padding: 24 }}>
+            <p style={{ fontSize: 19, fontWeight: 700, color: "#000", margin: 0 }}>Request a Product Quotation</p>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(0,0,0,0.66)", margin: "10px 0 18px" }}>
+              Contact us with your requirements and our team will get back with a competitive quote within 24 hours.
+            </p>
+            <div className="petro-cta-row">
+              <Link href="/careers#enquiry" className="inline-flex items-center justify-center" style={{ background: "#5aa6a8", color: "#fff", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+                Send Enquiry
+              </Link>
+              <a href="https://wa.me/911484142299" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+                WhatsApp Directly
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <Footer />
       </div>
     </main>
   );

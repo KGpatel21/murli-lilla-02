@@ -537,3 +537,38 @@ html, body {
   .furniture-mobile-grid { grid-template-columns: 1fr; }
   .furniture-cta-row a, .furniture-cta-row > a { flex: 1; min-width: 0; }
 }
+
+/* ════════════════════════════════════════════════════════
+   HEADER BAR — responsive horizontal padding (was fixed 120px)
+   ════════════════════════════════════════════════════════ */
+.header-bar { padding-inline: 120px; }
+@media (max-width: 1199px) { .header-bar { padding-inline: 60px; } }
+@media (max-width: 767px)  { .header-bar { padding-inline: 24px; } }
+@media (max-width: 360px)  { .header-bar { padding-inline: 18px; } }
+
+/* Footer links — larger tap target on touch devices */
+.footer-link { display: inline-flex; align-items: center; transition: color 200ms; }
+.footer-link:hover { color: rgba(255,255,255,0.9) !important; }
+@media (max-width: 767px) {
+  .footer-link { min-height: 40px; }
+}
+
+/* ════════════════════════════════════════════════════════
+   PRATIK PETRO — desktop canvas vs mobile layout
+   ════════════════════════════════════════════════════════ */
+.petro-desktop { display: block; }
+.petro-mobile { display: none; }
+@media (max-width: 1023px) {
+  .petro-desktop { display: none; }
+  .petro-mobile { display: block; }
+}
+.petro-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+.petro-products { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.petro-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .petro-products { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 380px) {
+  .petro-spec-grid { grid-template-columns: 1fr; }
+  .petro-cta-row a { flex: 1; }
+}
