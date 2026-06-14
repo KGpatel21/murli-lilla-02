@@ -106,10 +106,11 @@ export default function FurniturePage() {
     >
       <Header initialBg="#f7f7f7" position="absolute" />
 
-      <div
-        className="relative mx-auto"
-        style={{ width: 1440, maxWidth: "100%", height: 3107 }}
-      >
+      <div className="furniture-desktop">
+        <div
+          className="relative mx-auto"
+          style={{ width: 1440, maxWidth: "100%", height: 3107 }}
+        >
         {/* Chair hero illustration */}
         <div
           className="absolute overflow-hidden pointer-events-none"
@@ -306,10 +307,99 @@ export default function FurniturePage() {
           </div>
         </div>
 
-        {/* Footer — FULL WIDTH wrapper */}
+        {/* Footer — FULL WIDTH wrapper (desktop canvas) */}
         <div style={{ ...fullWidthBreakOut, top: 2598 }}>
           <Footer />
         </div>
+        </div>
+      </div>
+
+      {/* ════════ MOBILE / TABLET LAYOUT (natural flow) ════════ */}
+      <div className="furniture-mobile">
+        <div aria-hidden style={{ height: 56 }} />
+        <div className="frame" style={{ paddingTop: 28, paddingBottom: 8 }}>
+          {/* Breadcrumb */}
+          <div className="flex items-center" style={{ gap: 10, fontSize: 13, color: "rgba(0,0,0,0.6)" }}>
+            <Link href="/" className="hover:text-black">Home</Link>
+            <span>/</span>
+            <Link href="/#business" className="hover:text-black">Businesses</Link>
+            <span>/</span>
+            <span style={{ color: "#000" }}>Furniture</span>
+          </div>
+          {/* Title */}
+          <h1 style={{ fontWeight: 700, fontSize: "clamp(34px, 11vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
+            Furniture
+          </h1>
+          <p style={{ fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#a30000", fontWeight: 600, margin: "12px 0 0" }}>
+            Crafted in India · Since 2014
+          </p>
+          <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "14px 0 0", maxWidth: 520 }}>
+            Exporting premium Indian furniture to Canada, Europe, the US, and the
+            domestic market — handcrafted by India&apos;s finest artisans with
+            international design sensibilities.
+          </p>
+        </div>
+
+        {/* Hero image */}
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 11", background: "#d2b08f", marginTop: 18 }}>
+          <Image src="/figma/354/hero.png" alt="Furniture interior" fill sizes="100vw" style={{ objectFit: "cover" }} />
+        </div>
+
+        {/* Product showcase */}
+        <div className="frame" style={{ paddingTop: 40, paddingBottom: 16 }}>
+          <p style={{ fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(0,0,0,0.5)", fontWeight: 600, margin: 0 }}>
+            Product Categories
+          </p>
+          <h2 style={{ fontSize: "clamp(26px, 7vw, 34px)", fontWeight: 700, color: "#000", margin: "10px 0 22px", letterSpacing: "-0.02em" }}>
+            Browse Our Collections
+          </h2>
+          {/* Category chips (horizontal scroll) */}
+          <div className="furniture-chips">
+            {["All", "Living Room", "Bedroom", "Dining", "Office", "Outdoor"].map((c, i) => (
+              <span key={c} className="furniture-chip" data-active={i === 0}>{c}</span>
+            ))}
+          </div>
+
+          {/* Product grid */}
+          <div className="furniture-mobile-grid">
+            {[...ROW1, ...ROW2].map((card) => (
+              <div key={card.title} className="furniture-mcard">
+                <div className="furniture-mcard-img">
+                  <Image src={card.img} alt={card.title} fill sizes="(max-width: 520px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                </div>
+                <div style={{ padding: "16px 18px 18px" }}>
+                  <p style={{ fontSize: 18, fontWeight: 600, color: "#000", margin: 0 }}>{card.title}</p>
+                  <p style={{ fontSize: 14, color: "rgba(0,0,0,0.6)", margin: "4px 0 0" }}>{card.subtitle}</p>
+                  <div className="flex items-center" style={{ gap: 8, marginTop: 14 }}>
+                    <span style={{ fontSize: 13, color: "#a30000", letterSpacing: "0.02em" }}>EXPLORE MORE</span>
+                    <svg width={15} height={15} viewBox="0 0 16 16" fill="none" stroke="#a30000" strokeWidth="1.5">
+                      <path d="M3 8h10m-4-4 4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Export CTA */}
+          <div style={{ marginTop: 32, background: "#f4f4f4", borderRadius: 12, padding: 24 }}>
+            <p style={{ fontSize: 19, fontWeight: 700, color: "#000", margin: 0 }}>Exporting Globally Since 2014</p>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(0,0,0,0.66)", margin: "10px 0 18px" }}>
+              We partner with importers, retailers, and interior designers worldwide.
+              Contact us for wholesale and bulk export enquiries.
+            </p>
+            <div className="furniture-cta-row">
+              <Link href="/careers#enquiry" className="inline-flex items-center justify-center" style={{ background: "#a30000", color: "#fff", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+                Partner with us
+              </Link>
+              <a href="https://wa.me/911484142299" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+                WhatsApp Directly
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <Footer />
       </div>
     </main>
   );

@@ -30,16 +30,11 @@ export default function Careers() {
         </Reveal>
 
         <Reveal>
-          <div className="mt-[48px] flex items-start justify-between gap-8">
+          <div className="careers-head mt-[48px]">
             <div>
               <h2
                 data-reveal
-                className="font-sans font-bold text-ink"
-                style={{
-                  fontSize: 32,
-                  lineHeight: 1.15,
-                  letterSpacing: "0.01em",
-                }}
+                className="careers-head-h2 font-sans font-bold text-ink"
               >
                 One Company. Endless Opportunities.
               </h2>
@@ -62,36 +57,21 @@ export default function Careers() {
             <a
               data-reveal
               href="/careers#enquiry"
-              className="inline-flex items-center justify-center bg-paper text-ink transition-colors hover:bg-ink hover:text-paper"
-              style={{
-                height: 49,
-                width: 165,
-                borderRadius: 4,
-                border: "1px solid rgba(0,0,0,0.66)",
-                fontSize: 16,
-                flexShrink: 0,
-              }}
+              className="careers-head-cta inline-flex items-center justify-center bg-paper text-ink transition-colors hover:bg-ink hover:text-paper"
+              style={{ height: 49, borderRadius: 4, border: "1px solid rgba(0,0,0,0.66)", fontSize: 16 }}
             >
               Know more
             </a>
           </div>
         </Reveal>
 
-        <Reveal
-          className="mt-[60px] grid"
-          stagger={0.08}
-          style={{
-            gridTemplateColumns: "500fr 283fr 283fr 283fr",
-            gap: 22,
-          }}
-        >
+        <Reveal className="careers-cards mt-[60px] grid" stagger={0.08}>
           {CARDS.map((c) => (
             <a
               key={c.title}
               href="#"
               data-reveal
-              className="group relative block overflow-hidden"
-              style={{ height: 559 }}
+              className="careers-card group relative block overflow-hidden"
             >
               <Image
                 src={c.img}

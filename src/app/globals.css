@@ -376,3 +376,164 @@ html, body {
   .career-form { grid-template-columns: 1fr; }
   .career-form .col-span-2 { grid-column: span 1 / span 1; }
 }
+
+/* ════════════════════════════════════════════════════════
+   ABOUT SECTION — responsive (desktop preserved, mobile rebuilt)
+   ════════════════════════════════════════════════════════ */
+.about-pad { padding-top: 72px; padding-bottom: 80px; }
+.about-grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 596px 591px;
+  gap: 42px;
+  align-items: start;
+}
+.about-quote-card {
+  position: relative;
+  width: 596px;
+  height: 486px;
+  border-radius: 6px;
+}
+.about-quote-glyph { position: absolute; top: 40px; left: 50px; font-size: 140px; letter-spacing: -0.02em; }
+.about-quote-body {
+  position: absolute; top: 170px; left: 50px; width: 360px;
+  font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -0.02em; color: rgba(0,0,0,0.66);
+}
+.about-quote-foot { position: absolute; top: 348px; left: 23px; right: 23px; display: flex; gap: 20px; align-items: flex-start; }
+.about-quote-img { width: 220px; height: 190px; flex-shrink: 0; }
+.about-quote-attr { padding-top: 0; }
+.about-h2 { font-size: 32px; line-height: 1.15; letter-spacing: 0.01em; }
+.about-intro { font-size: 18px; line-height: 1.55; letter-spacing: -0.01em; color: rgba(255,255,255,0.66); max-width: 591px; }
+.about-pillar {
+  display: grid; grid-template-columns: 60px 180px 1fr; column-gap: 24px;
+  padding-top: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.2); align-items: start;
+}
+.about-pillar-n { font-size: 18px; letter-spacing: 0.01em; color: rgba(255,255,255,0.5); }
+.about-pillar-title { font-size: 18px; font-weight: 400; letter-spacing: 0.01em; }
+.about-pillar-body { font-size: 16px; line-height: 1.5; letter-spacing: -0.02em; color: rgba(255,255,255,0.66); }
+
+/* Tablet */
+@media (max-width: 1099px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-quote-card { width: 100%; max-width: 596px; }
+  .about-intro, .about-quote-body { width: auto; }
+}
+
+/* Mobile — quote card becomes natural flow, no absolute overlap */
+@media (max-width: 767px) {
+  .about-pad { padding-top: 56px; padding-bottom: 56px; }
+  .about-grid { margin-top: 48px; gap: 40px; }
+  .about-quote-card { height: auto; padding: 28px 24px 24px; }
+  .about-quote-glyph { position: static; font-size: 72px; }
+  .about-quote-body { position: static; width: auto; font-size: 18px; margin-top: -8px; }
+  .about-quote-foot { position: static; margin-top: 24px; flex-direction: column; gap: 16px; left: auto; right: auto; }
+  .about-quote-img { width: 100%; height: 180px; }
+  .about-h2 { font-size: 26px; }
+  .about-intro { font-size: 16px; }
+  .about-pillar { grid-template-columns: 40px 1fr; column-gap: 14px; row-gap: 6px; padding-top: 22px; padding-bottom: 22px; }
+  .about-pillar-title { grid-column: 2; font-weight: 600; }
+  .about-pillar-n { grid-row: 1; }
+  .about-pillar-body { grid-column: 2; font-size: 15px; }
+}
+
+/* Hero section clips full-bleed scaled background */
+#top { overflow: hidden; }
+
+/* ════════════════════════════════════════════════════════
+   WHY MURLILEELA — responsive orbit diagram
+   ════════════════════════════════════════════════════════ */
+.why-pad { padding-top: 72px; padding-bottom: 80px; }
+.why-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 510px;
+  gap: 60px;
+  align-items: center;
+}
+.why-text { max-width: 516px; }
+.why-h2 { font-size: 32px; line-height: 1.15; letter-spacing: 0.01em; }
+.why-intro { font-size: 16px; line-height: 1.55; letter-spacing: -0.01em; color: rgba(0,0,0,0.66); }
+
+.why-orbit-wrap { display: flex; justify-content: center; }
+.why-orbit { position: relative; width: 460px; height: 460px; }
+.why-ring { position: absolute; border-radius: 50%; border: 1px dashed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.why-ring-1 { width: 100%; height: 100%; border-color: rgba(0,0,0,0.15); }
+.why-ring-2 { width: 72%; height: 72%; border-color: rgba(0,0,0,0.12); }
+.why-ring-3 { width: 50%; height: 50%; border-color: rgba(0,0,0,0.1); }
+.why-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; }
+.why-tile { position: absolute; }
+.why-tile-inner { width: 104px; height: 104px; background: transparent; }
+.why-tile-top { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.why-tile-right { top: 50%; right: 0; transform: translate(50%, -50%); }
+.why-tile-bottom { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.why-tile-left { top: 50%; left: 0; transform: translate(-50%, -50%); }
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .why-grid { grid-template-columns: 1fr; gap: 56px; }
+  .why-text { max-width: none; }
+}
+
+/* Mobile — scale orbit down so tiles never overflow */
+@media (max-width: 767px) {
+  .why-pad { padding-top: 56px; padding-bottom: 56px; }
+  .why-grid { margin-top: 40px; gap: 44px; }
+  .why-h2 { font-size: 26px; }
+  .why-orbit { width: min(300px, 78vw); height: min(300px, 78vw); }
+  .why-tile-inner { width: 74px; height: 74px; }
+  .why-tile-icon { width: 20px !important; height: 20px !important; }
+  .why-center { width: 64%; }
+  .why-center p:first-child { font-size: 16px; }
+  .why-center p:last-child { font-size: 10.5px; }
+}
+@media (max-width: 360px) {
+  .why-orbit { width: 280px; height: 280px; }
+  .why-tile-inner { width: 64px; height: 64px; }
+}
+
+/* ════════════════════════════════════════════════════════
+   CAREERS (homepage section) — responsive
+   ════════════════════════════════════════════════════════ */
+.careers-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+.careers-head-h2 { font-size: 32px; line-height: 1.15; letter-spacing: 0.01em; }
+.careers-head-cta { width: 165px; flex-shrink: 0; }
+.careers-cards { grid-template-columns: 500fr 283fr 283fr 283fr; gap: 22px; }
+.careers-card { height: 559px; }
+
+@media (max-width: 1023px) {
+  .careers-cards { grid-template-columns: 1fr 1fr; }
+  .careers-card { height: 420px; }
+}
+@media (max-width: 767px) {
+  .careers-head { flex-direction: column; gap: 24px; }
+  .careers-head-h2 { font-size: 26px; }
+  .careers-head-cta { width: 100%; max-width: 200px; }
+  .careers-cards { grid-template-columns: 1fr; gap: 16px; }
+  .careers-card { height: 300px; }
+}
+
+
+/* ════════════════════════════════════════════════════════
+   FURNITURE PAGE — desktop canvas vs dedicated mobile layout
+   ════════════════════════════════════════════════════════ */
+.furniture-desktop { display: block; }
+.furniture-mobile { display: none; }
+@media (max-width: 1023px) {
+  .furniture-desktop { display: none; }
+  .furniture-mobile { display: block; }
+}
+.furniture-chips { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.furniture-chips::-webkit-scrollbar { display: none; }
+.furniture-chip {
+  flex-shrink: 0; padding: 8px 18px; border-radius: 24px; font-size: 14px; white-space: nowrap;
+  border: 1px solid #d2af8f; color: #d2af8f; cursor: pointer;
+}
+.furniture-chip[data-active="true"] { background: #d2af8f; color: #fff; }
+.furniture-mobile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+.furniture-mcard { border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; background: #fff; }
+.furniture-mcard-img { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #b58989; }
+.furniture-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 519px) {
+  .furniture-mobile-grid { grid-template-columns: 1fr; }
+  .furniture-cta-row a, .furniture-cta-row > a { flex: 1; min-width: 0; }
+}
