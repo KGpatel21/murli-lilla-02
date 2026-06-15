@@ -413,7 +413,7 @@ html, body {
 .about-quote-foot { position: absolute; top: 348px; left: 23px; right: 23px; display: flex; gap: 20px; align-items: flex-start; }
 .about-quote-img { width: 220px; height: 190px; flex-shrink: 0; }
 .about-quote-attr { padding-top: 0; }
-.about-h2 { font-size: 32px; line-height: 1.15; letter-spacing: 0.01em; }
+.about-h2 { font-size: clamp(26px, 3.2vw, 38px); line-height: 1.12; letter-spacing: -0.01em; }
 .about-intro { font-size: 18px; line-height: 1.55; letter-spacing: -0.01em; color: rgba(255,255,255,0.66); max-width: 591px; }
 .about-pillar {
   display: grid; grid-template-columns: 60px 180px 1fr; column-gap: 24px;
