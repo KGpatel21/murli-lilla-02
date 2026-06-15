@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/site/Header";
+import FurnitureShowcase from "@/components/furniture/FurnitureShowcase";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
@@ -353,33 +354,9 @@ export default function FurniturePage() {
           <h2 style={{ fontSize: "clamp(26px, 7vw, 34px)", fontWeight: 700, color: "#000", margin: "10px 0 22px", letterSpacing: "-0.02em" }}>
             Browse Our Collections
           </h2>
-          {/* Category chips (horizontal scroll) */}
-          <div className="furniture-chips">
-            {["All", "Living Room", "Bedroom", "Dining", "Office", "Outdoor"].map((c, i) => (
-              <span key={c} className="furniture-chip" data-active={i === 0}>{c}</span>
-            ))}
-          </div>
 
-          {/* Product grid */}
-          <div className="furniture-mobile-grid">
-            {[...ROW1, ...ROW2].map((card) => (
-              <div key={card.title} className="furniture-mcard">
-                <div className="furniture-mcard-img">
-                  <Image src={card.img} alt={card.title} fill sizes="(max-width: 520px) 100vw, 50vw" style={{ objectFit: "cover" }} />
-                </div>
-                <div style={{ padding: "16px 18px 18px" }}>
-                  <p style={{ fontSize: 18, fontWeight: 600, color: "#000", margin: 0 }}>{card.title}</p>
-                  <p style={{ fontSize: 14, color: "rgba(0,0,0,0.6)", margin: "4px 0 0" }}>{card.subtitle}</p>
-                  <div className="flex items-center" style={{ gap: 8, marginTop: 14 }}>
-                    <span style={{ fontSize: 13, color: "#a30000", letterSpacing: "0.02em" }}>EXPLORE MORE</span>
-                    <svg width={15} height={15} viewBox="0 0 16 16" fill="none" stroke="#a30000" strokeWidth="1.5">
-                      <path d="M3 8h10m-4-4 4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Functional category filter + product grid */}
+          <FurnitureShowcase />
 
           {/* Export CTA */}
           <div style={{ marginTop: 32, background: "#f4f4f4", borderRadius: 12, padding: 24 }}>

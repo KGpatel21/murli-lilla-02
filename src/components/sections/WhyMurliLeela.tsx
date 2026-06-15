@@ -3,6 +3,14 @@
 import Reveal from "@/components/anim/Reveal";
 import LineIcon from "@/components/site/LineIcon";
 
+const PILLARS = [
+  { icon: "shield", label: "Trust", angle: -90 },
+  { icon: "chart", label: "Sustainable Growth", angle: -18 },
+  { icon: "award", label: "Reliability", angle: 54 },
+  { icon: "users", label: "Loyalty", angle: 126 },
+  { icon: "globe", label: "Multi-Industry Reach", angle: 198 },
+];
+
 export default function WhyMurliLeela() {
   return (
     <section id="why" className="relative bg-paper">
@@ -22,56 +30,78 @@ export default function WhyMurliLeela() {
           <Reveal>
             <div className="why-text">
               <h2 data-reveal className="why-h2 font-sans font-bold text-ink">
-                A Trusted Legacy Across Industries.
+                Relationships that compound over decades.
               </h2>
-              <p data-reveal className="why-intro mt-[20px]">
-                We bridge global trade, advanced automation, real estate, and
-                community ventures, delivering reliable solutions on a global and
-                domestic scale.
+              <p data-reveal className="why-intro mt-[22px]">
+                MurliLeela was not built in a quarter. Across petroleum, furniture
+                export, real estate, and beyond, our standing rests on partners who
+                stayed — because we delivered, consistently, when it mattered.
               </p>
+              <p data-reveal className="why-intro mt-[16px]">
+                Trust earns the first order. Reliability earns the next ten. That
+                loyalty, repaid through honest dealing and steady performance, is
+                what lets us grow into new industries without losing the ones that
+                made us.
+              </p>
+
+              {/* Quick proof points */}
+              <ul data-reveal className="why-points mt-[28px]">
+                {[
+                  "Long-term partnerships across regulated and export markets",
+                  "A customer-first standard applied to every division",
+                  "Disciplined, sustainable expansion — never growth for its own sake",
+                ].map((p) => (
+                  <li key={p} className="why-point">
+                    <span className="why-point-dot" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
 
-          {/* Orbit diagram */}
+          {/* Animated ecosystem diagram */}
           <Reveal>
-            <div data-reveal className="why-orbit-wrap">
-              <div className="why-orbit">
-                <div className="why-ring why-ring-1" />
-                <div className="why-ring why-ring-2" />
-                <div className="why-ring why-ring-3" />
+            <div data-reveal className="why-eco-wrap">
+              <div className="why-eco" role="img" aria-label="MurliLeela connected business ecosystem">
+                {/* Rotating dashed rings */}
+                <span className="why-eco-ring why-eco-ring-1" />
+                <span className="why-eco-ring why-eco-ring-2" />
+                <span className="why-eco-ring why-eco-ring-3" />
 
-                <div className="why-center grid place-items-center text-center">
-                  <div>
-                    <p className="font-sans" style={{ fontSize: 18, fontWeight: 400, letterSpacing: "0.01em", color: "#000", lineHeight: 1.2 }}>
-                      Global research
-                    </p>
-                    <p className="mt-[6px]" style={{ fontSize: 11.5, lineHeight: 1.4, color: "rgba(0,0,0,0.5)" }}>
-                      operating across India, Canada, Europe and USA with strong international partnerships
-                    </p>
-                  </div>
-                </div>
+                {/* Orbiting pillar nodes */}
+                {PILLARS.map((p, i) => (
+                  <span
+                    key={p.label}
+                    className="why-eco-node"
+                    style={
+                      {
+                        // CSS custom props drive position + stagger
+                        ["--angle" as string]: `${p.angle}deg`,
+                        ["--delay" as string]: `${i * 0.6}s`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <span className="why-eco-node-inner">
+                      <LineIcon name={p.icon} size={22} strokeWidth={1.5} />
+                    </span>
+                    <span className="why-eco-node-label">{p.label}</span>
+                  </span>
+                ))}
 
-                <div className="why-tile why-tile-top"><Tile icon="globe" /></div>
-                <div className="why-tile why-tile-right"><Tile icon="chart" /></div>
-                <div className="why-tile why-tile-bottom"><Tile icon="award" /></div>
-                <div className="why-tile why-tile-left"><Tile icon="briefcase" /></div>
+                {/* Center */}
+                <span className="why-eco-center">
+                  <span className="why-eco-center-pulse" />
+                  <span className="why-eco-center-text font-sans">
+                    MurliLeela
+                  </span>
+                  <span className="why-eco-center-sub">One Group · Many Industries</span>
+                </span>
               </div>
             </div>
           </Reveal>
         </div>
       </div>
     </section>
-  );
-}
-
-function Tile({ icon }: { icon: string }) {
-  return (
-    <div className="why-tile-inner grid place-items-center rounded-full border" style={{ borderColor: "rgba(0,0,0,0.12)" }}>
-      <div className="grid h-[72%] w-[72%] place-items-center rounded-full bg-paper" style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.06)" }}>
-        <span style={{ color: "#a30000" }}>
-          <LineIcon name={icon} className="why-tile-icon" size={26} strokeWidth={1.4} />
-        </span>
-      </div>
-    </div>
   );
 }

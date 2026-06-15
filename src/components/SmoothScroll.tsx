@@ -25,6 +25,9 @@ export default function SmoothScroll({
       touchMultiplier: 1.4,
     });
 
+    // Expose for utilities like the scroll-to-top button
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+
     lenis.on("scroll", ScrollTrigger.update);
     const onNativeScroll = () => ScrollTrigger.update();
     window.addEventListener("scroll", onNativeScroll, { passive: true });
@@ -54,6 +57,7 @@ export default function SmoothScroll({
       window.removeEventListener("scroll", onNativeScroll);
       gsap.ticker.remove(raf);
       lenis.destroy();
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
       document.documentElement.classList.remove("js-on");
     };
   }, []);

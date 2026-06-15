@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/site/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen overflow-x-clip bg-paper text-ink">
         <SmoothScroll>{children}</SmoothScroll>
+        <ScrollToTop />
       </body>
     </html>
   );

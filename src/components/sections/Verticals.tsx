@@ -184,6 +184,44 @@ export default function Verticals() {
               </Link>
             );
           })}
+
+          {/* 9th cell — Future Ventures (fills the empty space intentionally) */}
+          <div
+            data-reveal
+            className="vertical-future group relative block overflow-hidden"
+          >
+            <div className="vertical-card-content absolute">
+              <span
+                className="inline-flex items-center"
+                style={{ gap: 8, fontSize: 12, letterSpacing: "0.14em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}
+              >
+                <span className="rounded-full" style={{ width: 6, height: 6, background: "#fff", display: "inline-block" }} />
+                Growing Together
+              </span>
+              <h3
+                className="font-numeric"
+                style={{ fontSize: 20, fontWeight: 600, lineHeight: 1.25, color: "#fff", marginTop: 14 }}
+              >
+                Future Ventures
+              </h3>
+              <p
+                className="mt-[14px]"
+                style={{ fontSize: 14, lineHeight: 1.55, letterSpacing: "-0.01em", color: "rgba(255,255,255,0.7)" }}
+              >
+                New industries are on our horizon. As MurliLeela grows, so does
+                the breadth of what we build — guided by the same trust and
+                long-term thinking.
+              </p>
+            </div>
+            <div className="vertical-card-cta absolute inline-flex items-center" style={{ gap: 8 }}>
+              <Link href="/careers#enquiry" style={{ fontSize: 14, letterSpacing: "0.1em", color: "#fff" }} className="inline-flex items-center" >
+                PARTNER WITH US
+                <svg className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M2 7h10m-4-4 4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
