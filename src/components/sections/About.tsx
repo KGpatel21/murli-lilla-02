@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import Reveal from "@/components/anim/Reveal";
 import AboutStats from "./AboutStats";
@@ -61,8 +62,14 @@ export default function About() {
                 we educate.
               </p>
               <div className="about-quote-foot">
-                <div className="about-quote-img grid place-items-center bg-brand text-paper">
-                  <span style={{ fontSize: 13, letterSpacing: "0.04em" }}>client image</span>
+                <div className="about-quote-img relative overflow-hidden">
+                  <Image
+                    src="/figma/founder.jpg"
+                    alt="MurliLeela leadership"
+                    fill
+                    sizes="220px"
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div className="about-quote-attr">
                   <p style={{ fontSize: 16, lineHeight: 1.5, color: "rgba(0,0,0,0.66)" }}>
