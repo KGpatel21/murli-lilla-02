@@ -55,7 +55,7 @@ export default function Footer() {
     <footer className="relative w-full overflow-clip text-white" style={{ background: "#000000" }}>
       {/* Brand accent rule */}
 
-      <div className="frame" style={{ paddingTop: 72, paddingBottom: 0 }}>
+      <div className="frame footer-pad" style={{ paddingBottom: 0 }}>
         {/* Top: brand + link columns */}
         <div className="footer-grid">
           {/* Brand block */}

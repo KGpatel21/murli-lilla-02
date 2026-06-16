@@ -68,12 +68,12 @@ export default function TrustCharityPage() {
             background: `radial-gradient(circle, ${ACCENT}14, transparent 65%)`,
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 104, paddingBottom: 110, textAlign: "center" }}>
+        <div className="frame relative division-hero">
           <Reveal stagger={0.08}>
             <div
               data-reveal
-              className="flex items-center justify-center"
-              style={{ gap: 17, fontSize: 14, marginBottom: 36 }}
+              className="flex items-center division-breadcrumb"
+              style={{ gap: 17, fontSize: 14 }}
             >
               <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
               <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
@@ -110,7 +110,7 @@ export default function TrustCharityPage() {
               </span>
             </div>
 
-            <h1 data-reveal className="div-h1" style={{ maxWidth: 800, marginInline: "auto" }}>
+            <h1 data-reveal className="div-h1" style={{ maxWidth: 800 }}>
               Business gives us the means. Community gives us the reason.
             </h1>
             <p
@@ -121,7 +121,6 @@ export default function TrustCharityPage() {
                 color: "rgba(0,0,0,0.6)",
                 maxWidth: 640,
                 marginTop: 24,
-                marginInline: "auto",
               }}
             >
               The MurliLeela Foundation is being established to carry the group's

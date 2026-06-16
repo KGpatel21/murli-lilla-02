@@ -416,7 +416,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom control bar — Prev · thin progress line · Next (Adani-style) */}
-        <div className="hero-controls absolute hidden items-center md:flex" style={{ pointerEvents: "auto" }}>
+        <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto" }}>
           {/* Thin progress line */}
           <div className="relative flex-1 overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
             <span

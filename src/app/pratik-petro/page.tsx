@@ -188,35 +188,25 @@ export default function PratikPetroPage() {
                   className="grid"
                   style={{
                     gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                    gridTemplateRows: "repeat(2, minmax(0, 1fr))",
-                    gap: 28,
+                    gap: 16,
                     width: "100%",
-                    height: 166,
                   }}
                 >
-                  <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
-                    <div className="absolute flex flex-col items-start" style={{ left: 15, top: "50%", transform: "translateY(-50%)", gap: 8, width: 166 }}>
-                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>PRIMARY PRODUCT</p>
-                      <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>Bitumen 60/70 &amp; 80/100</p>
-                    </div>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 8, minHeight: 78, justifyContent: "center" }}>
+                    <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "0.02em", margin: 0 }}>PRIMARY PRODUCT</p>
+                    <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0, lineHeight: 1.3 }}>Bitumen 60/70 &amp; 80/100</p>
                   </div>
-                  <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
-                    <div className="absolute flex flex-col items-start" style={{ left: 15, top: 15, gap: 8, width: 87 }}>
-                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>SUPPLY FORMAT</p>
-                      <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>Bulk &amp; Drum</p>
-                    </div>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 8, minHeight: 78, justifyContent: "center" }}>
+                    <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "0.02em", margin: 0 }}>SUPPLY FORMAT</p>
+                    <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0, lineHeight: 1.3 }}>Bulk &amp; Drum</p>
                   </div>
-                  <div className="relative overflow-clip" style={{ background: "#ffffff", borderRadius: 5 }}>
-                    <div className="absolute flex flex-col items-start" style={{ left: 16, top: "50%", transform: "translateY(-50%)", gap: 8, width: 94 }}>
-                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>MIN. ORDER</p>
-                      <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>As per inquiry</p>
-                    </div>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 8, minHeight: 78, justifyContent: "center" }}>
+                    <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "0.02em", margin: 0 }}>MIN. ORDER</p>
+                    <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0, lineHeight: 1.3 }}>As per inquiry</p>
                   </div>
-                  <div className="relative overflow-clip" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5 }}>
-                    <div className="absolute flex flex-col items-start" style={{ left: 15, top: 15, gap: 8, width: 130 }}>
-                      <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.2px", margin: 0 }}>COMPLIANCE</p>
-                      <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0 }}>IS 73:2013 | ASTM</p>
-                    </div>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 8, minHeight: 78, justifyContent: "center" }}>
+                    <p style={{ fontSize: 11, color: "rgba(0,0,0,0.6)", letterSpacing: "0.02em", margin: 0 }}>COMPLIANCE</p>
+                    <p style={{ fontSize: 16, color: "#000", letterSpacing: "-0.32px", margin: 0, lineHeight: 1.3 }}>IS 73:2013 | ASTM</p>
                   </div>
                 </div>
               </div>
@@ -240,11 +230,11 @@ export default function PratikPetroPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-start" style={{ marginLeft: 12, marginTop: 12, gap: 16, width: 425 }}>
+                <div className="flex flex-col items-start" style={{ marginLeft: 12, marginTop: 12, gap: 12, width: 425 }}>
                   {BULLETS.map((b) => (
-                    <div key={b} className="flex items-center" style={{ gap: 11 }}>
-                      <span className="rounded-full inline-block shrink-0" style={{ width: 8, height: 8, background: "#fff" }} />
-                      <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.32px", margin: 0 }}>{b}</p>
+                    <div key={b} className="flex items-start" style={{ gap: 12 }}>
+                      <span className="rounded-full inline-block shrink-0" style={{ width: 8, height: 8, background: "#fff", marginTop: 9 }} />
+                      <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.32px", margin: 0, lineHeight: 1.8 }}>{b}</p>
                     </div>
                   ))}
                 </div>

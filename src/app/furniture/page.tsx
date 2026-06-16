@@ -366,18 +366,18 @@ export default function FurniturePage() {
               Contact us for wholesale and bulk export enquiries.
             </p>
             <div className="furniture-cta-row">
-              <Link href="/careers#enquiry" className="inline-flex items-center justify-center" style={{ background: "#a30000", color: "#fff", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+              <Link href="/careers#enquiry" className="furniture-cta-btn inline-flex items-center justify-center" style={{ background: "#a30000", color: "#fff", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
                 Partner with us
               </Link>
-              <a href="https://wa.me/911484142299" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+              <a href="https://wa.me/911484142299" target="_blank" rel="noreferrer" className="furniture-cta-btn inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
                 WhatsApp Directly
               </a>
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
+
+      <Footer />
     </main>
   );
 }

@@ -64,8 +64,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
 
       {/* HERO */}
       <section
-        className="relative bg-paper"
-        style={{ paddingTop: 96, paddingBottom: 96 }}
+        className="relative bg-paper division-section-pad"
       >
         <div className="frame">
           <Reveal>
@@ -174,11 +173,10 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
           }}
         />
         <div
-          className="frame relative"
-          style={{ paddingTop: 96, paddingBottom: 96 }}
+          className="frame relative division-section-pad"
         >
           <Reveal stagger={0.1}>
-            <div className="div-grid-2" style={{ gap: 100 }}>
+            <div className="div-grid-2" style={{ gap: 56 }}>
               <div data-reveal>
                 <span
                   className="inline-flex items-center"
@@ -267,8 +265,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
 
       {/* SECTIONS */}
       <section
-        className="relative bg-paper"
-        style={{ paddingTop: 110, paddingBottom: 110 }}
+        className="relative bg-paper division-section-pad"
       >
         <div className="frame">
           <Reveal stagger={0.07}>
@@ -392,8 +389,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
             }}
           />
           <div
-            className="frame relative"
-            style={{ paddingTop: 110, paddingBottom: 110 }}
+            className="frame relative division-section-pad"
           >
             <Reveal stagger={0.1}>
               <div

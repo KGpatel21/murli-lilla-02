@@ -113,13 +113,13 @@ html.js-on .split-line > span:not(.is-in) {
 @media (max-width: 1023px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 40px 32px;
   }
 }
 @media (max-width: 559px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
   }
 }
 .footer-bottom {
@@ -213,8 +213,11 @@ html.js-on .split-line > span:not(.is-in) {
 }
 .vertical-future {
   background: #a30000;
+  padding: 28px;
 }
-.vertical-future .vertical-card-cta a:hover { opacity: 0.85; }
+.vertical-future-body { flex: 1 1 auto; }
+.vertical-future-cta { margin-top: 20px; }
+.vertical-future-cta a:hover { opacity: 0.85; }
 .vertical-card-content {
   top: 97px;
   left: 28px;
@@ -239,12 +242,15 @@ html.js-on .split-line > span:not(.is-in) {
   .verticals-grid {
     grid-template-columns: 1fr;
   }
-  .verticals-grid > a,
-  .verticals-grid > .vertical-future {
+  .verticals-grid > a {
     height: 240px;
   }
   .vertical-card-content {
     top: 64px;
+  }
+  .verticals-grid > .vertical-future {
+    height: auto;
+    min-height: 240px;
   }
 }
 
@@ -337,17 +343,20 @@ html.js-on .split-line > span:not(.is-in) {
   .hero-thumbs { right: 64px; }
 }
 @media (max-width: 1023px) {
-  .hero-content { bottom: 120px; gap: 18px; max-width: 620px; }
-  .hero-controls { left: 48px; right: 48px; bottom: 48px; }
+  .hero-content { bottom: 130px; gap: 18px; max-width: 620px; }
+  .hero-controls { left: 48px; right: 48px; bottom: 40px; }
 }
 @media (max-width: 767px) {
-  .hero-content { left: 24px; right: 24px; bottom: 88px; gap: 16px; max-width: none; }
+  .hero-content { left: 24px; right: 24px; bottom: 104px; gap: 14px; max-width: none; }
   .hero-headline { font-size: clamp(28px, 8vw, 40px); }
   .hero-desc { font-size: 14px; }
+  /* Controls pinned to bottom of hero, full-width, never overlap text */
+  .hero-controls { left: 24px; right: 24px; bottom: 28px; }
 }
 @media (max-width: 360px) {
-  .hero-content { left: 18px; right: 18px; bottom: 76px; }
+  .hero-content { left: 18px; right: 18px; bottom: 100px; }
   .hero-headline { font-size: 26px; }
+  .hero-controls { left: 18px; right: 18px; bottom: 24px; }
 }
 @media (min-width: 1920px) {
   .hero-content, .hero-controls {
@@ -410,9 +419,9 @@ html, body {
   position: absolute; top: 170px; left: 50px; width: 360px;
   font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -0.02em; color: rgba(0,0,0,0.66);
 }
-.about-quote-foot { position: absolute; top: 348px; left: 23px; right: 23px; display: flex; gap: 20px; align-items: flex-start; }
-.about-quote-img { width: 220px; height: 190px; flex-shrink: 0; }
-.about-quote-attr { padding-top: 0; }
+.about-quote-foot { position: absolute; top: 348px; left: 23px; right: 23px; display: flex; gap: 20px; align-items: stretch; }
+.about-quote-img { width: 220px; height: 190px; flex-shrink: 0; border-radius: 4px; }
+.about-quote-attr { display: flex; flex-direction: column; justify-content: center; }
 .about-h2 { font-size: clamp(26px, 3.2vw, 38px); line-height: 1.12; letter-spacing: -0.01em; }
 .about-intro { font-size: 18px; line-height: 1.55; letter-spacing: -0.01em; color: rgba(255,255,255,0.66); max-width: 591px; }
 .about-pillar {
@@ -451,9 +460,9 @@ html, body {
 /* ════════════════════════════════════════════════════════
    WHY MURLILEELA — animated connected ecosystem
    ════════════════════════════════════════════════════════ */
-.why-pad { padding-top: 72px; padding-bottom: 80px; }
+.why-pad { padding-top: 72px; padding-bottom: 72px; }
 .why-grid {
-  margin-top: 56px;
+  margin-top: 48px;
   display: grid;
   grid-template-columns: 1fr 520px;
   gap: 64px;
@@ -467,7 +476,7 @@ html, body {
 .why-point-dot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #a30000; margin-top: 7px; }
 
 /* Ecosystem diagram */
-.why-eco-wrap { display: flex; justify-content: center; }
+.why-eco-wrap { display: flex; justify-content: center; padding-top: 0; }
 .why-eco {
   position: relative;
   width: 460px;
@@ -533,13 +542,15 @@ html, body {
 @media (max-width: 1023px) {
   .why-grid { grid-template-columns: 1fr; gap: 56px; }
   .why-text { max-width: none; }
+  .why-eco-wrap { padding-top: 48px; }
   .why-eco { width: 420px; height: 420px; }
   .why-eco-node { transform: rotate(var(--angle)) translateX(210px) rotate(calc(-1 * var(--angle))); }
 }
 /* Mobile — scale ecosystem so nodes never overflow */
 @media (max-width: 767px) {
   .why-pad { padding-top: 56px; padding-bottom: 56px; }
-  .why-grid { margin-top: 40px; gap: 48px; }
+  .why-grid { margin-top: 40px; gap: 40px; }
+  .why-eco-wrap { padding-top: 32px; }
   .why-eco { width: min(300px, 80vw); height: min(300px, 80vw); }
   .why-eco-node { transform: rotate(var(--angle)) translateX(min(140px, 37vw)) rotate(calc(-1 * var(--angle))); }
   .why-eco-node-inner { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
@@ -564,22 +575,23 @@ html, body {
    CAREERS (homepage section) — responsive
    ════════════════════════════════════════════════════════ */
 .careers-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
-.careers-head-h2 { font-size: 32px; line-height: 1.15; letter-spacing: 0.01em; }
+.careers-head-h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.12; letter-spacing: -0.01em; }
 .careers-head-cta { width: 165px; flex-shrink: 0; }
 .careers-cards { grid-template-columns: 500fr 283fr 283fr 283fr; gap: 22px; }
 .careers-card { height: 559px; }
-
 @media (max-width: 1023px) {
+  .careers-head { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .careers-head-cta { width: auto; min-width: 165px; }
   .careers-cards { grid-template-columns: 1fr 1fr; }
   .careers-card { height: 420px; }
 }
-@media (max-width: 767px) {
-  .careers-head { flex-direction: column; gap: 24px; }
-  .careers-head-h2 { font-size: 26px; }
-  .careers-head-cta { width: 100%; max-width: 200px; }
+@media (max-width: 639px) {
+  .careers-head { gap: 20px; }
+  .careers-head-cta { width: 100%; max-width: 220px; }
   .careers-cards { grid-template-columns: 1fr; gap: 16px; }
   .careers-card { height: 300px; }
 }
+
 
 
 /* ════════════════════════════════════════════════════════
@@ -600,9 +612,12 @@ html, body {
 .furniture-mcard { border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; background: #fff; }
 .furniture-mcard-img { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #b58989; }
 .furniture-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.furniture-cta-btn { width: auto; }
+@media (max-width: 767px) {
+  .furniture-cta-btn { width: 100%; }
+}
 @media (max-width: 519px) {
   .furniture-mobile-grid { grid-template-columns: 1fr; }
-  .furniture-cta-row a, .furniture-cta-row > a { flex: 1; min-width: 0; }
 }
 
 /* Filter chip active state + grid fade-in on category change */
@@ -629,7 +644,7 @@ html, body {
 .footer-link { display: inline-flex; align-items: center; transition: color 200ms; }
 .footer-link:hover { color: rgba(255,255,255,0.9) !important; }
 @media (max-width: 767px) {
-  .footer-link { min-height: 40px; }
+  .footer-link { min-height: 34px; }
 }
 
 /* ════════════════════════════════════════════════════════
@@ -684,4 +699,170 @@ html, body {
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-top { transition: opacity 200ms; }
+}
+
+/* ════════════════════════════════════════════════════════
+   EIGHT VERTICALS header (item 2) — row on desktop, stack+center on mobile
+   ════════════════════════════════════════════════════════ */
+.verticals-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  width: 1201px;
+  max-width: 100%;
+}
+.verticals-head-h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+.verticals-head-desc {
+  font-size: clamp(15px, 1.2vw, 16px);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: rgba(0,0,0,0.66);
+  width: 360px;
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+/* Tablet: stack but keep left-aligned */
+@media (max-width: 1023px) {
+  .verticals-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .verticals-head-h2 { text-align: left; }
+  .verticals-head-desc {
+    width: 100%;
+    max-width: 520px;
+    text-align: left;
+    padding-top: 0;
+  }
+}
+/* Mobile: center */
+@media (max-width: 639px) {
+  .verticals-head {
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .verticals-head-h2 { text-align: center; }
+  .verticals-head-h2 br { display: none; }
+  .verticals-head-desc {
+    text-align: center;
+    max-width: 440px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   FLUID RESPONSIVE FONT SYSTEM (user request: fonts scale with screen)
+   Root font-size scales smoothly; rem-based sizes follow automatically.
+   ════════════════════════════════════════════════════════ */
+:root { font-size: 16px; }
+@media (max-width: 1024px) { :root { font-size: 15.5px; } }
+@media (max-width: 767px)  { :root { font-size: 15px; } }
+@media (max-width: 400px)  { :root { font-size: 14.5px; } }
+@media (max-width: 340px)  { :root { font-size: 14px; } }
+
+/* ════════════════════════════════════════════════════════
+   SECTION SPACING RHYTHM (items 3 & 7) — tighten stacked vertical gaps
+   so there are no large blank areas before Careers / MurliLeela diagram.
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .why-pad { padding-top: 56px; padding-bottom: 56px; }
+  #careers > .frame { padding-top: 48px !important; padding-bottom: 56px !important; }
+  .about-pad { padding-top: 56px; padding-bottom: 56px; }
+}
+@media (max-width: 767px) {
+  #careers > .frame { padding-top: 40px !important; padding-bottom: 48px !important; }
+}
+
+/* ════════════════════════════════════════════════════════
+   DIVISION PAGE HERO — consistent, compact, responsive spacing
+   (applied to Education, Technology, Pharma, Agriculture,
+    Trust & Charity, Real Estate)
+   ════════════════════════════════════════════════════════ */
+.division-hero {
+  padding-top: 72px;
+  padding-bottom: 88px;
+}
+@media (max-width: 1023px) {
+  .division-hero { padding-top: 56px; padding-bottom: 64px; }
+}
+@media (max-width: 767px) {
+  .division-hero { padding-top: 40px; padding-bottom: 48px; }
+}
+/* Division hero breadcrumb gap */
+.division-hero .division-breadcrumb { margin-bottom: 28px; }
+@media (max-width: 767px) {
+  .division-hero .division-breadcrumb { margin-bottom: 20px; }
+}
+
+/* Division page CTA rows — stack neatly on mobile */
+.division-cta-row { gap: 16px; }
+@media (max-width: 639px) {
+  .division-cta-row { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; }
+  .division-cta-btn { width: 100%; }
+}
+
+/* DivisionPage section padding — compact & responsive (RealEstate etc.) */
+.division-section-pad { padding-top: 80px; padding-bottom: 80px; }
+@media (max-width: 1023px) {
+  .division-section-pad { padding-top: 56px; padding-bottom: 56px; }
+}
+@media (max-width: 767px) {
+  .division-section-pad { padding-top: 44px; padding-bottom: 44px; }
+}
+
+/* Footer responsive top padding */
+.footer-pad { padding-top: 72px; }
+@media (max-width: 767px) {
+  .footer-pad { padding-top: 48px; }
+}
+
+/* ════════════════════════════════════════════════════════
+   GLOBAL RESPONSIVE TYPOGRAPHY
+   Fluid scaling so text resizes smoothly with the viewport.
+   Major headings already use clamp(); this adds fluid behaviour
+   to division headings, section intros, and body copy.
+   ════════════════════════════════════════════════════════ */
+.div-h1 { font-size: clamp(34px, 5.2vw, 64px) !important; }
+.div-h2 { font-size: clamp(28px, 3.8vw, 46px) !important; }
+
+/* Division page hero subtitle / intros scale down on small screens */
+@media (max-width: 767px) {
+  .division-hero h1 { line-height: 1.08; }
+}
+
+/* Section intros and body paragraphs — gentle fluid scaling */
+.about-intro { font-size: clamp(16px, 1.4vw, 18px); }
+.why-intro { font-size: clamp(15px, 1.3vw, 16px); }
+.careers-head-desc { font-size: clamp(15px, 1.2vw, 16px); }
+
+/* ════════════════════════════════════════════════════════
+   CAREERS ENQUIRY FORM — modern fields with soft focus states
+   ════════════════════════════════════════════════════════ */
+.career-field {
+  border-color: rgba(255,255,255,0.18);
+}
+.career-field:hover {
+  border-color: rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.06);
+}
+.career-field:focus {
+  border-color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 0 0 3px rgba(163,0,0,0.25);
+}
+/* Select dropdown options readable */
+.career-field option { color: #000; }
+
+/* Careers → Footer visual separation (gradient divider) */
+.careers-footer-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
 }

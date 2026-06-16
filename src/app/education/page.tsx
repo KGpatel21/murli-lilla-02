@@ -85,7 +85,7 @@ export default function EducationPage() {
             background: `radial-gradient(circle, ${ACCENT}1f, transparent 68%)`,
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 104, paddingBottom: 104 }}>
+        <div className="frame relative division-hero">
           <Reveal stagger={0.08}>
             <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
               <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>

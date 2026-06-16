@@ -13,7 +13,7 @@ const CARDS = [
 export default function Careers() {
   return (
     <section id="careers" className="bg-paper">
-      <div className="frame" style={{ paddingTop: 72, paddingBottom: 80 }}>
+      <div className="frame" style={{ paddingTop: 56, paddingBottom: 72 }}>
         <Reveal>
           <p
             data-reveal
@@ -30,7 +30,7 @@ export default function Careers() {
         </Reveal>
 
         <Reveal>
-          <div className="careers-head mt-[48px]">
+          <div className="careers-head mt-[32px]">
             <div>
               <h2
                 data-reveal

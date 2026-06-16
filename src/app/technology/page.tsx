@@ -251,7 +251,7 @@ export default function TechnologyPage() {
             background: "radial-gradient(circle, rgba(255,255,255,0.16), transparent 65%)",
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="frame relative division-hero">
           <Reveal stagger={0.08}>
             <h2 data-reveal className="div-h2" style={{ maxWidth: 620, marginBottom: 56 }}>
               How we engineer.
@@ -299,10 +299,10 @@ export default function TechnologyPage() {
                   will scope a solution and respond with a considered path forward.
                 </p>
               </div>
-              <div className="flex flex-wrap items-center lg:justify-end" style={{ gap: 16 }}>
+              <div className="division-cta-row flex flex-wrap items-center lg:justify-end">
                 <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center transition-transform hover:-translate-y-0.5"
+                  href="/careers#enquiry"
+                  className="division-cta-btn inline-flex items-center justify-center transition-transform hover:-translate-y-0.5"
                   style={{
                     background: "#fff",
                     color: "#000",
@@ -317,7 +317,7 @@ export default function TechnologyPage() {
                 </Link>
                 <Link
                   href="/#business"
-                  className="inline-flex items-center justify-center hover:bg-white/10"
+                  className="division-cta-btn inline-flex items-center justify-center hover:bg-white/10"
                   style={{
                     border: "1px solid rgba(255,255,255,0.35)",
                     color: "#fff",

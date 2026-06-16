@@ -522,7 +522,7 @@ export default function Header({
             top: 0,
             right: 0,
             bottom: 0,
-            width: "min(420px, 90vw)",
+            width: "min(100vw, 420px)",
             background: "#fff",
             display: "flex",
             flexDirection: "column",

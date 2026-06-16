@@ -83,14 +83,10 @@ export default function Verticals() {
 
         {/* Heading row */}
         <Reveal>
-          <div
-            className="mt-[69px] flex items-start justify-between"
-            style={{ width: 1201, maxWidth: "100%" }}
-          >
+          <div className="verticals-head mt-[56px]">
             <h2
               data-reveal
-              className="font-sans font-bold text-ink"
-              style={{ fontSize: 32, lineHeight: 1.15, letterSpacing: "0.01em" }}
+              className="verticals-head-h2 font-sans font-bold text-ink"
             >
               Eight Verticals,
               <br />
@@ -98,14 +94,7 @@ export default function Verticals() {
             </h2>
             <p
               data-reveal
-              className="text-right"
-              style={{
-                fontSize: 16,
-                lineHeight: 1.55,
-                letterSpacing: "-0.01em",
-                color: "rgba(0,0,0,0.66)",
-                width: 360,
-              }}
+              className="verticals-head-desc"
             >
               Each division operates with strategic independence while sharing
               the group&apos;s core values of quality and integrity.
@@ -188,9 +177,9 @@ export default function Verticals() {
           {/* 9th cell — Future Ventures (fills the empty space intentionally) */}
           <div
             data-reveal
-            className="vertical-future group relative block overflow-hidden"
+            className="vertical-future group relative flex flex-col overflow-hidden"
           >
-            <div className="vertical-card-content absolute">
+            <div className="vertical-future-body">
               <span
                 className="inline-flex items-center"
                 style={{ gap: 8, fontSize: 12, letterSpacing: "0.14em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}
@@ -213,8 +202,8 @@ export default function Verticals() {
                 long-term thinking.
               </p>
             </div>
-            <div className="vertical-card-cta absolute inline-flex items-center" style={{ gap: 8 }}>
-              <Link href="/careers#enquiry" style={{ fontSize: 14, letterSpacing: "0.1em", color: "#fff" }} className="inline-flex items-center" >
+            <div className="vertical-future-cta inline-flex items-center" style={{ gap: 8 }}>
+              <Link href="/careers#enquiry" style={{ fontSize: 14, letterSpacing: "0.1em", color: "#fff" }} className="inline-flex items-center">
                 PARTNER WITH US
                 <svg className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M2 7h10m-4-4 4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />

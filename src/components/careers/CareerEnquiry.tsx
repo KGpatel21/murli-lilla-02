@@ -4,8 +4,8 @@ import { useState } from "react";
 import Reveal from "@/components/anim/Reveal";
 
 const FIELD =
-  "h-[50px] w-full rounded-[4px] border bg-transparent px-4 text-[16px] text-paper outline-none transition-colors placeholder:text-snow-50 focus:border-paper";
-const FIELD_STYLE = { borderColor: "rgba(255,255,255,0.3)" } as const;
+  "career-field h-[52px] w-full rounded-[8px] border bg-white/[0.04] px-4 text-[16px] text-paper outline-none transition-all placeholder:text-snow-50";
+const FIELD_STYLE = { borderColor: "rgba(255,255,255,0.18)" } as const;
 
 export default function CareerEnquiry() {
   const [submitted, setSubmitted] = useState(false);
@@ -75,7 +75,7 @@ export default function CareerEnquiry() {
                 <span className="mb-3 block" style={{ fontSize: 14, color: "rgba(255,255,255,0.66)" }}>MESSAGE</span>
                 <textarea
                   rows={3}
-                  className="w-full resize-none rounded-[4px] border bg-transparent px-4 py-3 text-[16px] text-paper outline-none placeholder:text-snow-50 focus:border-paper"
+                  className="career-field w-full resize-none rounded-[8px] border bg-white/[0.04] px-4 py-3 text-[16px] text-paper outline-none transition-all placeholder:text-snow-50"
                   style={{ ...FIELD_STYLE, height: 96 }}
                   placeholder="Tell us briefly about your background or interest..."
                 />
