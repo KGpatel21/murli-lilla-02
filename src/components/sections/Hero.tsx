@@ -416,18 +416,9 @@ export default function Hero() {
         </div>
 
         {/* Bottom control bar — Prev · thin progress line · Next (Adani-style) */}
-        <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto" }}>
-          {/* Thin progress line */}
-          <div className="hero-progress-track relative overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
-            <span
-              ref={progressRef}
-              className="absolute inset-y-0 left-0 rounded-full bg-paper"
-              style={{ width: "0%" }}
-            />
-          </div>
-
-          {/* Prev / Next — compact circular controls */}
-          <div className="flex shrink-0 items-center" style={{ gap: 12, marginLeft: 28 }}>
+        <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto", gap: 20 }}>
+          {/* Prev / Next — compact circular controls on the LEFT */}
+          <div className="flex shrink-0 items-center" style={{ gap: 12 }}>
             <button
               type="button"
               onClick={() => goTo(indexRef.current - 1)}
@@ -450,6 +441,15 @@ export default function Hero() {
                 <path d="M9 5l7 7-7 7" />
               </svg>
             </button>
+          </div>
+
+          {/* Thin progress line — RIGHT side, constrained width */}
+          <div className="hero-progress-track relative overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
+            <span
+              ref={progressRef}
+              className="absolute inset-y-0 left-0 rounded-full bg-paper"
+              style={{ width: "0%" }}
+            />
           </div>
         </div>
       </div>

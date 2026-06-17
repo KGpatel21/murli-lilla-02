@@ -305,34 +305,7 @@ export default function Header({
 
           {/* Right group */}
           <div className="ml-auto flex items-center" style={{ gap: 20 }}>
-            <button
-              aria-label="Search"
-              className="hidden h-6 w-6 place-items-center md:grid"
-              style={{
-                color: "rgba(0,0,0,0.7)",
-                transition: `color 200ms ${EASE}, transform 200ms ${EASE}`,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#000";
-                e.currentTarget.style.transform = "scale(1.08)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgba(0,0,0,0.7)";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              <svg
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="m20 20-3.5-3.5" strokeLinecap="round" />
-              </svg>
-            </button>
+
             <Link
               href="/careers#enquiry"
               className="hidden items-center justify-center text-white sm:inline-flex"

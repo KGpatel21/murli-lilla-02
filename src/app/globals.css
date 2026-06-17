@@ -302,10 +302,13 @@ html.js-on .split-line > span:not(.is-in) {
 /* ── Hero eyebrow pill — text-shadow + frosted bg for legibility ── */
 [data-hero-fade].hero-eyebrow,
 .hero-eyebrow {
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-  background: rgba(255,255,255,0.08) !important;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  /* Solid dark pill — text always legible on any hero image */
+  background: rgba(0,0,0,0.52) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(255,255,255,0.25) !important;
 }
 
 /* ── Hero content layout (cinematic lower-left, fully responsive) ── */
@@ -352,10 +355,11 @@ html.js-on .split-line > span:not(.is-in) {
   right: 120px;
   bottom: 56px;
 }
-/* Progress line: constrained so it never stretches full viewport */
+/* Progress line: right-aligned, constrained width */
 .hero-progress-track {
-  max-width: 320px;
+  max-width: 280px;
   width: 100%;
+  margin-left: auto;   /* push to right when in flex row */
 }
 @media (max-width: 1279px) {
   .hero-content { left: 64px; right: 64px; top: 56px; bottom: 100px; }
@@ -457,7 +461,19 @@ html, body {
 /* Tablet */
 @media (max-width: 1099px) {
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-quote-card { width: 100%; max-width: 596px; margin-left: auto; margin-right: auto; }
+  /* Reset fixed height — card flows with content at all widths below desktop */
+  .about-quote-card {
+    width: 100%;
+    max-width: 596px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 36px 32px 32px;
+  }
+  .about-quote-glyph { position: static; font-size: 96px; }
+  .about-quote-body { position: static; width: auto; font-size: 20px; margin-top: -12px; }
+  .about-quote-foot { position: static; margin-top: 28px; left: auto; right: auto; }
+  .about-quote-img { width: 180px; height: 160px; flex-shrink: 0; }
   .about-intro, .about-quote-body { width: auto; }
 }
 
