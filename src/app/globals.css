@@ -866,3 +866,142 @@ html, body {
   width: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
 }
+
+/* ════════════════════════════════════════════════════════
+   FOOTER — Mobile accordion + visibility split
+   ════════════════════════════════════════════════════════ */
+
+/* Show desktop footer, hide mobile footer by default */
+.footer-desktop-only { display: block; }
+.footer-mobile-only  { display: none; }
+
+@media (max-width: 767px) {
+  .footer-desktop-only { display: none; }
+  .footer-mobile-only  { display: block; }
+}
+
+/* Mobile footer brand block */
+.footer-mobile-brand {
+  padding: 28px 20px 20px;
+}
+
+/* Mobile footer social row */
+.footer-mobile-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+/* Mobile accordion sections wrapper */
+.footer-mobile-accordions {
+  /* no extra padding — each accordion handles its own */
+}
+
+/* Accordion toggle button */
+.footer-accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 52px;
+}
+
+/* Accordion expanded body */
+.footer-accordion-body {
+  padding: 0 20px 20px;
+}
+
+/* Mobile bottom copyright block */
+.footer-mobile-bottom {
+  padding: 20px 20px 28px;
+}
+
+/* ════════════════════════════════════════════════════════
+   DIVISION PAGE — CTA strip fully mobile responsive
+   ════════════════════════════════════════════════════════ */
+
+/* Outer section — compact padding on mobile */
+.division-cta-section {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .division-cta-section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+}
+
+/* CTA card */
+.division-cta-card {
+  background: #f4f4f4;
+  border-radius: 14px;
+  padding: 48px;
+}
+@media (max-width: 767px) {
+  .division-cta-card {
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+}
+
+/* Inner layout: row on desktop, column on mobile */
+.division-cta-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media (max-width: 767px) {
+  .division-cta-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+}
+
+/* Text portion */
+.division-cta-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Buttons group */
+.division-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .division-cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+  /* Full width buttons on mobile */
+  .division-cta-btns a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   GLOBAL — Prevent any content section from using 100vh
+   Only hero is allowed to use full viewport height.
+   ════════════════════════════════════════════════════════ */
+section:not(.hero-section):not([data-hero]) {
+  height: auto;
+  min-height: unset;
+}

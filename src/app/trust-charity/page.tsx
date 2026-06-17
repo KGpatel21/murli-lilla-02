@@ -132,7 +132,7 @@ export default function TrustCharityPage() {
       </section>
 
       {/* PILLARS */}
-      <section className="bg-white" style={{ paddingTop: 110, paddingBottom: 110 }}>
+      <section className="bg-white division-section-pad">
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ textAlign: "center", marginBottom: 64 }}>
@@ -209,7 +209,7 @@ export default function TrustCharityPage() {
             filter: "blur(40px)",
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="frame relative division-section-pad">
           <Reveal stagger={0.08}>
             <h2 data-reveal className="div-h2" style={{ maxWidth: 560, marginBottom: 56 }}>
               How the Foundation will work.
@@ -233,7 +233,7 @@ export default function TrustCharityPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: WARM, paddingTop: 96, paddingBottom: 110 }}>
+      <section className="division-section-pad" style={{ background: WARM }}>
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ textAlign: "center", maxWidth: 620, marginInline: "auto" }}>

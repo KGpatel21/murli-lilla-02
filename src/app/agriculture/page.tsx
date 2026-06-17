@@ -132,7 +132,7 @@ export default function AgriculturePage() {
       </section>
 
       {/* FOCUS AREAS */}
-      <section className="bg-white" style={{ paddingTop: 110, paddingBottom: 110 }}>
+      <section className="bg-white division-section-pad">
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ marginBottom: 60, maxWidth: 720 }}>
@@ -207,7 +207,7 @@ export default function AgriculturePage() {
             filter: "blur(40px)",
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="frame relative division-section-pad">
           <Reveal stagger={0.08}>
             <div className="div-grid-2" style={{ gap: 72, alignItems: "center" }}>
               <div data-reveal>
@@ -253,7 +253,7 @@ export default function AgriculturePage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: FIELD, paddingTop: 96, paddingBottom: 110 }}>
+      <section className="division-section-pad" style={{ background: FIELD }}>
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ textAlign: "center", maxWidth: 620, marginInline: "auto" }}>

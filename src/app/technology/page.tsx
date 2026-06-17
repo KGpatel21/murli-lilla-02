@@ -93,7 +93,7 @@ export default function TechnologyPage() {
             filter: "blur(60px)",
           }}
         />
-        <div className="frame relative" style={{ paddingTop: 110, paddingBottom: 110 }}>
+        <div className="frame relative division-section-pad">
           <Reveal stagger={0.08}>
             <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
               <Link href="/" style={{ color: "rgba(255,255,255,0.6)" }} className="hover:text-white">Home</Link>
@@ -171,7 +171,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* CAPABILITIES — numbered editorial rows */}
-      <section className="bg-paper" style={{ paddingTop: 110, paddingBottom: 110 }}>
+      <section className="bg-paper division-section-pad">
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ marginBottom: 64, maxWidth: 720 }}>
@@ -275,7 +275,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-paper" style={{ paddingTop: 96, paddingBottom: 110 }}>
+      <section className="bg-paper division-section-pad">
         <div className="frame">
           <Reveal>
             <div

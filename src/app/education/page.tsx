@@ -130,7 +130,7 @@ export default function EducationPage() {
       </section>
 
       {/* PILLARS */}
-      <section className="bg-white" style={{ paddingTop: 110, paddingBottom: 110 }}>
+      <section className="bg-white division-section-pad">
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ marginBottom: 60, maxWidth: 700 }}>
@@ -193,7 +193,7 @@ export default function EducationPage() {
       </section>
 
       {/* APPROACH — editorial two-column */}
-      <section style={{ background: "#231507", color: "#fff", paddingTop: 100, paddingBottom: 100 }}>
+      <section className="division-section-pad" style={{ background: "#231507", color: "#fff" }}>
         <div className="frame">
           <Reveal stagger={0.08}>
             <div className="div-grid-2" style={{ gap: 72 }}>
@@ -243,7 +243,7 @@ export default function EducationPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: PAPER, paddingTop: 96, paddingBottom: 110 }}>
+      <section className="division-section-pad" style={{ background: PAPER }}>
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ textAlign: "center", maxWidth: 640, marginInline: "auto" }}>

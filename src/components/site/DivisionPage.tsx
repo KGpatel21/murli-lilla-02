@@ -574,21 +574,12 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
       )}
 
       {/* CTA STRIP */}
-      <section className="bg-paper" style={{ paddingTop: 96, paddingBottom: 110 }}>
+      <section className="bg-paper division-cta-section">
         <div className="frame">
           <Reveal>
             <div
               data-reveal
-              className="relative overflow-hidden"
-              style={{
-                background: "#f4f4f4",
-                borderRadius: 14,
-                padding: "48px 48px",
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                gap: 32,
-                alignItems: "center",
-              }}
+              className="relative overflow-hidden division-cta-card"
             >
               <div
                 aria-hidden
@@ -602,68 +593,67 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
                   background: `radial-gradient(circle, ${config.accent}1a, transparent 65%)`,
                 }}
               />
-              <div className="relative" style={{ maxWidth: 760 }}>
-                <h4
-                  style={{
-                    fontSize: 28,
-                    fontWeight: 700,
-                    color: "#000",
-                    letterSpacing: "-0.28px",
-                    lineHeight: 1.2,
-                    margin: 0,
-                    marginBottom: 10,
-                  }}
-                >
-                  {config.cta.headline}
-                </h4>
-                <p
-                  style={{
-                    fontSize: 16,
-                    color: "rgba(0,0,0,0.66)",
-                    lineHeight: 1.55,
-                    margin: 0,
-                  }}
-                >
-                  {config.cta.description}
-                </p>
-              </div>
-              <div
-                className="relative flex flex-wrap items-center"
-                style={{ gap: 16 }}
-              >
-                <Link
-                  href={config.cta.primaryHref || "/#contact"}
-                  className="inline-flex items-center justify-center"
-                  style={{
-                    background: config.accent,
-                    color: "#fff",
-                    padding: "14px 28px",
-                    borderRadius: 6,
-                    fontSize: 16,
-                    fontWeight: 500,
-                    transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}`,
-                  }}
-                >
-                  {config.cta.primaryLabel}
-                </Link>
-                {config.cta.secondaryLabel && (
+              <div className="relative division-cta-inner">
+                <div className="division-cta-text">
+                  <h4
+                    style={{
+                      fontSize: "clamp(20px, 2.5vw, 28px)",
+                      fontWeight: 700,
+                      color: "#000",
+                      letterSpacing: "-0.28px",
+                      lineHeight: 1.2,
+                      margin: 0,
+                      marginBottom: 10,
+                    }}
+                  >
+                    {config.cta.headline}
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      color: "rgba(0,0,0,0.66)",
+                      lineHeight: 1.55,
+                      margin: 0,
+                    }}
+                  >
+                    {config.cta.description}
+                  </p>
+                </div>
+                <div className="division-cta-btns">
                   <Link
-                    href={config.cta.secondaryHref || "/#business"}
+                    href={config.cta.primaryHref || "/#contact"}
                     className="inline-flex items-center justify-center"
                     style={{
-                      border: "1px solid rgba(0,0,0,0.2)",
-                      color: "#000",
+                      background: config.accent,
+                      color: "#fff",
                       padding: "14px 28px",
                       borderRadius: 6,
                       fontSize: 16,
                       fontWeight: 500,
-                      background: "#fff",
-                      transition: `border-color 200ms ${EASE}, background-color 200ms ${EASE}`,
+                      transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}`,
                     }}
                   >
-                    {config.cta.secondaryLabel}
+                    {config.cta.primaryLabel}
                   </Link>
-                )}
+                  {config.cta.secondaryLabel && (
+                    <Link
+                      href={config.cta.secondaryHref || "/#business"}
+                      className="inline-flex items-center justify-center"
+                      style={{
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        color: "#000",
+                        padding: "14px 28px",
+                        borderRadius: 6,
+                        fontSize: 16,
+                        fontWeight: 500,
+                        background: "#fff",
+                        transition: `border-color 200ms ${EASE}, background-color 200ms ${EASE}`,
+                      }}
+                    >
+                      {config.cta.secondaryLabel}
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </Reveal>

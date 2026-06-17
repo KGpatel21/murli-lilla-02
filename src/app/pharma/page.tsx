@@ -125,7 +125,7 @@ export default function PharmaPage() {
       </section>
 
       {/* FOCUS AREAS */}
-      <section className="bg-white" style={{ paddingTop: 110, paddingBottom: 110 }}>
+      <section className="bg-white division-section-pad">
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ marginBottom: 60, maxWidth: 700 }}>
@@ -184,7 +184,7 @@ export default function PharmaPage() {
       </section>
 
       {/* ROADMAP — dark clinical */}
-      <section style={{ background: "#0c1717", color: "#fff", paddingTop: 100, paddingBottom: 100 }}>
+      <section className="division-section-pad" style={{ background: "#0c1717", color: "#fff" }}>
         <div className="frame">
           <Reveal stagger={0.08}>
             <div className="div-grid-2" style={{ gap: 72 }}>
@@ -250,7 +250,7 @@ export default function PharmaPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: CLINICAL, paddingTop: 96, paddingBottom: 110 }}>
+      <section className="division-section-pad" style={{ background: CLINICAL }}>
         <div className="frame">
           <Reveal>
             <div data-reveal style={{ textAlign: "center", maxWidth: 620, marginInline: "auto" }}>
