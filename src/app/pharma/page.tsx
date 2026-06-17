@@ -3,7 +3,6 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/anim/Reveal";
-import HeroReveal from "@/components/anim/HeroReveal";
 import LineIcon from "@/components/site/LineIcon";
 
 export const metadata: Metadata = {
@@ -46,7 +45,7 @@ export default function PharmaPage() {
       <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — clinical precision */}
-      <section className="relative overflow-hidden hero-depth-light" style={{ background: CLINICAL }}>
+      <section className="relative overflow-hidden" style={{ background: CLINICAL }}>
         {/* Precision rules */}
         <div
           aria-hidden
@@ -58,19 +57,19 @@ export default function PharmaPage() {
           }}
         />
         <div className="frame relative division-hero">
-          <HeroReveal>
-            <div data-hero-el="badge" className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 18 }}>
-              <Link href="/" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Home</Link>
-              <span style={{ color: "rgba(0,0,0,0.3)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Businesses</Link>
-              <span style={{ color: "rgba(0,0,0,0.3)" }}>/</span>
-              <span style={{ color: ACCENT, fontWeight: 600 }}>Pharma</span>
+          <Reveal stagger={0.08}>
+            <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
+              <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
+              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
+              <Link href="/#business" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Businesses</Link>
+              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
+              <span style={{ color: "rgba(0,0,0,0.7)" }}>Pharma</span>
             </div>
 
             {/* Status badge */}
             <div
-              data-hero-el="badge"
-              className="hero-badge inline-flex items-center"
+              data-reveal
+              className="inline-flex items-center"
               style={{
                 gap: 10,
                 background: "#fff",
@@ -103,15 +102,17 @@ export default function PharmaPage() {
               </span>
             </div>
 
-            <h1 data-hero-el="heading" className="hero-h1 hero-text-lift" style={{ maxWidth: 760, color: "#0a0a0c", marginBottom: 22 }}>
+            <h1 data-reveal className="div-h1" style={{ maxWidth: 760 }}>
               Healthcare, held to a higher standard.
             </h1>
             <p
-              data-hero-el="body"
-              className="hero-lead"
+              data-reveal
               style={{
-                color: "rgba(0,0,0,0.58)",
+                fontSize: 18,
+                lineHeight: 1.6,
+                color: "rgba(0,0,0,0.6)",
                 maxWidth: 620,
+                marginTop: 24,
               }}
             >
               MurliLeela Pharma is being established as the group's healthcare
@@ -119,7 +120,7 @@ export default function PharmaPage() {
               foundations first — because in healthcare, the order of operations
               matters.
             </p>
-          </HeroReveal>
+          </Reveal>
         </div>
       </section>
 

@@ -115,12 +115,11 @@ export default function PratikPetroPage() {
           <div className="flex flex-col items-start" style={{ gap: 16, width: "100%" }}>
             <p
               style={{
-                fontFamily: "var(--font-manrope), 'Helvetica Neue', Helvetica, sans-serif",
-                fontWeight: 800,
+                fontWeight: 700,
                 fontSize: 62,
-                color: "#0a0a0c",
-                letterSpacing: "-0.03em",
-                lineHeight: 1.02,
+                color: "#000000",
+                letterSpacing: "-1.24px",
+                lineHeight: "normal",
                 margin: 0,
               }}
             >
@@ -221,7 +220,7 @@ export default function PratikPetroPage() {
                 </div>
 
                 <div className="flex flex-col items-start" style={{ gap: 20, width: "100%" }}>
-                  <p style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 800, fontSize: 52, color: "#fff", letterSpacing: "-0.03em", whiteSpace: "nowrap", margin: 0 }}>
+                  <p style={{ fontWeight: 700, fontSize: 52, color: "#fff", letterSpacing: "-1.04px", whiteSpace: "nowrap", margin: 0 }}>
                     Bitumen &amp; Petroleum
                     <br />
                     Products
@@ -311,7 +310,7 @@ export default function PratikPetroPage() {
             <span>/</span>
             <span style={{ color: "#000" }}>Pratik Petro</span>
           </div>
-          <h1 style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 800, fontSize: "clamp(34px, 11vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
+          <h1 style={{ fontWeight: 700, fontSize: "clamp(34px, 11vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
             Pratik Petro
           </h1>
           <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.55)", margin: "14px 0 0", maxWidth: 520 }}>

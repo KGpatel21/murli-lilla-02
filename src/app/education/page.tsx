@@ -3,7 +3,6 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/anim/Reveal";
-import HeroReveal from "@/components/anim/HeroReveal";
 import LineIcon from "@/components/site/LineIcon";
 
 export const metadata: Metadata = {
@@ -60,85 +59,65 @@ export default function EducationPage() {
       <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — warm academic */}
-      <section className="relative overflow-hidden hero-depth-light" style={{ background: PAPER }}>
-        {/* Soft arc motif — outer ring */}
+      <section className="relative overflow-hidden" style={{ background: PAPER }}>
+        {/* Soft arc motif */}
         <div
           aria-hidden
           className="pointer-events-none absolute"
           style={{
-            right: -140,
-            top: -240,
-            width: 680,
-            height: 680,
+            right: -180,
+            top: -260,
+            width: 640,
+            height: 640,
             borderRadius: "50%",
-            border: `1.5px solid ${ACCENT}28`,
+            border: `1.5px solid ${ACCENT}2e`,
           }}
         />
-        {/* Inner glow */}
         <div
           aria-hidden
           className="pointer-events-none absolute"
           style={{
-            right: -60,
-            top: -140,
-            width: 500,
-            height: 500,
+            right: -100,
+            top: -180,
+            width: 480,
+            height: 480,
             borderRadius: "50%",
-            background: `radial-gradient(circle, ${ACCENT}22, transparent 68%)`,
-          }}
-        />
-        {/* Second smaller glow bottom-left for depth */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute"
-          style={{
-            left: -120,
-            bottom: -120,
-            width: 360,
-            height: 360,
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${ACCENT}0f, transparent 70%)`,
+            background: `radial-gradient(circle, ${ACCENT}1f, transparent 68%)`,
           }}
         />
         <div className="frame relative division-hero">
-          <HeroReveal>
-            {/* Breadcrumb */}
-            <div data-hero-el="badge" className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 18 }}>
-              <Link href="/" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Home</Link>
-              <span style={{ color: "rgba(0,0,0,0.3)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Businesses</Link>
-              <span style={{ color: "rgba(0,0,0,0.3)" }}>/</span>
-              <span style={{ color: ACCENT, fontWeight: 600 }}>Education</span>
+          <Reveal stagger={0.08}>
+            <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
+              <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
+              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
+              <Link href="/#business" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Businesses</Link>
+              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
+              <span style={{ color: "rgba(0,0,0,0.7)" }}>Education</span>
             </div>
-            {/* Badge */}
-            <div
-              data-hero-el="badge"
-              className="hero-badge"
+            <p
+              data-reveal
               style={{
-                background: `${ACCENT}14`,
-                border: `1px solid ${ACCENT}2e`,
-                borderRadius: 32,
-                padding: "6px 14px",
+                fontSize: 13,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
                 color: ACCENT,
-                marginBottom: 24,
+                fontWeight: 600,
+                marginBottom: 20,
               }}
             >
-              <span style={{ width: 6, height: 6, borderRadius: 6, background: ACCENT, display: "inline-block", flexShrink: 0 }} />
               MurliLeela Education
-            </div>
-            <h1
-              data-hero-el="heading"
-              className="hero-h1 hero-text-lift"
-              style={{ maxWidth: 780, color: "#0a0a0c", marginBottom: 22 }}
-            >
+            </p>
+            <h1 data-reveal className="div-h1" style={{ maxWidth: 760 }}>
               Strong foundations for every young learner.
             </h1>
             <p
-              data-hero-el="body"
-              className="hero-lead"
+              data-reveal
               style={{
-                color: "rgba(0,0,0,0.58)",
+                fontSize: 18,
+                lineHeight: 1.6,
+                color: "rgba(0,0,0,0.6)",
                 maxWidth: 620,
+                marginTop: 24,
               }}
             >
               Anchored by the established Kidzys presence at Zundal, we are extending a
@@ -146,7 +125,7 @@ export default function EducationPage() {
               institutional standards — structured curriculum, certified
               educators, and campuses designed around children's safety and curiosity.
             </p>
-          </HeroReveal>
+          </Reveal>
         </div>
       </section>
 

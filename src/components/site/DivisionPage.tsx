@@ -2,7 +2,6 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/anim/Reveal";
-import HeroReveal from "@/components/anim/HeroReveal";
 import LineIcon from "@/components/site/LineIcon";
 
 export type DivisionSection = {
@@ -64,96 +63,55 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
       <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-paper hero-depth-light">
-        {/* Subtle radial glow behind orb */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute"
-          style={{
-            right: -80,
-            top: -80,
-            width: 520,
-            height: 520,
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${config.accent}14, transparent 65%)`,
-          }}
-        />
-        <div className="frame division-hero">
-          <HeroReveal>
+      <section
+        className="relative bg-paper division-section-pad"
+      >
+        <div className="frame">
+          <Reveal>
             <div
               className="grid items-start"
               style={{ gridTemplateColumns: "1fr auto", gap: 40 }}
             >
-              <div style={{ maxWidth: 720 }}>
+              <div data-reveal style={{ maxWidth: 720 }}>
                 {/* Breadcrumb */}
                 <div
-                  data-hero-el="badge"
                   className="flex items-start"
                   style={{
                     gap: 17,
                     fontSize: 14,
                     whiteSpace: "nowrap",
-                    marginBottom: 20,
+                    marginBottom: 28,
                   }}
                 >
                   <Link
                     href="/"
-                    style={{ color: "rgba(0,0,0,0.55)" }}
+                    style={{ color: "rgba(0,0,0,0.66)" }}
                     className="hover:text-black"
                   >
                     Home
                   </Link>
-                  <span style={{ color: "rgba(0,0,0,0.35)" }}>/</span>
+                  <span style={{ color: "rgba(0,0,0,0.6)" }}>/</span>
                   <Link
                     href="/#business"
-                    style={{ color: "rgba(0,0,0,0.55)" }}
+                    style={{ color: "rgba(0,0,0,0.66)" }}
                     className="hover:text-black"
                   >
                     Businesses
                   </Link>
-                  <span style={{ color: "rgba(0,0,0,0.35)" }}>/</span>
-                  <span style={{ color: config.accent, fontWeight: 600 }}>
+                  <span style={{ color: "rgba(0,0,0,0.6)" }}>/</span>
+                  <span style={{ color: "rgba(0,0,0,0.66)" }}>
                     {config.breadcrumb || config.title}
                   </span>
                 </div>
-                {/* Division label badge */}
-                <div
-                  data-hero-el="badge"
-                  className="hero-badge"
-                  style={{
-                    background: `${config.accent}12`,
-                    border: `1px solid ${config.accent}2e`,
-                    borderRadius: 32,
-                    padding: "6px 14px",
-                    color: config.accent,
-                    marginBottom: 24,
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: 6,
-                      background: config.accent,
-                      display: "inline-block",
-                      flexShrink: 0,
-                    }}
-                  />
-                  {config.mission.eyebrowLabel}
-                </div>
-                <h1
-                  data-hero-el="heading"
-                  className="hero-h1 hero-text-lift"
-                  style={{ marginBottom: 22, color: "#0a0a0c" }}
-                >
+                <h1 className="div-h1" style={{ marginBottom: 20 }}>
                   {config.title}
                 </h1>
                 <p
-                  data-hero-el="body"
-                  className="hero-lead"
                   style={{
-                    color: "rgba(0,0,0,0.58)",
-                    maxWidth: 600,
+                    fontSize: 18,
+                    color: "rgba(0,0,0,0.55)",
+                    lineHeight: 1.55,
+                    margin: 0,
                   }}
                 >
                   {config.subtitle}
@@ -162,7 +120,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
 
               {/* Decorative orb with accent */}
               <div
-                data-hero-el="meta"
+                data-reveal
                 className="relative hidden lg:block"
                 style={{ flexShrink: 0 }}
               >
@@ -172,37 +130,27 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
                     width: 240,
                     height: 240,
                     borderRadius: "50%",
-                    background: `radial-gradient(135% 135% at 15% 15%, ${config.accent}26, ${config.accent}08)`,
-                    border: `1px solid ${config.accent}30`,
-                    boxShadow: `0 0 0 24px ${config.accent}06, 0 0 0 48px ${config.accent}03`,
+                    background: `radial-gradient(135% 135% at 15% 15%, ${config.accent}26, ${config.accent}05)`,
+                    border: `1px solid ${config.accent}33`,
                   }}
                 >
                   <span style={{ color: config.accent }}>
-                    <LineIcon name={config.heroIcon} size={96} strokeWidth={1.0} />
+                    <LineIcon name={config.heroIcon} size={96} strokeWidth={1.1} />
                   </span>
-                  {/* Orbiting rings */}
+                  {/* Orbiting decoration */}
                   <div
                     aria-hidden
                     className="absolute"
                     style={{
-                      inset: -18,
+                      inset: -16,
                       borderRadius: "50%",
-                      border: `1px dashed ${config.accent}28`,
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute"
-                    style={{
-                      inset: -36,
-                      borderRadius: "50%",
-                      border: `1px dashed ${config.accent}14`,
+                      border: `1px dashed ${config.accent}33`,
                     }}
                   />
                 </div>
               </div>
             </div>
-          </HeroReveal>
+          </Reveal>
         </div>
       </section>
 

@@ -157,7 +157,7 @@ export default function FurniturePage() {
             <p style={{ color: "rgba(0,0,0,0.66)" }}>Furniture</p>
           </div>
           <div className="flex flex-col items-start" style={{ gap: 16, width: "100%" }}>
-            <p style={{ fontFamily: "var(--font-manrope), 'Helvetica Neue', Helvetica, sans-serif", fontWeight: 800, fontSize: 62, color: "#0a0a0c", letterSpacing: "-0.03em", lineHeight: 1.02, margin: 0 }}>
+            <p style={{ fontWeight: 700, fontSize: 62, color: "#000", letterSpacing: "-1.24px", margin: 0 }}>
               Furniture
             </p>
             <p style={{ fontSize: 16, color: "rgba(0,0,0,0.5)", whiteSpace: "pre-wrap", margin: 0 }}>{`Company since 2014  Exporting Premium Indian Furniture to Canada, Europe, US & Domestic Market.`}</p>
@@ -207,7 +207,7 @@ export default function FurniturePage() {
                     </div>
                   </div>
                   <div className="flex flex-col items-start" style={{ gap: 20, width: "100%" }}>
-                    <p style={{ fontFamily: "var(--font-manrope), 'Helvetica Neue', Helvetica, sans-serif", fontWeight: 800, fontSize: 52, color: "#fff", letterSpacing: "-0.025em", whiteSpace: "nowrap", margin: 0 }}>
+                    <p style={{ fontWeight: 700, fontSize: 52, color: "#fff", whiteSpace: "nowrap", margin: 0 }}>
                       Crafted in India,
                       <br />
                       Loved Worldwide
@@ -328,7 +328,7 @@ export default function FurniturePage() {
             <span style={{ color: "#000" }}>Furniture</span>
           </div>
           {/* Title */}
-          <h1 style={{ fontFamily: "var(--font-manrope), 'Helvetica Neue', Helvetica, sans-serif", fontWeight: 800, fontSize: "clamp(34px, 11vw, 54px)", color: "#0a0a0c", letterSpacing: "-0.03em", lineHeight: 1.03, margin: "18px 0 0" }}>
+          <h1 style={{ fontWeight: 700, fontSize: "clamp(34px, 11vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
             Furniture
           </h1>
           <p style={{ fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#a30000", fontWeight: 600, margin: "12px 0 0" }}>
@@ -351,7 +351,7 @@ export default function FurniturePage() {
           <p style={{ fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(0,0,0,0.5)", fontWeight: 600, margin: 0 }}>
             Product Categories
           </p>
-          <h2 style={{ fontFamily: "var(--font-manrope), 'Helvetica Neue', Helvetica, sans-serif", fontSize: "clamp(26px, 7vw, 34px)", fontWeight: 800, color: "#000", margin: "10px 0 22px", letterSpacing: "-0.025em" }}>
+          <h2 style={{ fontSize: "clamp(26px, 7vw, 34px)", fontWeight: 700, color: "#000", margin: "10px 0 22px", letterSpacing: "-0.02em" }}>
             Browse Our Collections
           </h2>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Condensed, Manrope, Playfair_Display } from "next/font/google";
+import { Inter, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/site/ScrollToTop";
@@ -17,21 +17,6 @@ const robotoCondensed = Roboto_Condensed({
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "MurliLeela Private Limited — Shaping Diversified Industries",
   description:
@@ -44,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${robotoCondensed.variable} ${manrope.variable} ${playfair.variable} antialiased`}
+      className={`${inter.variable} ${robotoCondensed.variable} antialiased`}
     >
       <body className="min-h-screen overflow-x-clip bg-paper text-ink">
         <SmoothScroll>{children}</SmoothScroll>
