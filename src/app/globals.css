@@ -343,41 +343,85 @@ html.js-on .split-line > span:not(.is-in) {
 }
 .hero-thumbs {
   right: 120px;
-  bottom: 150px;
-  gap: 12px;
+  bottom: 106px; /* clears controls bar (56px bottom + ~50px height) */
+  gap: 10px;
+  align-items: flex-end;
 }
 .hero-thumb {
-  width: 170px;
-  height: 248px;
+  width: 140px;
+  height: 204px;
+}
+/* Medium screens: smaller cards, show 2 (hide 3rd) */
+.hero-thumb:last-child {
+  /* visible on large, hidden on medium */
 }
 .hero-controls {
   left: 120px;
   right: 120px;
   bottom: 56px;
+  /* Timer [grows] → [Prev] [Next] — all pinned to right edge */
+  justify-content: flex-end;
+  gap: 0;
 }
-/* Progress line: right-aligned, constrained width */
+/* Progress bar — fills available space to the left of buttons */
 .hero-progress-track {
-  max-width: 280px;
   width: 100%;
-  margin-left: auto;   /* push to right when in flex row */
+  max-width: 280px;
+  margin-right: 20px;  /* gap between timer and buttons */
+}
+/* Nav buttons group */
+.hero-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+/* Responsive button sizing */
+.hero-nav-btn {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 200ms, background-color 200ms;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.hero-nav-btn:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.10);
 }
 @media (max-width: 1279px) {
   .hero-content { left: 64px; right: 64px; top: 56px; bottom: 100px; }
   .hero-controls { left: 64px; right: 64px; }
-  .hero-thumbs { right: 64px; }
+  .hero-thumbs { right: 64px; bottom: 92px; }
+  .hero-thumb { width: 120px; height: 176px; }
+}
+/* Show only 2 thumbs at medium-large (below 1400px where collision starts) */
+@media (max-width: 1380px) {
+  .hero-thumb:last-child { display: none; }
+  .hero-thumbs { gap: 8px; }
 }
 @media (max-width: 1023px) {
   .hero-content { top: 56px; bottom: 90px; gap: 18px; max-width: 620px; }
   .hero-controls { left: 48px; right: 48px; bottom: 40px; }
-  .hero-progress-track { max-width: 240px; }
+  .hero-progress-track { max-width: 200px; }
+  .hero-nav-btn { width: 34px; height: 34px; }
+  .hero-nav-btn svg { width: 14px; height: 14px; }
 }
 @media (max-width: 767px) {
   .hero-content { left: 24px; right: 24px; top: 56px; bottom: 90px; gap: 14px; max-width: none; }
-  .hero-progress-track { max-width: 160px; }
   .hero-headline { font-size: clamp(28px, 8vw, 40px); }
   .hero-desc { font-size: 14px; }
   /* Controls pinned to bottom of hero, full-width, never overlap text */
   .hero-controls { left: 24px; right: 24px; bottom: 28px; }
+  /* Hide nav buttons on mobile — timer takes full width */
+  .hero-nav-btns { display: none; }
+  .hero-progress-track { max-width: 100%; margin-right: 0; }
+  /* Hide thumbs on mobile — no space */
+  .hero-thumbs { display: none; }
 }
 @media (max-width: 360px) {
   .hero-content { left: 18px; right: 18px; top: 56px; bottom: 86px; }
@@ -509,7 +553,7 @@ html, body {
 .why-text { max-width: 540px; }
 .why-h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; letter-spacing: -0.01em; }
 .why-intro { font-size: 16px; line-height: 1.6; letter-spacing: -0.01em; color: rgba(0,0,0,0.62); }
-.why-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.why-points { list-style: none; margin-top: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
 .why-point { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5; color: rgba(0,0,0,0.78); }
 .why-point-dot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #a30000; margin-top: 7px; }
 

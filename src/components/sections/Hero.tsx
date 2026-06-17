@@ -389,7 +389,7 @@ export default function Hero() {
 
         {/* Thumbnails — upcoming divisions; visibility on 3s/10s schedule */}
         <div
-          className="hero-thumbs absolute hidden lg:flex"
+          className="hero-thumbs absolute flex"
           style={{
             pointerEvents: thumbsVisible ? "auto" : "none",
             opacity: thumbsVisible ? 1 : 0,
@@ -415,16 +415,24 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Bottom control bar — Prev · thin progress line · Next (Adani-style) */}
-        <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto", gap: 20 }}>
-          {/* Prev / Next — compact circular controls on the LEFT */}
-          <div className="flex shrink-0 items-center" style={{ gap: 12 }}>
+        {/* Bottom control bar — [timer grows ←——] [Prev][Next] right end */}
+        <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto" }}>
+          {/* Timer track — grows to fill left space, red accent */}
+          <div className="hero-progress-track relative overflow-hidden rounded-full" style={{ height: 2, background: "rgba(255,255,255,0.18)" }}>
+            <span
+              ref={progressRef}
+              className="absolute inset-y-0 left-0 rounded-full"
+              style={{ width: "0%", background: "#a30000" }}
+            />
+          </div>
+
+          {/* Prev / Next — right end, hide on mobile via CSS */}
+          <div className="hero-nav-btns">
             <button
               type="button"
               onClick={() => goTo(indexRef.current - 1)}
               aria-label="Previous slide"
-              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-              style={{ width: 40, height: 40 }}
+              className="hero-nav-btn"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 5l-7 7 7 7" />
@@ -434,22 +442,12 @@ export default function Hero() {
               type="button"
               onClick={() => goTo(indexRef.current + 1)}
               aria-label="Next slide"
-              className="grid place-items-center rounded-full border border-snow-40 text-paper transition-colors duration-200 hover:border-paper hover:bg-white/10"
-              style={{ width: 40, height: 40 }}
+              className="hero-nav-btn"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 5l7 7-7 7" />
               </svg>
             </button>
-          </div>
-
-          {/* Thin progress line — RIGHT side, constrained width */}
-          <div className="hero-progress-track relative overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
-            <span
-              ref={progressRef}
-              className="absolute inset-y-0 left-0 rounded-full bg-paper"
-              style={{ width: "0%" }}
-            />
           </div>
         </div>
       </div>
