@@ -336,7 +336,7 @@ export default function Hero() {
             <Image src={s.image} alt="" fill priority={i === 0} sizes="100vw" className="object-cover object-center will-change-transform" />
           </div>
         ))}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.25)_55%,rgba(0,0,0,0)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.08)_55%,rgba(0,0,0,0)_100%)]" />
       </div>
 
       {/* Click-to-reveal surface (sits above bg, below interactive controls) */}
@@ -357,7 +357,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <p
             data-hero-fade
-            className="inline-flex items-center gap-2 self-start rounded-[36px] border border-snow-40 text-paper"
+            className="hero-eyebrow inline-flex items-center gap-2 self-start rounded-[36px] border border-snow-40 text-paper"
             style={{ height: 33, paddingInline: 16, fontSize: 14 }}
           >
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
@@ -371,7 +371,7 @@ export default function Hero() {
           </h1>
 
           {/* Description */}
-          <p data-hero-fade className="hero-desc text-snow-70">
+          <p data-hero-fade className="hero-desc" style={{ color: "rgba(255,255,255,0.92)" }}>
             {slide.description}
           </p>
 
@@ -418,7 +418,7 @@ export default function Hero() {
         {/* Bottom control bar — Prev · thin progress line · Next (Adani-style) */}
         <div className="hero-controls absolute flex items-center" style={{ pointerEvents: "auto" }}>
           {/* Thin progress line */}
-          <div className="relative flex-1 overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
+          <div className="hero-progress-track relative overflow-hidden rounded-full" style={{ height: 1.5, background: "rgba(255,255,255,0.28)" }}>
             <span
               ref={progressRef}
               className="absolute inset-y-0 left-0 rounded-full bg-paper"

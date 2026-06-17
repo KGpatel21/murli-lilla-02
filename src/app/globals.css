@@ -299,15 +299,27 @@ html.js-on .split-line > span:not(.is-in) {
   .about-stat span:first-child { font-size: 36px !important; }
 }
 
+/* ── Hero eyebrow pill — text-shadow + frosted bg for legibility ── */
+[data-hero-fade].hero-eyebrow,
+.hero-eyebrow {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 /* ── Hero content layout (cinematic lower-left, fully responsive) ── */
 .hero-content {
   position: absolute;
   left: 120px;
   right: 120px;
-  bottom: 150px;
+  /* vertically centered — sits between header (56px) and controls (100px) */
+  top: 56px;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 22px;
   max-width: 760px;
 }
@@ -316,12 +328,15 @@ html.js-on .split-line > span:not(.is-in) {
   font-size: clamp(30px, 4.4vw, 54px);
   line-height: 1.08;
   letter-spacing: 0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.25);
 }
 .hero-desc {
   margin: 0;
   max-width: 560px;
   font-size: clamp(14px, 1.1vw, 16px);
   line-height: 1.55;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 .hero-thumbs {
   right: 120px;
@@ -337,24 +352,31 @@ html.js-on .split-line > span:not(.is-in) {
   right: 120px;
   bottom: 56px;
 }
+/* Progress line: constrained so it never stretches full viewport */
+.hero-progress-track {
+  max-width: 320px;
+  width: 100%;
+}
 @media (max-width: 1279px) {
-  .hero-content { left: 64px; right: 64px; bottom: 130px; }
+  .hero-content { left: 64px; right: 64px; top: 56px; bottom: 100px; }
   .hero-controls { left: 64px; right: 64px; }
   .hero-thumbs { right: 64px; }
 }
 @media (max-width: 1023px) {
-  .hero-content { bottom: 130px; gap: 18px; max-width: 620px; }
+  .hero-content { top: 56px; bottom: 90px; gap: 18px; max-width: 620px; }
   .hero-controls { left: 48px; right: 48px; bottom: 40px; }
+  .hero-progress-track { max-width: 240px; }
 }
 @media (max-width: 767px) {
-  .hero-content { left: 24px; right: 24px; bottom: 104px; gap: 14px; max-width: none; }
+  .hero-content { left: 24px; right: 24px; top: 56px; bottom: 90px; gap: 14px; max-width: none; }
+  .hero-progress-track { max-width: 160px; }
   .hero-headline { font-size: clamp(28px, 8vw, 40px); }
   .hero-desc { font-size: 14px; }
   /* Controls pinned to bottom of hero, full-width, never overlap text */
   .hero-controls { left: 24px; right: 24px; bottom: 28px; }
 }
 @media (max-width: 360px) {
-  .hero-content { left: 18px; right: 18px; bottom: 100px; }
+  .hero-content { left: 18px; right: 18px; top: 56px; bottom: 86px; }
   .hero-headline { font-size: 26px; }
   .hero-controls { left: 18px; right: 18px; bottom: 24px; }
 }
@@ -373,7 +395,7 @@ html, body {
 }
 /* On very short viewports the hero content can exceed height — allow it to sit higher */
 @media (max-height: 680px) {
-  .hero-content { bottom: 64px; gap: 12px; }
+  .hero-content { top: 56px; bottom: 64px; gap: 12px; }
   .hero-headline { font-size: clamp(24px, 6vw, 34px); }
 }
 
@@ -435,7 +457,7 @@ html, body {
 /* Tablet */
 @media (max-width: 1099px) {
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-quote-card { width: 100%; max-width: 596px; }
+  .about-quote-card { width: 100%; max-width: 596px; margin-left: auto; margin-right: auto; }
   .about-intro, .about-quote-body { width: auto; }
 }
 
