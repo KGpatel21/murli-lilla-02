@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/anim/Reveal";
+import HeroReveal from "@/components/anim/HeroReveal";
 import LineIcon from "@/components/site/LineIcon";
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ export default function TrustCharityPage() {
       <div aria-hidden style={{ height: 56 }} />
 
       {/* HERO — warm, humane */}
-      <section className="relative overflow-hidden" style={{ background: WARM }}>
+      <section className="relative overflow-hidden hero-depth-light" style={{ background: WARM }}>
         <div
           aria-hidden
           className="pointer-events-none absolute"
@@ -69,15 +70,15 @@ export default function TrustCharityPage() {
           }}
         />
         <div className="frame relative division-hero">
-          <Reveal stagger={0.08}>
+          <HeroReveal>
             <div
-              data-reveal
+              data-hero-el="badge"
               className="flex items-center division-breadcrumb"
-              style={{ gap: 17, fontSize: 14 }}
+              style={{ gap: 17, fontSize: 14, marginBottom: 18 }}
             >
-              <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Businesses</Link>
+              <Link href="/" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Home</Link>
+              <span style={{ color: "rgba(0,0,0,0.3)" }}>/</span>
+              <Link href="/#business" style={{ color: "rgba(0,0,0,0.5)" }} className="hover:text-black">Businesses</Link>
               <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
               <span style={{ color: "rgba(0,0,0,0.7)" }}>Trust & Charity</span>
             </div>
@@ -110,7 +111,7 @@ export default function TrustCharityPage() {
               </span>
             </div>
 
-            <h1 data-reveal className="div-h1" style={{ maxWidth: 800 }}>
+            <h1 data-hero-el="heading" className="hero-h1 hero-text-lift" style={{ maxWidth: 760, color: "#0a0a0c", marginBottom: 22 }}>
               Business gives us the means. Community gives us the reason.
             </h1>
             <p
@@ -127,7 +128,7 @@ export default function TrustCharityPage() {
               social commitment — structured, accountable initiatives in education,
               health, and livelihood for the communities we work alongside.
             </p>
-          </Reveal>
+          </HeroReveal>
         </div>
       </section>
 

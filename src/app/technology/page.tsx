@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/anim/Reveal";
+import HeroReveal from "@/components/anim/HeroReveal";
 import CountUp from "@/components/anim/CountUp";
 import LineIcon from "@/components/site/LineIcon";
 
@@ -67,82 +68,99 @@ export default function TechnologyPage() {
 
       {/* HERO — dark digital */}
       <section
-        className="relative overflow-hidden"
+        className="relative overflow-hidden hero-depth-dark"
         style={{ background: "#0b1018", color: "#fff" }}
       >
+        {/* Grid overlay */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
             backgroundSize: "72px 72px",
             maskImage: "radial-gradient(120% 90% at 50% 0%, black 40%, transparent 100%)",
           }}
         />
+        {/* Accent glow — right */}
         <div
           aria-hidden
           className="pointer-events-none absolute"
           style={{
-            top: -180,
-            right: -120,
-            width: 560,
-            height: 560,
+            top: -200,
+            right: -140,
+            width: 600,
+            height: 600,
             borderRadius: "50%",
-            background: `radial-gradient(circle, ${ACCENT}99, transparent 65%)`,
-            filter: "blur(60px)",
+            background: `radial-gradient(circle, ${ACCENT}88, transparent 65%)`,
+            filter: "blur(70px)",
           }}
         />
-        <div className="frame relative division-section-pad">
-          <Reveal stagger={0.08}>
-            <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
-              <Link href="/" style={{ color: "rgba(255,255,255,0.6)" }} className="hover:text-white">Home</Link>
-              <span style={{ color: "rgba(255,255,255,0.4)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(255,255,255,0.6)" }} className="hover:text-white">Businesses</Link>
-              <span style={{ color: "rgba(255,255,255,0.4)" }}>/</span>
-              <span style={{ color: "rgba(255,255,255,0.85)" }}>Technology</span>
+        {/* Secondary glow — left bottom for depth */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute"
+          style={{
+            bottom: -120,
+            left: -80,
+            width: 360,
+            height: 360,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,255,255,0.04), transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+        <div className="frame relative division-hero">
+          <HeroReveal>
+            {/* Breadcrumb */}
+            <div data-hero-el="badge" className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 18 }}>
+              <Link href="/" style={{ color: "rgba(255,255,255,0.45)" }} className="hover:text-white">Home</Link>
+              <span style={{ color: "rgba(255,255,255,0.25)" }}>/</span>
+              <Link href="/#business" style={{ color: "rgba(255,255,255,0.45)" }} className="hover:text-white">Businesses</Link>
+              <span style={{ color: "rgba(255,255,255,0.25)" }}>/</span>
+              <span style={{ color: "#8fb3dd", fontWeight: 600 }}>Technology</span>
             </div>
-            <p
-              data-reveal
+            {/* Badge */}
+            <div
+              data-hero-el="badge"
+              className="hero-badge"
               style={{
-                fontSize: 13,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
+                background: "rgba(143,179,221,0.12)",
+                border: "1px solid rgba(143,179,221,0.25)",
+                borderRadius: 32,
+                padding: "6px 14px",
                 color: "#8fb3dd",
-                marginBottom: 20,
-                fontWeight: 500,
+                marginBottom: 24,
               }}
             >
+              <span style={{ width: 6, height: 6, borderRadius: 6, background: "#8fb3dd", display: "inline-block", flexShrink: 0 }} />
               MurliLeela Technology
-            </p>
-            <h1 data-reveal className="div-h1" style={{ color: "#fff", maxWidth: 780 }}>
+            </div>
+            <h1
+              data-hero-el="heading"
+              className="hero-h1 hero-text-glow"
+              style={{ color: "#ffffff", maxWidth: 780, marginBottom: 22 }}
+            >
               Enterprise technology, engineered with discipline.
             </h1>
             <p
-              data-reveal
+              data-hero-el="body"
+              className="hero-lead"
               style={{
-                fontSize: 18,
-                lineHeight: 1.6,
-                color: "rgba(255,255,255,0.65)",
+                color: "rgba(255,255,255,0.6)",
                 maxWidth: 640,
-                marginTop: 24,
               }}
             >
               We build and operate the digital systems that run modern businesses —
               enterprise platforms, intelligent automation, and data infrastructure —
               with the same rigour MurliLeela applies across its industrial operations.
             </p>
-          </Reveal>
+          </HeroReveal>
 
           <Reveal stagger={0.08}>
             <div
-              className="div-grid-3"
-              style={{
-                marginTop: 72,
-                paddingTop: 40,
-                borderTop: "1px solid rgba(255,255,255,0.12)",
-                gap: 40,
-              }}
+              className="div-grid-3 hero-stat-divider"
+              style={{ gap: 40 }}
             >
               {METRICS.map((m) => (
                 <div key={m.label} data-reveal>
@@ -157,7 +175,7 @@ export default function TechnologyPage() {
                       fontSize: 13,
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.5)",
+                      color: "rgba(255,255,255,0.45)",
                       marginTop: 12,
                     }}
                   >
