@@ -316,7 +316,7 @@ export default function Header({
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-1px)";
                 e.currentTarget.style.boxShadow =
-                  "0 10px 24px -10px rgba(163,0,0,0.5)";
+                  "0 10px 24px -10px rgba(0,0,0,0.4)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";

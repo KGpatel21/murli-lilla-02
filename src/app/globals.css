@@ -311,17 +311,33 @@ html.js-on .split-line > span:not(.is-in) {
   border-color: rgba(255,255,255,0.25) !important;
 }
 
-/* ── Hero content layout (cinematic lower-left, fully responsive) ── */
+/* ── Hero content layout ──
+   Base (below 1200px): vertically centered, as it was originally.
+   ≥1200px: cinematic bottom-left anchor (Adani-style). */
 .hero-content {
   position: absolute;
-  left: clamp(24px, 6.25vw, 120px);
-  bottom: clamp(96px, 14vh, 150px);
+  left: clamp(24px, 6.25vw, 64px);
+  right: clamp(24px, 6.25vw, 64px);
+  top: 56px;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(16px, 1.6vw, 24px);
-  width: min(760px, 56vw);
-  max-width: calc(100vw - 48px);
+  justify-content: center;
+  gap: clamp(16px, 1.6vw, 22px);
+  max-width: 760px;
+}
+@media (min-width: 1200px) {
+  .hero-content {
+    left: clamp(24px, 6.25vw, 120px);
+    right: auto;
+    top: auto;
+    bottom: clamp(96px, 14vh, 150px);
+    justify-content: flex-end;
+    gap: clamp(16px, 1.6vw, 24px);
+    width: min(760px, 56vw);
+    max-width: calc(100vw - 48px);
+  }
 }
 .hero-headline {
   margin: 0;
@@ -402,14 +418,14 @@ html.js-on .split-line > span:not(.is-in) {
   .hero-thumbs { gap: 8px; }
 }
 @media (max-width: 1023px) {
-  .hero-content { gap: 18px; width: min(620px, 78vw); }
+  .hero-content { gap: 18px; max-width: 620px; }
   .hero-controls { bottom: 40px; }
   .hero-progress-track { max-width: 200px; }
   .hero-nav-btn { width: 34px; height: 34px; }
   .hero-nav-btn svg { width: 14px; height: 14px; }
 }
 @media (max-width: 767px) {
-  .hero-content { bottom: 104px; gap: 14px; width: auto; right: 24px; max-width: none; }
+  .hero-content { gap: 14px; max-width: none; }
   .hero-desc { font-size: clamp(13px, 3.6vw, 15px); }
   /* Controls pinned to bottom of hero, full-width, never overlap text */
   .hero-controls { bottom: 28px; }
@@ -420,7 +436,6 @@ html.js-on .split-line > span:not(.is-in) {
   .hero-thumbs { display: none; }
 }
 @media (max-width: 360px) {
-  .hero-content { bottom: 100px; }
   .hero-controls { bottom: 24px; }
 }
 
@@ -1096,10 +1111,10 @@ section:not(.hero-section):not([data-hero]) {
   border-color: #fff;
 }
 
-/* Header "Enquire now" button — brand-aligned, fluid sizing */
+/* Header "Enquire now" button — black, fluid sizing */
 .enquire-btn {
-  background: #a30000;
-  border: 1px solid #a30000;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 6px;
   height: clamp(38px, 2.8vw, 44px);
   padding-inline: clamp(16px, 1.4vw, 22px);
@@ -1108,4 +1123,32 @@ section:not(.hero-section):not([data-hero]) {
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-.enquire-btn:hover { background: #8a0000; border-color: #8a0000; }
+.enquire-btn:hover { background: #1a1a1a; }
+
+/* ════════════════════════════════════════════════════════
+   CAREERS ENQUIRY — light theme form (contrasts dark footer)
+   ════════════════════════════════════════════════════════ */
+.career-field-light {
+  border-color: rgba(0,0,0,0.14);
+  background: #ffffff;
+}
+.career-field-light:hover { border-color: rgba(0,0,0,0.24); }
+.career-field-light:focus {
+  border-color: #a30000;
+  box-shadow: 0 0 0 3px rgba(163,0,0,0.12);
+}
+.career-field-light option { color: #0a0a0c; }
+
+.career-form-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
+  padding: clamp(20px, 3vw, 36px);
+  box-shadow: 0 24px 60px -28px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.04);
+}
+@media (max-width: 767px) {
+  .career-form-card { border-radius: 14px; }
+}
+
+/* Hero headline lines must each sit on their own line (override .split-line inline-block) */
+.hero-headline .hero-line.split-line { display: block; }

@@ -22,11 +22,6 @@ export default function CareersPage() {
       <CareerValues />
       <GrowthOpportunities />
       <CareerEnquiry />
-      <div aria-hidden style={{ background: "#0a0a0c", paddingTop: 8, paddingBottom: 8 }}>
-        <div className="frame">
-          <div className="careers-footer-divider" />
-        </div>
-      </div>
       <Footer />
     </main>
   );
