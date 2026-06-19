@@ -308,21 +308,15 @@ export default function Header({
 
             <Link
               href="/careers#enquiry"
-              className="hidden items-center justify-center text-white sm:inline-flex"
+              className="enquire-btn hidden items-center justify-center text-white sm:inline-flex"
               style={{
-                background: "#000",
-                border: "1px solid rgba(255,255,255,0.2)",
-                borderRadius: 6,
-                height: 42,
-                width: 124,
-                fontSize: 16,
-                transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}`,
+                transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}, background-color 200ms ${EASE}`,
                 willChange: "transform",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-1px)";
                 e.currentTarget.style.boxShadow =
-                  "0 10px 24px -10px rgba(0,0,0,0.4)";
+                  "0 10px 24px -10px rgba(163,0,0,0.5)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";

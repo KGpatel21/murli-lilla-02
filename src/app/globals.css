@@ -314,38 +314,37 @@ html.js-on .split-line > span:not(.is-in) {
 /* ── Hero content layout (cinematic lower-left, fully responsive) ── */
 .hero-content {
   position: absolute;
-  left: 120px;
-  right: 120px;
-  /* vertically centered — sits between header (56px) and controls (100px) */
-  top: 56px;
-  bottom: 100px;
+  left: clamp(24px, 6.25vw, 120px);
+  bottom: clamp(96px, 14vh, 150px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  gap: 22px;
-  max-width: 760px;
+  gap: clamp(16px, 1.6vw, 24px);
+  width: min(760px, 56vw);
+  max-width: calc(100vw - 48px);
 }
 .hero-headline {
   margin: 0;
-  font-size: clamp(30px, 4.4vw, 54px);
-  line-height: 1.08;
-  letter-spacing: 0.01em;
+  /* Fluid but capped so it never explodes on ultra-wide screens */
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.25);
+  font-weight: 800;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
 }
 .hero-desc {
   margin: 0;
   max-width: 560px;
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.55;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
 }
 .hero-thumbs {
-  right: 120px;
-  bottom: 106px; /* clears controls bar (56px bottom + ~50px height) */
-  gap: 10px;
-  align-items: flex-end;
+  right: clamp(24px, 6.25vw, 120px);
+  bottom: clamp(96px, 14vh, 150px);
+  gap: 12px;
 }
 .hero-thumb {
   width: 140px;
@@ -356,8 +355,8 @@ html.js-on .split-line > span:not(.is-in) {
   /* visible on large, hidden on medium */
 }
 .hero-controls {
-  left: 120px;
-  right: 120px;
+  left: clamp(24px, 6.25vw, 120px);
+  right: clamp(24px, 6.25vw, 120px);
   bottom: 56px;
   /* Timer [grows] → [Prev] [Next] — all pinned to right edge */
   justify-content: flex-end;
@@ -394,9 +393,7 @@ html.js-on .split-line > span:not(.is-in) {
   background: rgba(255,255,255,0.10);
 }
 @media (max-width: 1279px) {
-  .hero-content { left: 64px; right: 64px; top: 56px; bottom: 100px; }
-  .hero-controls { left: 64px; right: 64px; }
-  .hero-thumbs { right: 64px; bottom: 92px; }
+  .hero-thumbs { right: clamp(24px, 6.25vw, 120px); bottom: clamp(96px, 14vh, 150px); }
   .hero-thumb { width: 120px; height: 176px; }
 }
 /* Show only 2 thumbs at medium-large (below 1400px where collision starts) */
@@ -405,18 +402,17 @@ html.js-on .split-line > span:not(.is-in) {
   .hero-thumbs { gap: 8px; }
 }
 @media (max-width: 1023px) {
-  .hero-content { top: 56px; bottom: 90px; gap: 18px; max-width: 620px; }
-  .hero-controls { left: 48px; right: 48px; bottom: 40px; }
+  .hero-content { gap: 18px; width: min(620px, 78vw); }
+  .hero-controls { bottom: 40px; }
   .hero-progress-track { max-width: 200px; }
   .hero-nav-btn { width: 34px; height: 34px; }
   .hero-nav-btn svg { width: 14px; height: 14px; }
 }
 @media (max-width: 767px) {
-  .hero-content { left: 24px; right: 24px; top: 56px; bottom: 90px; gap: 14px; max-width: none; }
-  .hero-headline { font-size: clamp(28px, 8vw, 40px); }
-  .hero-desc { font-size: 14px; }
+  .hero-content { bottom: 104px; gap: 14px; width: auto; right: 24px; max-width: none; }
+  .hero-desc { font-size: clamp(13px, 3.6vw, 15px); }
   /* Controls pinned to bottom of hero, full-width, never overlap text */
-  .hero-controls { left: 24px; right: 24px; bottom: 28px; }
+  .hero-controls { bottom: 28px; }
   /* Hide nav buttons on mobile — timer takes full width */
   .hero-nav-btns { display: none; }
   .hero-progress-track { max-width: 100%; margin-right: 0; }
@@ -424,16 +420,8 @@ html.js-on .split-line > span:not(.is-in) {
   .hero-thumbs { display: none; }
 }
 @media (max-width: 360px) {
-  .hero-content { left: 18px; right: 18px; top: 56px; bottom: 86px; }
-  .hero-headline { font-size: 26px; }
-  .hero-controls { left: 18px; right: 18px; bottom: 24px; }
-}
-@media (min-width: 1920px) {
-  .hero-content, .hero-controls {
-    left: max(120px, calc((100vw - 1680px) / 2));
-    right: max(120px, calc((100vw - 1680px) / 2));
-  }
-  .hero-thumbs { right: max(120px, calc((100vw - 1680px) / 2)); }
+  .hero-content { bottom: 100px; }
+  .hero-controls { bottom: 24px; }
 }
 
 /* Global horizontal-overflow guard (prevents off-screen cards causing x-scroll) */
@@ -443,8 +431,8 @@ html, body {
 }
 /* On very short viewports the hero content can exceed height — allow it to sit higher */
 @media (max-height: 680px) {
-  .hero-content { top: 56px; bottom: 64px; gap: 12px; }
-  .hero-headline { font-size: clamp(24px, 6vw, 34px); }
+  .hero-content { bottom: 64px; gap: 12px; }
+  .hero-headline { font-size: clamp(24px, 5vw, 34px); }
 }
 
 /* ── Careers enquiry layout ── */
@@ -1087,3 +1075,37 @@ section:not(.hero-section):not([data-hero]) {
   height: auto;
   min-height: unset;
 }
+
+/* ════════════════════════════════════════════════════════
+   HERO CTA — Adani-style: transparent w/ white border, fluid
+   ════════════════════════════════════════════════════════ */
+.hero-cta {
+  height: clamp(44px, 3.4vw, 52px);
+  padding-inline: clamp(24px, 2.2vw, 34px);
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.85);
+  border-radius: 4px;
+  background: transparent;
+}
+.hero-cta:hover {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+/* Header "Enquire now" button — brand-aligned, fluid sizing */
+.enquire-btn {
+  background: #a30000;
+  border: 1px solid #a30000;
+  border-radius: 6px;
+  height: clamp(38px, 2.8vw, 44px);
+  padding-inline: clamp(16px, 1.4vw, 22px);
+  font-size: clamp(14px, 0.95vw, 15.5px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.enquire-btn:hover { background: #8a0000; border-color: #8a0000; }

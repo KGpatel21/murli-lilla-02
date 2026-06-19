@@ -348,7 +348,7 @@ export default function Hero() {
         tabIndex={-1}
       />
 
-      <div className="frame relative flex h-full flex-col" style={{ pointerEvents: "none" }}>
+      <div className="relative h-full" style={{ pointerEvents: "none" }}>
         {/* Content column — anchored lower-left (cinematic), responsive */}
         <div
           className="hero-content"
@@ -379,8 +379,7 @@ export default function Hero() {
           <div data-hero-fade>
             <a
               href={slide.link}
-              className="inline-flex items-center justify-center rounded-[6px] bg-paper font-normal text-ink transition-colors hover:bg-paper/85"
-              style={{ height: 44, paddingInline: 28, fontSize: 16 }}
+              className="hero-cta inline-flex items-center justify-center transition-all"
             >
               {slide.cta}
             </a>
