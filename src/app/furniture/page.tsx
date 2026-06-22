@@ -343,7 +343,7 @@ export default function FurniturePage() {
 
         {/* Hero image */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 11", background: "#d2b08f", marginTop: 18 }}>
-          <Image src="/figma/354/hero.png" alt="Furniture interior" fill sizes="100vw" style={{ objectFit: "cover" }} />
+          <Image src="/figma/354/interior.jpg" alt="Furniture interior" fill sizes="100vw" style={{ objectFit: "cover" }} />
         </div>
 
         {/* Product showcase */}
