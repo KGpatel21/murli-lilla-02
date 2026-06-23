@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { CONTACT } from "@/lib/contact";
 
 const BUSINESS = [
   { label: "Pratik Petro", href: "/pratik-petro" },
@@ -21,15 +22,22 @@ const COMPANY = [
   { label: "Contact", href: "/careers#enquiry" },
 ];
 
-const SOCIAL_PATHS: Record<string, string> = {
-  x: "M17.7 3H21l-7.4 8.5L22 21h-6.8l-5.3-6.5L3.8 21H.5l7.9-9L1 3h7l4.8 6 4.9-6Z",
-  facebook:
-    "M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.2-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4v2.4H7.6V13h2.7v8h3.2Z",
-  instagram:
-    "M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.6.5.7.3 1.3.7 1.9 1.3.6.6 1 1.2 1.3 1.9.3.6.4 1.4.5 2.6.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.5 2.6-.3.7-.7 1.3-1.3 1.9-.6.6-1.2 1-1.9 1.3-.6.3-1.4.4-2.6.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.6-.5a5.2 5.2 0 0 1-1.9-1.3 5.2 5.2 0 0 1-1.3-1.9c-.3-.6-.4-1.4-.5-2.6-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-2 .5-2.6.3-.7.7-1.3 1.3-1.9.6-.6 1.2-1 1.9-1.3.6-.3 1.4-.4 2.6-.5C8.4 2.2 8.8 2.2 12 2.2Zm0 5a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm0 8a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm6.1-8.6a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z",
-  whatsapp:
-    "M20.5 3.5A11.5 11.5 0 0 0 3.7 19.1L3 22l3-.8A11.5 11.5 0 1 0 20.5 3.5ZM12 20.4a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2 .5.5-2-.2-.3A8.4 8.4 0 1 1 12 20.4Z",
-};
+const LINKEDIN_PATH =
+  "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.3 18.3v-7H6v7h2.3ZM7.1 10.3a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6ZM18 18.3v-3.8c0-2-.4-3.6-2.8-3.6-1.1 0-1.9.6-2.2 1.2h-.03v-1H10.8v7H13v-3.5c0-.9.2-1.8 1.3-1.8 1.1 0 1.1 1 1.1 1.9v3.4H18Z";
+
+// Social links — real URLs. Each: { icon path, href, label }
+const SOCIALS: { name: string; d: string; href: string }[] = [
+  {
+    name: "LinkedIn",
+    d: LINKEDIN_PATH,
+    href: CONTACT.linkedinCompany,
+  },
+  {
+    name: "WhatsApp",
+    d: "M20.5 3.5A11.5 11.5 0 0 0 3.7 19.1L3 22l3-.8A11.5 11.5 0 1 0 20.5 3.5ZM12 20.4a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2 .5.5-2-.2-.3A8.4 8.4 0 1 1 12 20.4Z",
+    href: CONTACT.whatsappGeneral,
+  },
+];
 
 const headingStyle: React.CSSProperties = {
   fontWeight: 700,
@@ -130,11 +138,13 @@ export default function Footer() {
           <div>
             <p style={headingStyle}>Contact</p>
             <address className="flex flex-col not-italic" style={{ gap: 14, fontSize: 15.5, lineHeight: 1.5 }}>
-              <span style={{ color: "rgba(255,255,255,0.75)" }}>MurliLeela Private Limited</span>
-              <span style={{ color: "rgba(255,255,255,0.55)" }}>Jodhpur, Rajasthan · Ahmedabad, Gujarat</span>
-              <a href="tel:+911484423082" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>+91 1484 423082</a>
-              <a href="mailto:MurlileelaPvt.Lim@gmail.com" className="footer-link" style={{ color: "rgba(255,255,255,0.55)", wordBreak: "break-all" }}>
-                MurlileelaPvt.Lim@gmail.com
+              <span style={{ color: "rgba(255,255,255,0.75)" }}>{CONTACT.company}</span>
+              <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>
+                {CONTACT.addressLine1}, {CONTACT.addressCity}
+              </a>
+              <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>{CONTACT.phoneDisplay}</a>
+              <a href={`mailto:${CONTACT.email}`} className="footer-link" style={{ color: "rgba(255,255,255,0.55)", wordBreak: "break-all" }}>
+                {CONTACT.email}
               </a>
             </address>
           </div>
@@ -153,11 +163,11 @@ export default function Footer() {
             <Link href="#" className="footer-link" style={{ whiteSpace: "nowrap" }}>Privacy policy</Link>
           </div>
           <div className="flex items-center" style={{ gap: 26 }}>
-            {Object.entries(SOCIAL_PATHS).map(([name, d]) => (
-              <a key={name} href="#" aria-label={`MurliLeela on ${name === "x" ? "X" : name}`}
+            {SOCIALS.map((s) => (
+              <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`MurliLeela on ${s.name}`}
                 className="footer-social grid place-items-center"
                 style={{ width: 24, height: 24, color: "rgba(255,255,255,0.7)" }}>
-                <svg width={22} height={22} viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg>
+                <svg width={22} height={22} viewBox="0 0 24 24" fill="currentColor"><path d={s.d} /></svg>
               </a>
             ))}
           </div>
@@ -178,11 +188,11 @@ export default function Footer() {
 
         {/* Social icons */}
         <div className="footer-mobile-social">
-          {Object.entries(SOCIAL_PATHS).map(([name, d]) => (
-            <a key={name} href="#" aria-label={`MurliLeela on ${name === "x" ? "X" : name}`}
+          {SOCIALS.map((s) => (
+            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`MurliLeela on ${s.name}`}
               className="footer-social grid place-items-center"
               style={{ width: 40, height: 40, color: "rgba(255,255,255,0.6)", background: "rgba(255,255,255,0.06)", borderRadius: 8 }}>
-              <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg>
+              <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor"><path d={s.d} /></svg>
             </a>
           ))}
         </div>
@@ -210,10 +220,10 @@ export default function Footer() {
 
           <MobileAccordion title="Contact">
             <address className="flex flex-col not-italic" style={{ gap: 12, fontSize: 14.5, lineHeight: 1.5 }}>
-              <span style={{ color: "rgba(255,255,255,0.7)" }}>Jodhpur, Rajasthan · Ahmedabad, Gujarat</span>
-              <a href="tel:+911484423082" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>+91 1484 423082</a>
-              <a href="mailto:MurlileelaPvt.Lim@gmail.com" className="footer-link" style={{ color: "rgba(255,255,255,0.55)", wordBreak: "break-all" }}>
-                MurlileelaPvt.Lim@gmail.com
+              <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>{CONTACT.addressLine1}, {CONTACT.addressCity}</a>
+              <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color: "rgba(255,255,255,0.55)" }}>{CONTACT.phoneDisplay}</a>
+              <a href={`mailto:${CONTACT.email}`} className="footer-link" style={{ color: "rgba(255,255,255,0.55)", wordBreak: "break-all" }}>
+                {CONTACT.email}
               </a>
             </address>
           </MobileAccordion>

@@ -3,11 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Pratik Petro — Bitumen & Petroleum Products | MurliLeela",
+  title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLeela",
   description:
-    "MurliLeela's Pratik Petro division specialises in the trading, supply, and distribution of high-grade bitumen and petroleum products for road construction, waterproofing, and industrial applications across India.",
+    "MurliLeela's Pratik Petro supplies and trades high-grade bitumen, damar (dammar), VG-10/VG-30/VG-40 grades, bitumen emulsion, and petroleum products for road construction, waterproofing and industrial use across India. Reliable bulk bitumen supplier and dammar trader.",
+  keywords: [
+    "bitumen supplier India",
+    "bitumen trader",
+    "damar trader",
+    "dammar supplier India",
+    "VG30 bitumen supplier",
+    "VG40 bitumen",
+    "bitumen emulsion supplier",
+    "petroleum products trading India",
+    "road construction bitumen",
+    "bulk bitumen supplier Gujarat",
+    "Pratik Petro",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/pratik-petro" },
+  openGraph: {
+    title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLeela",
+    description: "Bitumen, damar (dammar) and petroleum products trading & supply across India.",
+    url: "https://murli-lila1.netlify.app/pratik-petro",
+    type: "website",
+  },
 };
 
 const BULLETS = [
@@ -398,7 +419,7 @@ export default function PratikPetroPage() {
               <Link href="/careers#enquiry" className="inline-flex items-center justify-center" style={{ background: "#5aa6a8", color: "#fff", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
                 Send Enquiry
               </Link>
-              <a href="https://wa.me/911484142299" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
+              <a href={CONTACT.whatsappGeneral} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.2)", color: "#000", height: 48, borderRadius: 6, fontSize: 16, paddingInline: 26 }}>
                 WhatsApp Directly
               </a>
             </div>

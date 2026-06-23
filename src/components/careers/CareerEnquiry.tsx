@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "@/components/anim/Reveal";
+import { CONTACT } from "@/lib/contact";
 
 const FIELD =
   "career-field-light h-[52px] w-full rounded-[10px] border px-4 text-[16px] text-ink outline-none transition-all placeholder:text-black/35";
@@ -115,7 +116,7 @@ export default function CareerEnquiry() {
                     {submitted ? "Thank you — we'll be in touch" : "Submit Interest"}
                   </button>
                   <a
-                    href="https://wa.me/911484142299"
+                    href={CONTACT.whatsappCareers}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center transition-colors hover:bg-black/[0.04]"

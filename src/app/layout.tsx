@@ -18,9 +18,45 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "MurliLeela Private Limited — Shaping Diversified Industries",
+  metadataBase: new URL("https://murli-lila1.netlify.app"),
+  title: {
+    default: "MurliLeela Private Limited — Diversified Indian Enterprise",
+    template: "%s | MurliLeela",
+  },
   description:
-    "MurliLeela Private Limited is a forward-thinking Indian conglomerate headquartered in Rajasthan, with operations spanning petroleum trading, premium furniture export, real estate, cutting-edge IT solutions, child education, and social welfare.",
+    "MurliLeela Private Limited is a diversified Indian enterprise based in Ahmedabad & Jodhpur, spanning bitumen & petroleum trading, premium furniture export, real estate, enterprise technology, early-childhood education, pharma, agriculture, and community trust initiatives.",
+  keywords: [
+    "MurliLeela",
+    "MurliLeela Private Limited",
+    "diversified Indian enterprise",
+    "Ahmedabad business group",
+    "bitumen supplier India",
+    "furniture export India",
+    "real estate Rajasthan",
+    "enterprise technology India",
+  ],
+  authors: [{ name: "MurliLeela Private Limited" }],
+  alternates: { canonical: "https://murli-lila1.netlify.app/" },
+  openGraph: {
+    type: "website",
+    siteName: "MurliLeela Private Limited",
+    title: "MurliLeela Private Limited — Diversified Indian Enterprise",
+    description:
+      "A diversified Indian enterprise spanning bitumen & petroleum, furniture export, real estate, technology, education, pharma, agriculture and community trust initiatives.",
+    url: "https://murli-lila1.netlify.app/",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MurliLeela Private Limited — Diversified Indian Enterprise",
+    description:
+      "A diversified Indian enterprise spanning bitumen & petroleum, furniture export, real estate, technology, education, pharma, agriculture and community trust.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export default function RootLayout({

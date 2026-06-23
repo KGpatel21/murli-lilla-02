@@ -2,9 +2,27 @@ import type { Metadata } from "next";
 import DivisionPage, { type DivisionConfig } from "@/components/site/DivisionPage";
 
 export const metadata: Metadata = {
-  title: "Real Estate — Property & Land | MurliLeela",
+  title: "Real Estate — Property Development & Land | MurliLeela",
   description:
-    "Property sales, acquisitions, and rental management across Jodhpur, Rajasthan and growth corridors. Built on trust, valuation built on transparency.",
+    "MurliLeela Real Estate handles residential and commercial property sales, acquisitions, land sourcing, and rental management across Jodhpur, Rajasthan and Ahmedabad, Gujarat. Property built on trust, valuation built on transparency, on a turnover-sharing model.",
+  keywords: [
+    "real estate Jodhpur",
+    "property dealer Rajasthan",
+    "commercial property Ahmedabad",
+    "residential property Jodhpur",
+    "land sourcing Rajasthan",
+    "property rental management India",
+    "real estate investment Rajasthan",
+    "property acquisition Gujarat",
+    "MurliLeela real estate",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/real-estate" },
+  openGraph: {
+    title: "Real Estate — Property Development & Land | MurliLeela",
+    description: "Residential & commercial property development and rental management across Rajasthan and Gujarat.",
+    url: "https://murli-lila1.netlify.app/real-estate",
+    type: "website",
+  },
 };
 
 const config: DivisionConfig = {

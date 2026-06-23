@@ -6,9 +6,25 @@ import Reveal from "@/components/anim/Reveal";
 import LineIcon from "@/components/site/LineIcon";
 
 export const metadata: Metadata = {
-  title: "Agriculture — Sustainable Agri Division in Development | MurliLeela",
+  title: "Agriculture — Sustainable Farm-to-Market Division | MurliLeela",
   description:
-    "MurliLeela Agriculture is an upcoming division focused on sustainable farm-to-market supply chains, modern farming practices, and long-term value creation for producers.",
+    "MurliLeela Agriculture is an upcoming division focused on sustainable farm-to-market supply chains, modern farming practices, agri-produce trading, and long-term value creation for producers across India.",
+  keywords: [
+    "agriculture company India",
+    "farm to market supply chain",
+    "agri produce trading India",
+    "sustainable farming India",
+    "agribusiness Gujarat",
+    "agricultural supply chain",
+    "MurliLeela agriculture",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/agriculture" },
+  openGraph: {
+    title: "Agriculture — Sustainable Farm-to-Market Division | MurliLeela",
+    description: "An upcoming farm-to-market platform built on sustainable cultivation and fair producer economics.",
+    url: "https://murli-lila1.netlify.app/agriculture",
+    type: "website",
+  },
 };
 
 const ACCENT = "#3f7a3a";

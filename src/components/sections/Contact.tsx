@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/anim/Reveal";
+import { CONTACT } from "@/lib/contact";
 
 const FIELD =
   "h-[50px] w-full rounded-[4px] border bg-transparent px-4 text-[16px] text-paper outline-none transition-colors placeholder:text-snow-50 focus:border-paper";
@@ -197,7 +198,7 @@ export default function Contact() {
                   {submitted ? "Sent" : "Send Enquiry"}
                 </button>
                 <a
-                  href="https://wa.me/911484142299"
+                  href={CONTACT.whatsappGeneral}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center bg-transparent text-paper transition-colors hover:bg-white/10"

@@ -7,9 +7,26 @@ import CountUp from "@/components/anim/CountUp";
 import LineIcon from "@/components/site/LineIcon";
 
 export const metadata: Metadata = {
-  title: "Technology — Enterprise Digital Solutions | MurliLeela",
+  title: "Technology — Enterprise Software & AI Solutions | MurliLeela",
   description:
-    "MurliLeela Technology designs and operates enterprise platforms, AI-led automation, and digital transformation programmes for businesses across India and international markets.",
+    "MurliLeela Technology builds enterprise software, custom web & mobile platforms, AI-led automation, and digital transformation solutions for businesses across India and international markets — engineered with security and long-term maintainability as defaults.",
+  keywords: [
+    "enterprise software development India",
+    "AI automation company India",
+    "custom software development Ahmedabad",
+    "digital transformation services",
+    "web application development India",
+    "business automation solutions",
+    "enterprise technology partner",
+    "MurliLeela technology",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/technology" },
+  openGraph: {
+    title: "Technology — Enterprise Software & AI Solutions | MurliLeela",
+    description: "Enterprise platforms, AI automation and digital transformation for real businesses.",
+    url: "https://murli-lila1.netlify.app/technology",
+    type: "website",
+  },
 };
 
 const ACCENT = "#1e3a5f";

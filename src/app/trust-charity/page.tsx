@@ -8,7 +8,23 @@ import LineIcon from "@/components/site/LineIcon";
 export const metadata: Metadata = {
   title: "Trust & Charity — MurliLeela Foundation | MurliLeela",
   description:
-    "The MurliLeela Foundation is being established to lead the group's social commitment — structured initiatives in education access, community health, and rural livelihood.",
+    "The MurliLeela Foundation leads the group's social commitment with structured initiatives in education access, community health, and rural livelihood across Gujarat and Rajasthan — business gives the means, community gives the reason.",
+  keywords: [
+    "MurliLeela Foundation",
+    "CSR initiatives Gujarat",
+    "charity foundation Ahmedabad",
+    "rural livelihood programs India",
+    "community health initiatives",
+    "education access NGO",
+    "social welfare Rajasthan",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/trust-charity" },
+  openGraph: {
+    title: "Trust & Charity — MurliLeela Foundation | MurliLeela",
+    description: "Structured initiatives in education access, community health and rural livelihood.",
+    url: "https://murli-lila1.netlify.app/trust-charity",
+    type: "website",
+  },
 };
 
 const ACCENT = "#7a1118";

@@ -8,7 +8,24 @@ import LineIcon from "@/components/site/LineIcon";
 export const metadata: Metadata = {
   title: "Education — Early-Childhood Learning Network | MurliLeela",
   description:
-    "MurliLeela Education extends the Kidzys early-learning ecosystem — already present at Zundal — into a wider network of modern, structured early-childhood centres across the region.",
+    "MurliLeela Education extends the Kidzys early-learning ecosystem — already present at Zundal, Ahmedabad — into a wider network of modern, structured early-childhood and preschool centres with certified educators and safe, purpose-built campuses.",
+  keywords: [
+    "preschool Ahmedabad",
+    "early childhood education Zundal",
+    "Kidzys preschool",
+    "play school Ahmedabad",
+    "kindergarten Gujarat",
+    "early learning centre India",
+    "best preschool Zundal",
+    "MurliLeela education",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/education" },
+  openGraph: {
+    title: "Education — Early-Childhood Learning Network | MurliLeela",
+    description: "A growing network of modern early-childhood learning centres, anchored by Kidzys at Zundal.",
+    url: "https://murli-lila1.netlify.app/education",
+    type: "website",
+  },
 };
 
 const ACCENT = "#b8753a";

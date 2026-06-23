@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import Reveal from "@/components/anim/Reveal";
 import AboutStats from "./AboutStats";
+import { CONTACT } from "@/lib/contact";
 
 const PILLARS = [
   {
@@ -72,12 +73,25 @@ export default function About() {
                   />
                 </div>
                 <div className="about-quote-attr">
-                  <p style={{ fontSize: 16, lineHeight: 1.5, color: "rgba(0,0,0,0.66)" }}>
+                  <p style={{ fontSize: 16, lineHeight: 1.5, fontWeight: 600, color: "#0a0a0c" }}>
+                    Pratik Gaur
+                  </p>
+                  <p style={{ fontSize: 15, lineHeight: 1.5, color: "rgba(0,0,0,0.6)" }}>
                     MurliLeela Private Limited
                   </p>
-                  <p className="mt-1" style={{ fontSize: 16, lineHeight: 1.5, color: "rgba(0,0,0,0.66)" }}>
-                    Leadership Vision
-                  </p>
+                  <a
+                    href={CONTACT.linkedinCeo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex items-center hover:opacity-70 transition-opacity"
+                    style={{ gap: 6, fontSize: 14, color: "#a30000", fontWeight: 500 }}
+                    aria-label="Pratik Gaur on LinkedIn"
+                  >
+                    <svg width={15} height={15} viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.3 18.3v-7H6v7h2.3ZM7.1 10.3a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6ZM18 18.3v-3.8c0-2-.4-3.6-2.8-3.6-1.1 0-1.9.6-2.2 1.2h-.03v-1H10.8v7H13v-3.5c0-.9.2-1.8 1.3-1.8 1.1 0 1.1 1 1.1 1.9v3.4H18Z" />
+                    </svg>
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>

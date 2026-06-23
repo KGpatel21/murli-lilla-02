@@ -8,7 +8,22 @@ import LineIcon from "@/components/site/LineIcon";
 export const metadata: Metadata = {
   title: "Pharma — Healthcare Division in Development | MurliLeela",
   description:
-    "MurliLeela Pharma is a healthcare division in structured development, focused on quality-driven pharmaceutical distribution and healthcare products for the Indian market.",
+    "MurliLeela Pharma is a healthcare division in structured development, focused on quality-driven pharmaceutical distribution, healthcare products and regulatory-first foundations for the Indian market.",
+  keywords: [
+    "pharmaceutical distribution India",
+    "pharma company Ahmedabad",
+    "healthcare products supplier",
+    "pharma distribution Gujarat",
+    "medicine supplier India",
+    "MurliLeela pharma",
+  ],
+  alternates: { canonical: "https://murli-lila1.netlify.app/pharma" },
+  openGraph: {
+    title: "Pharma — Healthcare Division in Development | MurliLeela",
+    description: "A pharmaceutical division in structured development — quality and distribution foundations first.",
+    url: "https://murli-lila1.netlify.app/pharma",
+    type: "website",
+  },
 };
 
 const ACCENT = "#2c7a7b";
