@@ -1390,15 +1390,16 @@ section:not(.hero-section):not([data-hero]) {
 .furn2-btn-secondary:hover { border-color: rgba(0,0,0,0.4); background: #fafafa; }
 
 /* ════════════════════════════════════════════════════════
-   DIVISION HERO — full-bleed image background, text left-centre,
-   breadcrumb bottom-left. Used across all 8 business pages.
+   DIVISION HERO — full-bleed image background, screen height.
+   Robust 3-row flex layout: breadcrumb (top, clears navbar) /
+   heading block (centred) / spacer. Nothing overlaps.
    ════════════════════════════════════════════════════════ */
 .dhero {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
-  max-height: 1100px;
+  min-height: 560px;
+  max-height: 1000px;
   overflow: hidden;
   background: #1a1a1a;
 }
@@ -1412,25 +1413,55 @@ section:not(.hero-section):not([data-hero]) {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Darker on the left where text sits, lighter on the right */
+  /* Darker on the left where text sits + top & bottom for nav/crumb legibility */
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.12) 78%, rgba(0,0,0,0.05) 100%),
-    linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 38%);
+    linear-gradient(90deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.48) 42%, rgba(0,0,0,0.14) 78%, rgba(0,0,0,0.05) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 22%),
+    linear-gradient(0deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 30%);
 }
+/* 3-row flex column: crumb / content / spacer */
 .dhero-frame {
   position: relative;
   z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Top padding clears the 56px fixed navbar; bottom keeps breathing room */
+  padding-top: 96px;
+  padding-bottom: 48px;
 }
-/* Heading block — vertically centred, left aligned */
+/* Breadcrumb — first row, sits just under the navbar */
+.dhero-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+.dhero-crumb-link {
+  color: rgba(255,255,255,0.75);
+  transition: color 200ms;
+}
+.dhero-crumb-link:hover { color: #fff; }
+.dhero-crumb-current { color: #fff; font-weight: 600; }
+.dhero-crumb-sep { color: rgba(255,255,255,0.45); }
+
+/* Heading block — middle row, grows to centre itself in remaining space */
 .dhero-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 680px;
+  min-height: 0;
+  padding: 24px 0;
 }
+.dhero-spacer { flex: 0 0 auto; height: 0; }
+
 .dhero-eyebrow {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: 8px;
   font-size: 12px;
@@ -1451,7 +1482,7 @@ section:not(.hero-section):not([data-hero]) {
   line-height: 1.04;
   letter-spacing: -0.03em;
   color: #ffffff;
-  text-shadow: 0 0 30px rgba(0,0,0,0.4), 0 0 64px rgba(0,0,0,0.25);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.45), 0 0 64px rgba(0,0,0,0.3);
 }
 .dhero-sub {
   margin: 20px 0 0;
@@ -1459,60 +1490,35 @@ section:not(.hero-section):not([data-hero]) {
   font-size: clamp(15px, 1.3vw, 18px);
   line-height: 1.6;
   font-weight: 400;
-  color: rgba(255,255,255,0.9);
-  text-shadow: 0 0 20px rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 16px rgba(0,0,0,0.5);
 }
-/* Breadcrumb pinned to bottom-left */
-.dhero-crumb {
-  position: absolute;
-  left: 120px;
-  bottom: 36px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-}
-.dhero-crumb-link {
-  color: rgba(255,255,255,0.7);
-  transition: color 200ms;
-}
-.dhero-crumb-link:hover { color: #fff; }
-.dhero-crumb-current { color: #fff; font-weight: 600; }
-.dhero-crumb-sep { color: rgba(255,255,255,0.4); }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 1199px) {
-  .dhero-crumb { left: 60px; }
+  .dhero-frame { padding-top: 92px; }
 }
 @media (max-width: 767px) {
   .dhero {
     height: auto;
-    min-height: 0;
+    min-height: 88vh;
     max-height: none;
   }
   .dhero-frame {
-    /* On mobile, stack vertically with generous top/bottom padding */
-    padding-top: 120px;
-    padding-bottom: 72px;
-    min-height: 90vh;
+    padding-top: 104px;
+    padding-bottom: 56px;
+    min-height: 88vh;
   }
-  .dhero-content { max-width: 100%; }
-  .dhero-crumb {
-    left: 24px;
-    bottom: 28px;
-  }
+  .dhero-content { max-width: 100%; padding: 20px 0; }
   .dhero-h1 { font-size: clamp(30px, 8vw, 44px); }
   .dhero-sub { font-size: 15px; max-width: 100%; }
   .dhero-overlay {
     /* On mobile text spans full width, so darken more evenly */
     background:
-      linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.35) 100%),
-      linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%);
+      linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.4) 100%),
+      linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 20%),
+      linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 35%);
   }
-}
-@media (max-width: 380px) {
-  .dhero-crumb { left: 18px; }
 }
 
 /* ── Shared section helpers reused across redesigned division pages ── */

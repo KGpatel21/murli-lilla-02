@@ -38,6 +38,22 @@ export default function DivisionHero({
 
       {/* Content frame */}
       <div className="frame dhero-frame">
+        {/* Breadcrumb — top, below navbar */}
+        <nav className="dhero-crumb" aria-label="Breadcrumb">
+          {breadcrumb.map((c, i) => (
+            <span key={c.label} className="inline-flex items-center" style={{ gap: 10 }}>
+              {c.href ? (
+                <Link href={c.href} className="dhero-crumb-link">
+                  {c.label}
+                </Link>
+              ) : (
+                <span className="dhero-crumb-current">{c.label}</span>
+              )}
+              {i < breadcrumb.length - 1 && <span className="dhero-crumb-sep">/</span>}
+            </span>
+          ))}
+        </nav>
+
         {/* Heading block — left, vertically centred */}
         <div className="dhero-content">
           {eyebrow && (
@@ -65,21 +81,8 @@ export default function DivisionHero({
           {subheading && <p className="dhero-sub">{subheading}</p>}
         </div>
 
-        {/* Breadcrumb — left bottom */}
-        <nav className="dhero-crumb" aria-label="Breadcrumb">
-          {breadcrumb.map((c, i) => (
-            <span key={c.label} className="inline-flex items-center" style={{ gap: 10 }}>
-              {c.href ? (
-                <Link href={c.href} className="dhero-crumb-link">
-                  {c.label}
-                </Link>
-              ) : (
-                <span className="dhero-crumb-current">{c.label}</span>
-              )}
-              {i < breadcrumb.length - 1 && <span className="dhero-crumb-sep">/</span>}
-            </span>
-          ))}
-        </nav>
+        {/* Spacer to balance the column so content sits visually centred */}
+        <div className="dhero-spacer" aria-hidden />
       </div>
     </section>
   );
