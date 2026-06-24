@@ -67,6 +67,11 @@ export default function Header({
   initialBg?: string;
   position?: "fixed" | "absolute" | "sticky";
 }) {
+  // On business pages the header sits over a dark hero image (position absolute):
+  // render logo + nav in light colours for a consistent look everywhere.
+  const onDark = position === "absolute";
+  const navColor = onDark ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.78)";
+  const navColorActive = onDark ? "#ffffff" : "#000000";
   const [scrolled, setScrolled] = useState(false);
   const [openItem, setOpenItem] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -143,7 +148,13 @@ export default function Header({
           left: 0,
           right: 0,
           top: 0,
-          background: initialBg,
+          // Consistent across all business pages: when the header sits over a
+          // hero image (absolute), use one shared gradient scrim instead of a
+          // per-page solid colour. Fixed headers (homepage) keep their bg.
+          background:
+            position === "absolute"
+              ? "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0) 100%)"
+              : initialBg,
           boxShadow:
             scrolled && position !== "absolute"
               ? "0 1px 0 rgba(0,0,0,0.06), 0 12px 28px -22px rgba(0,0,0,0.18)"
@@ -194,7 +205,7 @@ export default function Header({
                       gap: 8,
                       fontSize: 16,
                       fontWeight: 600,
-                      color: isOpen ? "#000" : "rgba(0,0,0,0.78)",
+                      color: isOpen ? navColorActive : navColor,
                       transition: `color 200ms ${EASE}`,
                       whiteSpace: "nowrap",
                     }}
@@ -329,8 +340,8 @@ export default function Header({
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="grid h-11 w-11 place-items-center text-black lg:hidden"
-              style={{ marginRight: -8 }}
+              className="grid h-11 w-11 place-items-center lg:hidden"
+              style={{ marginRight: -8, color: navColorActive }}
             >
               <svg
                 width={24}

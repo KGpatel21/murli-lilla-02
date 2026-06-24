@@ -80,6 +80,22 @@ const config: DivisionConfig = {
     },
   ],
 
+  appPromo: {
+    label: "One app for everything property · Coming soon",
+    headline: "Your entire property journey, in one app.",
+    description:
+      "We're building a single app for everything related to property — buy, sell, rent, or simply track your home's worth. List your property in minutes, discover verified homes near you, connect directly with owners, and manage it all from your phone. Launching soon on the Play Store.",
+    features: [
+      "Buy, sell & rent homes, shops and plots",
+      "Verified listings with genuine photos & videos",
+      "Connect directly with owners — no brokerage",
+      "Smart filters, map view & neighbourhood insights",
+      "Live price trends and home-value tracking",
+      "Instant alerts for new matching properties",
+    ],
+    note: "Currently in development — Android first, with iOS to follow.",
+  },
+
   cta: {
     headline: "Buying, selling, or co-investing?",
     description:

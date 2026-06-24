@@ -46,6 +46,15 @@ export type DivisionConfig = {
     description: string;
   };
 
+  // Optional app-promo panel (e.g. property app launching on Play Store)
+  appPromo?: {
+    label: string;
+    headline: string;
+    description: string;
+    features: string[];
+    note?: string;
+  };
+
   // CTA strip
   cta: {
     headline: string;
@@ -247,8 +256,8 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
               {config.mission.bullets && (
                 <ul
                   data-reveal
-                  className="flex flex-col"
-                  style={{ gap: 18, marginTop: 56 }}
+                  className="flex flex-col div-mission-bullets"
+                  style={{ gap: 18, marginTop: 0 }}
                 >
                   {config.mission.bullets.map((b) => (
                     <li
@@ -588,6 +597,63 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
                       🔔
                     </div>
                     Want updates? Reach out and we&apos;ll keep you in the loop.
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* APP PROMO — e.g. property super-app launching on Play Store */}
+      {config.appPromo && (
+        <section className="dband" style={{ background: "#0c1420", marginTop: 0 }}>
+          <div className="frame">
+            <Reveal stagger={0.08}>
+              <div className="div-app-promo">
+                <div data-reveal className="div-app-promo-text">
+                  <span
+                    className="inline-flex items-center div-app-badge"
+                    style={{ color: config.accent }}
+                  >
+                    <span style={{ width: 6, height: 6, borderRadius: 6, background: config.accent, display: "inline-block" }} />
+                    {config.appPromo.label}
+                  </span>
+                  <h2 className="div-app-h2">{config.appPromo.headline}</h2>
+                  <p className="div-app-desc">{config.appPromo.description}</p>
+                  <ul className="div-app-features">
+                    {config.appPromo.features.map((f) => (
+                      <li key={f} className="div-app-feature">
+                        <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke={config.accent} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  {config.appPromo.note && (
+                    <p className="div-app-note">{config.appPromo.note}</p>
+                  )}
+                  <div className="div-app-stores">
+                    <span className="div-app-store" aria-label="Coming soon on Google Play">
+                      <svg width={20} height={22} viewBox="0 0 24 24" fill="currentColor"><path d="M3 2.4 13.5 12 3 21.6c-.3-.2-.5-.6-.5-1V3.4c0-.4.2-.8.5-1Zm11.7 10.3 2.9 2.9-3.6 2.1-2.6-2.4 3.3-2.6Zm0-1.4L11.4 8.1 14 5.7l3.6 2.1-2.9 2.9ZM18.9 9.3l2.4 1.4c.7.4.7 1.5 0 1.9l-2.4 1.4-3.1-2.4 3.1-2.3Z"/></svg>
+                      <span>
+                        <span style={{ display: "block", fontSize: 10.5, opacity: 0.7, letterSpacing: "0.04em" }}>COMING SOON ON</span>
+                        <span style={{ display: "block", fontSize: 15, fontWeight: 600 }}>Google Play</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                {/* Phone mockup placeholder */}
+                <div data-reveal className="div-app-visual">
+                  <div className="div-app-phone">
+                    <div className="div-app-phone-notch" />
+                    <div className="div-app-phone-screen">
+                      <svg width={46} height={46} viewBox="0 0 24 24" fill="none" stroke={config.accent} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
+                        <path d="M3 9l9-7 9 7v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+                      </svg>
+                      <span style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 12, fontWeight: 600 }}>App preview coming soon</span>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -336,7 +336,8 @@ export default function Hero() {
             <Image src={s.image} alt="" fill priority={i === 0} sizes="100vw" className="object-cover object-center will-change-transform" />
           </div>
         ))}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.08)_55%,rgba(0,0,0,0)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.22)_45%,rgba(0,0,0,0.05)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.12)_38%,rgba(0,0,0,0)_65%)]" />
       </div>
 
       {/* Click-to-reveal surface (sits above bg, below interactive controls) */}
