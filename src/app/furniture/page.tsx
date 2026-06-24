@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import DivisionHero from "@/components/site/DivisionHero";
 import FurnitureShowcase from "@/components/furniture/FurnitureShowcase";
 import { CONTACT } from "@/lib/contact";
 
@@ -77,49 +77,25 @@ const PROCESS = [
 export default function FurniturePage() {
   return (
     <main className="relative bg-white" style={{ width: "100%", overflowX: "clip" }}>
-      <Header initialBg="#f7f7f7" position="absolute" />
+      <Header initialBg="#1a0606" position="absolute" />
+
+      <DivisionHero
+        image="/figma/354/interior.jpg"
+        imageAlt="Premium handcrafted Indian furniture in a styled luxury living room"
+        eyebrow="Furniture · Crafted in India Since 2014"
+        heading={<>Crafted in India,<br />furnishing the world.</>}
+        subheading="Exporting premium Indian furniture to Canada, Europe, the US, and the domestic market — handcrafted by India's finest artisans with international design sensibilities."
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Businesses", href: "/#business" },
+          { label: "Furniture" },
+        ]}
+        accent={ACCENT}
+      />
 
       <div className="furn2">
-        {/* Spacer for fixed/absolute header */}
-        <div aria-hidden style={{ height: 56 }} />
-
-        {/* ── HEADER BLOCK (breadcrumb + title + tagline — PRESERVED) ── */}
-        <div className="frame furn2-head">
-          {/* Breadcrumb */}
-          <div className="flex items-center" style={{ gap: 10, fontSize: 13, color: "rgba(0,0,0,0.6)" }}>
-            <Link href="/" className="hover:text-black">Home</Link>
-            <span>/</span>
-            <Link href="/#business" className="hover:text-black">Businesses</Link>
-            <span>/</span>
-            <span style={{ color: "#000" }}>Furniture</span>
-          </div>
-          {/* Title */}
-          <h1 style={{ fontWeight: 700, fontSize: "clamp(34px, 8vw, 54px)", color: "#000", letterSpacing: "-0.02em", margin: "18px 0 0" }}>
-            Furniture
-          </h1>
-          <p style={{ fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: ACCENT, fontWeight: 600, margin: "12px 0 0" }}>
-            Crafted in India · Since 2014
-          </p>
-          <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "14px 0 0", maxWidth: 540 }}>
-            Exporting premium Indian furniture to Canada, Europe, the US, and the
-            domestic market — handcrafted by India&apos;s finest artisans with
-            international design sensibilities.
-          </p>
-        </div>
-
-        {/* ── HERO IMAGE ── */}
-        <div className="furn2-hero">
-          <Image src="/figma/354/interior.jpg" alt="Premium handcrafted furniture in a styled living room" fill priority sizes="100vw" style={{ objectFit: "cover" }} />
-          <div className="furn2-hero-overlay" />
-          <div className="furn2-hero-caption">
-            <p style={{ fontSize: "clamp(20px, 3vw, 32px)", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1.15, margin: 0, textShadow: "0 0 24px rgba(0,0,0,0.35)" }}>
-              Crafted in India,<br />furnishing the world.
-            </p>
-          </div>
-        </div>
-
         {/* ── TRUST STRIP ── */}
-        <div className="frame">
+        <div className="frame" style={{ paddingTop: 8 }}>
           <div className="furn2-trust">
             {[
               { k: "10+", v: "Years exporting" },

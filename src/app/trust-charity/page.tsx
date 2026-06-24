@@ -1,246 +1,147 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import DivisionHero from "@/components/site/DivisionHero";
 import Reveal from "@/components/anim/Reveal";
-import LineIcon from "@/components/site/LineIcon";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Trust & Charity — MurliLeela Foundation | MurliLeela",
+  title: "Trust & Charity — The MurliLeela Foundation | MurliLeela",
   description:
-    "The MurliLeela Foundation leads the group's social commitment with structured initiatives in education access, community health, and rural livelihood across Gujarat and Rajasthan — business gives the means, community gives the reason.",
+    "The MurliLeela Foundation is the social conscience of the group — working with dignity and purpose across education, healthcare and rural livelihood in Gujarat and Rajasthan. Business gives the means; community gives the reason.",
   keywords: [
     "MurliLeela Foundation",
-    "CSR initiatives Gujarat",
-    "charity foundation Ahmedabad",
-    "rural livelihood programs India",
-    "community health initiatives",
-    "education access NGO",
+    "charitable trust Gujarat",
+    "CSR initiatives Ahmedabad",
+    "education access NGO India",
+    "rural livelihood programs",
+    "community health initiatives India",
     "social welfare Rajasthan",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/trust-charity" },
   openGraph: {
-    title: "Trust & Charity — MurliLeela Foundation | MurliLeela",
-    description: "Structured initiatives in education access, community health and rural livelihood.",
+    title: "Trust & Charity — The MurliLeela Foundation | MurliLeela",
+    description:
+      "Working with dignity across education, healthcare and rural livelihood. Business gives the means; community gives the reason.",
     url: "https://murli-lila1.netlify.app/trust-charity",
     type: "website",
   },
 };
 
-const ACCENT = "#7a1118";
-const WARM = "#faf5f3";
+const ACCENT = "#9a6b2f";
 
-const PILLARS = [
+const FOCUS = [
   {
-    icon: "education",
-    title: "Education Access",
-    body: "Scholarships and learning support for children whose circumstances, not their ability, limit their schooling.",
+    title: "Education access",
+    body: "Helping children stay in school — through learning support, resources and removing the everyday barriers that keep bright minds out of the classroom.",
+    icon: "M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5",
   },
   {
-    icon: "pulse",
-    title: "Community Health",
-    body: "Preventive health camps and access programmes in the communities where the group's businesses operate.",
+    title: "Community health",
+    body: "Bringing basic healthcare, awareness and preventive care closer to the families and villages that need it most.",
+    icon: "M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10zM12 8v6M9 11h6",
   },
   {
-    icon: "users",
-    title: "Rural Livelihood",
-    body: "Skill development and self-employment support that builds durable income, not one-time relief.",
+    title: "Rural livelihood",
+    body: "Supporting skills, self-reliance and dignified work — so progress takes root in communities and lasts well beyond a single gift.",
+    icon: "M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6",
   },
 ];
 
-const PRINCIPLES = [
-  {
-    k: "Structured, not occasional",
-    v: "The Foundation will run multi-year programmes with defined outcomes — philanthropy managed with the discipline of a business unit.",
-  },
-  {
-    k: "Local first",
-    v: "Initiatives begin in the communities surrounding our operations in Rajasthan and Gujarat, where our responsibility is most direct.",
-  },
-  {
-    k: "Accountable giving",
-    v: "Programme outcomes and fund utilisation will be reported annually with the same transparency we owe our shareholders.",
-  },
+const VALUES = [
+  { title: "Dignity, not charity", body: "We work alongside communities as partners, never as benefactors. Respect comes first, always." },
+  { title: "Lasting over loud", body: "We measure ourselves by change that endures — not by how much noise it makes." },
+  { title: "Local and rooted", body: "Real understanding comes from being present. We work close to the communities we serve in Gujarat and Rajasthan." },
+  { title: "Accountable to the rupee", body: "Every contribution is treated as a responsibility — directed with care, and with full transparency." },
 ];
 
 export default function TrustCharityPage() {
   return (
     <main className="relative bg-white">
-      <Header initialBg={WARM} position="fixed" />
-      <div aria-hidden style={{ height: 56 }} />
+      <Header initialBg="#1f1608" position="absolute" />
 
-      {/* HERO — warm, humane */}
-      <section className="relative overflow-hidden" style={{ background: WARM }}>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute"
-          style={{
-            left: "50%",
-            top: -340,
-            width: 760,
-            height: 760,
-            transform: "translateX(-50%)",
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${ACCENT}14, transparent 65%)`,
-          }}
-        />
-        <div className="frame relative division-hero">
-          <Reveal stagger={0.08}>
-            <div
-              data-reveal
-              className="flex items-center division-breadcrumb"
-              style={{ gap: 17, fontSize: 14 }}
-            >
-              <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Businesses</Link>
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
-              <span style={{ color: "rgba(0,0,0,0.7)" }}>Trust & Charity</span>
-            </div>
+      <DivisionHero
+        image="/figma/hero/trust.jpg"
+        imageAlt="The MurliLeela Foundation — community outreach in rural India"
+        eyebrow="Trust & Charity · MurliLeela Foundation"
+        heading={<>Business gives the means.<br />Community gives the reason.</>}
+        subheading="The MurliLeela Foundation is where the group's success comes full circle — a steady commitment to education, health and dignity for the communities that make everything possible."
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Businesses", href: "/#business" },
+          { label: "Trust & Charity" },
+        ]}
+        accent={ACCENT}
+      />
 
-            <div
-              data-reveal
-              className="inline-flex items-center"
-              style={{
-                gap: 10,
-                background: "#fff",
-                border: `1px solid ${ACCENT}33`,
-                borderRadius: 32,
-                padding: "8px 18px",
-                marginBottom: 30,
-              }}
-            >
-              <span style={{ color: ACCENT, display: "inline-flex" }}>
-                <LineIcon name="charity" size={14} strokeWidth={1.8} />
-              </span>
-              <span
-                style={{
-                  fontSize: 12.5,
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: ACCENT,
-                }}
-              >
-                Foundation in formation · Est. 2026
-              </span>
-            </div>
-
-            <h1 data-reveal className="div-h1" style={{ maxWidth: 800 }}>
-              Business gives us the means. Community gives us the reason.
-            </h1>
-            <p
-              data-reveal
-              style={{
-                fontSize: 18,
-                lineHeight: 1.6,
-                color: "rgba(0,0,0,0.6)",
-                maxWidth: 640,
-                marginTop: 24,
-              }}
-            >
-              The MurliLeela Foundation is being established to carry the group's
-              social commitment — structured, accountable initiatives in education,
-              health, and livelihood for the communities we work alongside.
-            </p>
-          </Reveal>
+      {/* MISSION / VISION */}
+      <section className="bg-white">
+        <div className="frame dsec">
+          <div className="trust-mv">
+            <Reveal>
+              <div data-reveal>
+                <p className="dsec-eyebrow" style={{ color: ACCENT }}>Our purpose</p>
+                <h2 className="dsec-h2" style={{ maxWidth: 760 }}>
+                  Prosperity means little if it isn&apos;t shared.
+                </h2>
+                <p className="dsec-lead">
+                  Every enterprise MurliLeela builds is, in the end, about people —
+                  and the MurliLeela Foundation is how we honour that. We believe a
+                  business is only as healthy as the community around it, and that
+                  those who have the means carry a quiet duty to lift others. Our work
+                  is not seasonal generosity; it is a long, patient commitment to
+                  leaving our communities stronger than we found them.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal stagger={0.08}>
+              <div data-reveal className="trust-mv-cards">
+                <div className="trust-mv-card">
+                  <p className="trust-mv-label" style={{ color: ACCENT }}>Mission</p>
+                  <p style={{ fontSize: 16.5, lineHeight: 1.55, color: "#0a0a0c", fontWeight: 500, margin: "8px 0 0" }}>
+                    To stand beside underserved communities with education, healthcare
+                    and opportunity — restoring not just resources, but dignity.
+                  </p>
+                </div>
+                <div className="trust-mv-card">
+                  <p className="trust-mv-label" style={{ color: ACCENT }}>Vision</p>
+                  <p style={{ fontSize: 16.5, lineHeight: 1.55, color: "#0a0a0c", fontWeight: 500, margin: "8px 0 0" }}>
+                    A future where every child can learn, every family can stay well,
+                    and every community can shape its own progress.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="bg-white division-section-pad">
+      {/* FOCUS AREAS — with image placeholders */}
+      <section className="dband" style={{ background: "#faf6ef" }}>
         <div className="frame">
-          <Reveal>
-            <div data-reveal style={{ textAlign: "center", marginBottom: 64 }}>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: 700,
-                  letterSpacing: "0.16em",
-                  color: ACCENT,
-                  textTransform: "uppercase",
-                  margin: 0,
-                  marginBottom: 16,
-                }}
-              >
-                Areas of Commitment
-              </p>
-              <h2 className="div-h2" style={{ maxWidth: 640, marginInline: "auto" }}>
-                Three causes, chosen to last.
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal stagger={0.08}>
-            <div className="div-grid-3" style={{ gap: 28 }}>
-              {PILLARS.map((p) => (
-                <article
-                  key={p.title}
-                  data-reveal
-                  style={{
-                    background: WARM,
-                    borderRadius: 16,
-                    padding: 36,
-                    textAlign: "center",
-                    border: "1px solid rgba(0,0,0,0.05)",
-                  }}
-                >
-                  <span
-                    className="mx-auto grid place-items-center"
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: "50%",
-                      background: `${ACCENT}12`,
-                      color: ACCENT,
-                      marginBottom: 26,
-                    }}
-                  >
-                    <LineIcon name={p.icon} size={26} />
-                  </span>
-                  <h3 style={{ fontSize: 21, fontWeight: 700, letterSpacing: "-0.2px", margin: 0, marginBottom: 12 }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: 0 }}>
-                    {p.body}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* PRINCIPLES — deep maroon */}
-      <section className="relative overflow-hidden" style={{ background: "#2a0709", color: "#fff" }}>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute"
-          style={{
-            left: -160,
-            top: -160,
-            width: 480,
-            height: 480,
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${ACCENT}88, transparent 65%)`,
-            filter: "blur(40px)",
-          }}
-        />
-        <div className="frame relative division-section-pad">
-          <Reveal stagger={0.08}>
-            <h2 data-reveal className="div-h2" style={{ maxWidth: 560, marginBottom: 56 }}>
-              How the Foundation will work.
-            </h2>
-            <div className="div-grid-3" style={{ gap: 40 }}>
-              {PRINCIPLES.map((p) => (
-                <div
-                  key={p.k}
-                  data-reveal
-                  style={{ borderTop: "2px solid rgba(255,255,255,0.3)", paddingTop: 24 }}
-                >
-                  <h3 style={{ fontSize: 19, fontWeight: 700, margin: 0, marginBottom: 12 }}>{p.k}</h3>
-                  <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", margin: 0 }}>
-                    {p.v}
-                  </p>
+          <Reveal stagger={0.06}>
+            <p data-reveal className="dsec-eyebrow" style={{ color: ACCENT }}>Where we work</p>
+            <h2 data-reveal className="dsec-h2">Three causes, one commitment.</h2>
+            <p data-reveal className="dsec-lead">
+              We focus our energy where it changes lives most directly — and where we
+              can stay involved for the long run.
+            </p>
+            <div className="trust-focus">
+              {FOCUS.map((f) => (
+                <div key={f.title} data-reveal className="trust-focus-card">
+                  {/* IMAGE PLACEHOLDER */}
+                  <div className="trust-focus-img">
+                    <div className="trust-img-ph">
+                      <svg width={40} height={40} viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                        <path d={f.icon} />
+                      </svg>
+                      <span style={{ fontSize: 12, color: ACCENT, marginTop: 10, fontWeight: 600 }}>Image coming soon</span>
+                    </div>
+                  </div>
+                  <div style={{ padding: "22px 22px 24px" }}>
+                    <h3 style={{ fontSize: 19, fontWeight: 700, color: "#0a0a0c", margin: 0 }}>{f.title}</h3>
+                    <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "10px 0 0" }}>{f.body}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -248,35 +149,62 @@ export default function TrustCharityPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="division-section-pad" style={{ background: WARM }}>
-        <div className="frame">
-          <Reveal>
-            <div data-reveal style={{ textAlign: "center", maxWidth: 620, marginInline: "auto" }}>
-              <h2 className="div-h2" style={{ marginBottom: 18 }}>
-                Partner in purpose.
-              </h2>
-              <p style={{ fontSize: 16.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", marginBottom: 36 }}>
-                NGOs, institutions, and community organisations interested in working
-                with the Foundation are invited to reach the group office.
-              </p>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center transition-transform hover:-translate-y-0.5"
-                style={{
-                  background: "#000",
-                  color: "#fff",
-                  borderRadius: 8,
-                  height: 50,
-                  paddingInline: 32,
-                  fontSize: 16,
-                  fontWeight: 600,
-                }}
-              >
-                Contact the group office
-              </Link>
+      {/* VALUES */}
+      <section className="bg-white">
+        <div className="frame dsec">
+          <Reveal stagger={0.06}>
+            <p data-reveal className="dsec-eyebrow" style={{ color: ACCENT }}>How we work</p>
+            <h2 data-reveal className="dsec-h2">The principles we hold to.</h2>
+            <div className="trust-values">
+              {VALUES.map((v) => (
+                <div key={v.title} data-reveal className="trust-value">
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#0a0a0c", margin: 0 }}>{v.title}</h3>
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "10px 0 0" }}>{v.body}</p>
+                </div>
+              ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* QUOTE / ETHOS BAND */}
+      <section className="dband" style={{ background: "#1f1608" }}>
+        <div className="frame">
+          <Reveal>
+            <blockquote data-reveal className="trust-quote">
+              <p style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 600, color: "#fff", lineHeight: 1.35, letterSpacing: "-0.01em", margin: 0 }}>
+                &ldquo;We do not give because we have extra. We give because we
+                remember that no one succeeds alone.&rdquo;
+              </p>
+              <footer style={{ marginTop: 22, fontSize: 15, color: "#cda86f", fontWeight: 600, letterSpacing: "0.04em" }}>
+                — The MurliLeela Foundation
+              </footer>
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-white">
+        <div className="frame dsec" style={{ paddingBottom: 80 }}>
+          <div className="trust-cta">
+            <div>
+              <h2 className="dsec-h2">Want to support the work?</h2>
+              <p className="dsec-lead">
+                Whether you wish to partner, contribute or simply learn more about
+                what we do, we would be glad to hear from you. Every hand makes the
+                work lighter.
+              </p>
+            </div>
+            <div className="trust-cta-btns">
+              <a href={CONTACT.whatsappGeneral} target="_blank" rel="noopener noreferrer" className="trust-btn-primary inline-flex items-center justify-center" style={{ background: ACCENT }}>
+                Get in touch
+              </a>
+              <a href={`mailto:${CONTACT.email}?subject=MurliLeela%20Foundation`} className="trust-btn-secondary inline-flex items-center justify-center">
+                Email the Foundation
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

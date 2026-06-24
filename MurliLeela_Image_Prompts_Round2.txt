@@ -1,0 +1,89 @@
+═══════════════════════════════════════════════════════════════════════════════
+  MURLILEELA — IMAGE PROMPTS FOR GEMINI NANO BANANA  (Round 2)
+═══════════════════════════════════════════════════════════════════════════════
+
+These are the images still needed to replace the "coming soon" placeholders on the
+redesigned pages. Generate each, then send them back and I'll place + optimize them.
+
+For every image, append this GLOBAL STYLE line to keep them consistent with the
+rest of the site:
+
+  GLOBAL STYLE: photorealistic, shot on a full-frame DSLR, natural soft lighting,
+  premium and editorial, realistic colours, NOT AI-looking, no text, no watermark,
+  no logos, high detail, professional commercial photography.
+
+IMPORTANT — RESPONSIVE / PHONE NOTE:
+  Keep the MAIN SUBJECT centred (roughly the middle 60% of the frame), with calm
+  / less-busy edges. On phones these images are cropped to squarer shapes, so
+  anything important near the far left/right edges can get cut off. Centre-weight
+  every composition.
+
+───────────────────────────────────────────────────────────────────────────────
+  A. PHARMA — DAILY MULTIVITAMIN PRODUCT SHOT   →  file: pharma-product
+───────────────────────────────────────────────────────────────────────────────
+  Aspect ratio: 4:3 (landscape).  Resolution: 2000×1500 or larger.
+
+  PROMPT:
+  A premium product photograph of a single daily multivitamin supplement bottle,
+  clean white or soft amber pharmaceutical bottle with a minimal modern label
+  (label blank / no readable text), standing on a clean light surface with a few
+  multivitamin tablets arranged neatly beside it. Soft natural daylight, subtle
+  shadows, shallow depth of field, calm neutral teal-and-white background, fresh
+  and clinical but warm. Health, wellness, trust. Centre-weighted composition with
+  clean space around the bottle.
+
+  NEGATIVE: no readable brand text, no hands, no clutter, no medical symbols, not
+  cartoonish, no harsh reflections.
+
+───────────────────────────────────────────────────────────────────────────────
+  B. TRUST & CHARITY — 3 IMAGES (focus cards)
+───────────────────────────────────────────────────────────────────────────────
+  Aspect ratio: 16:10 (landscape).  Resolution: 1600×1000 or larger.
+  Warm, hopeful, dignified — NEVER staged poverty or pity. Show people with
+  agency and dignity. Indian setting.
+
+  B1.  EDUCATION ACCESS   →  file: trust-education
+  PROMPT:
+  A warm, candid photograph of Indian schoolchildren in a bright classroom or
+  rural learning centre, smiling and engaged, reading or writing, a teacher gently
+  helping. Natural light, hopeful and dignified mood, authentic rural-India
+  setting, children in clean simple school uniforms. Centre-weighted.
+
+  B2.  COMMUNITY HEALTH   →  file: trust-health
+  PROMPT:
+  A warm documentary-style photograph of a community health camp in rural India —
+  a friendly female health worker in a simple coat checking on a smiling elderly
+  villager or mother with child, basic medical setup under a tent or simple room.
+  Caring, respectful, hopeful. Natural daylight. Centre-weighted, dignified.
+
+  B3.  RURAL LIVELIHOOD   →  file: trust-livelihood
+  PROMPT:
+  A warm photograph of rural Indian artisans or farmers working with pride — e.g.
+  women working at a craft/skill-training workshop or a farmer standing
+  confidently in a green field at golden hour. Themes of self-reliance, skill and
+  dignity. Authentic, hopeful, not staged. Centre-weighted.
+
+  NEGATIVE (all 3): no sad/pity framing, no posed begging, no logos, no text,
+  nothing that looks exploitative; keep it respectful and hopeful.
+
+───────────────────────────────────────────────────────────────────────────────
+  OPTIONAL — EDUCATION (Kidzys) EXTRA IMAGES
+───────────────────────────────────────────────────────────────────────────────
+  The Education page currently uses the hero image + emoji-based cards, so no
+  extra images are strictly required. BUT if you'd like real photos for the
+  "Why Kidzys" section later, these would work (4:3, 1600×1200):
+
+  - kidzys-classroom: bright cheerful Indian preschool classroom, colourful, safe,
+    toddlers playing and learning, caring teacher, lots of natural light.
+  - kidzys-play: happy Indian toddlers playing with educational toys / building
+    blocks in a clean modern playroom.
+
+  (Tell me if you want these and I'll wire them in.)
+
+═══════════════════════════════════════════════════════════════════════════════
+  WHERE EACH FILE GOES (for reference — I'll handle placement):
+    pharma-product      →  public/figma/pharma/product.jpg
+    trust-education     →  public/figma/trust/education.jpg
+    trust-health        →  public/figma/trust/health.jpg
+    trust-livelihood    →  public/figma/trust/livelihood.jpg
+═══════════════════════════════════════════════════════════════════════════════

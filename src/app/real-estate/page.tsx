@@ -30,6 +30,10 @@ const config: DivisionConfig = {
   subtitle:
     "Properties built on trust, valuation built on transparency, partnerships built to last — across Jodhpur, Rajasthan, and growing.",
   heroIcon: "realestate",
+  heroImage: "/figma/hero/realestate.jpg",
+  heroImageAlt: "MurliLeela Real Estate — premium waterfront residential and commercial towers at dusk",
+  heroEyebrow: "Real Estate · Property & Land",
+  headerBg: "#0c1420",
   accent: "#374e6b",
 
   mission: {

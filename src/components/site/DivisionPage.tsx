@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import DivisionHero from "@/components/site/DivisionHero";
 import Reveal from "@/components/anim/Reveal";
 import LineIcon from "@/components/site/LineIcon";
 
@@ -16,6 +17,10 @@ export type DivisionConfig = {
   subtitle: string;
   breadcrumb?: string;
   heroIcon: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  heroEyebrow?: string;
+  headerBg?: string;
 
   // Theming
   accent: string;
@@ -57,15 +62,31 @@ const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 export default function DivisionPage({ config }: { config: DivisionConfig }) {
   return (
     <main className="relative bg-white">
-      <Header initialBg="#f7f7f7" position="fixed" />
+      {config.heroImage ? (
+        <>
+          <Header initialBg={config.headerBg || "#0a0a0a"} position="absolute" />
+          <DivisionHero
+            image={config.heroImage}
+            imageAlt={config.heroImageAlt || config.title}
+            eyebrow={config.heroEyebrow}
+            heading={config.title}
+            subheading={config.subtitle}
+            breadcrumb={[
+              { label: "Home", href: "/" },
+              { label: "Businesses", href: "/#business" },
+              { label: config.breadcrumb || config.title },
+            ]}
+            accent={config.accent}
+          />
+        </>
+      ) : (
+        <>
+          <Header initialBg="#f7f7f7" position="fixed" />
+          {/* Spacer for fixed header */}
+          <div aria-hidden style={{ height: 56 }} />
 
-      {/* Spacer for fixed header */}
-      <div aria-hidden style={{ height: 56 }} />
-
-      {/* HERO */}
-      <section
-        className="relative bg-paper division-section-pad"
-      >
+          {/* HERO */}
+          <section className="relative bg-paper division-section-pad">
         <div className="frame">
           <Reveal>
             <div
@@ -152,7 +173,9 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
             </div>
           </Reveal>
         </div>
-      </section>
+          </section>
+        </>
+      )}
 
       {/* MISSION — full-width accent */}
       <section

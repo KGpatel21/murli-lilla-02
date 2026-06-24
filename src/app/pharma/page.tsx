@@ -1,298 +1,212 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import DivisionHero from "@/components/site/DivisionHero";
 import Reveal from "@/components/anim/Reveal";
-import LineIcon from "@/components/site/LineIcon";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Pharma — Healthcare Division in Development | MurliLeela",
+  title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLeela",
   description:
-    "MurliLeela Pharma is a healthcare division in structured development, focused on quality-driven pharmaceutical distribution, healthcare products and regulatory-first foundations for the Indian market.",
+    "MurliLeela Pharma introduces its first product — a daily multivitamin tablet formulated for everyday wellness, energy and immunity. Quality-driven, made to high manufacturing standards for the Indian market.",
   keywords: [
-    "pharmaceutical distribution India",
-    "pharma company Ahmedabad",
-    "healthcare products supplier",
-    "pharma distribution Gujarat",
-    "medicine supplier India",
+    "multivitamin tablet India",
+    "daily multivitamin supplement",
+    "wellness supplement India",
+    "immunity multivitamin",
+    "pharmaceutical products Ahmedabad",
+    "health supplement manufacturer",
     "MurliLeela pharma",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/pharma" },
   openGraph: {
-    title: "Pharma — Healthcare Division in Development | MurliLeela",
-    description: "A pharmaceutical division in structured development — quality and distribution foundations first.",
+    title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLeela",
+    description:
+      "Our first product: a daily multivitamin tablet for everyday wellness, energy and immunity.",
     url: "https://murli-lila1.netlify.app/pharma",
     type: "website",
   },
 };
 
 const ACCENT = "#2c7a7b";
-const CLINICAL = "#f3f7f7";
 
-const FOCUS = [
-  {
-    icon: "pharma",
-    title: "Pharmaceutical Distribution",
-    body: "A compliant, temperature-controlled distribution backbone for prescription and over-the-counter products.",
-  },
-  {
-    icon: "flask",
-    title: "Quality & Compliance",
-    body: "Operations designed around Schedule M, WHO-GMP alignment, and full batch-level traceability from day one.",
-  },
-  {
-    icon: "microscope",
-    title: "Healthcare Products",
-    body: "A curated portfolio of healthcare and wellness products, evaluated against clinical evidence rather than market trend.",
-  },
+const BENEFITS = [
+  { title: "Everyday energy", body: "A balanced blend of B-complex vitamins to help support natural energy metabolism through a busy day.", icon: "M13 2 4.5 13H11l-1 9 8.5-11H12z" },
+  { title: "Immunity support", body: "Vitamin C, D and zinc — nutrients that support the body's natural immune defences.", icon: "M12 3 5 6v5c0 4 3 7 7 9 4-2 7-5 7-9V6z" },
+  { title: "Bone & muscle", body: "Vitamin D and essential minerals that contribute to the maintenance of normal bones and muscle function.", icon: "M7 4v16M17 4v16M7 8h10M7 16h10" },
+  { title: "Daily wellness", body: "One tablet a day — a simple way to help fill the gaps in a modern, on-the-go diet.", icon: "M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" },
 ];
 
-const ROADMAP = [
-  { phase: "Phase I", title: "Regulatory & licensing groundwork", status: "In progress" },
-  { phase: "Phase II", title: "Distribution infrastructure and partnerships", status: "Planned" },
-  { phase: "Phase III", title: "Product portfolio launch", status: "Planned" },
+const FORMULA = [
+  "Vitamin A", "Vitamin C", "Vitamin D3", "Vitamin E",
+  "B1 · B2 · B3", "B6 · B12", "Folic Acid", "Zinc",
+  "Iron", "Calcium", "Magnesium", "Iodine",
+];
+
+const STANDARDS = [
+  { title: "Quality-first manufacturing", body: "Produced to high pharmaceutical manufacturing standards with batch-level quality control." },
+  { title: "Clean, considered formula", body: "A balanced daily blend — no overloading, just the nutrients that matter, in sensible amounts." },
+  { title: "Honest labelling", body: "Clear ingredients and clear claims. Nothing hidden, nothing exaggerated." },
 ];
 
 export default function PharmaPage() {
   return (
     <main className="relative bg-white">
-      <Header initialBg={CLINICAL} position="fixed" />
-      <div aria-hidden style={{ height: 56 }} />
+      <Header initialBg="#0e1f1f" position="absolute" />
 
-      {/* HERO — clinical precision */}
-      <section className="relative overflow-hidden" style={{ background: CLINICAL }}>
-        {/* Precision rules */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              `linear-gradient(${ACCENT}10 1px, transparent 1px)`,
-            backgroundSize: "100% 96px",
-          }}
-        />
-        <div className="frame relative division-hero">
-          <Reveal stagger={0.08}>
-            <div data-reveal className="flex items-center" style={{ gap: 17, fontSize: 14, marginBottom: 32 }}>
-              <Link href="/" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Home</Link>
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
-              <Link href="/#business" style={{ color: "rgba(0,0,0,0.6)" }} className="hover:text-black">Businesses</Link>
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>/</span>
-              <span style={{ color: "rgba(0,0,0,0.7)" }}>Pharma</span>
+      <DivisionHero
+        image="/figma/hero/pharma.jpg"
+        imageAlt="MurliLeela Pharma — clean pharmaceutical quality-control laboratory"
+        eyebrow="Pharma · Healthcare Division"
+        heading={<>Healthcare, held to<br />a higher standard.</>}
+        subheading="We are entering healthcare the way we enter everything — carefully. Our first product is a daily multivitamin built for everyday wellness."
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Businesses", href: "/#business" },
+          { label: "Pharma" },
+        ]}
+        accent={ACCENT}
+      />
+
+      {/* FIRST PRODUCT — feature */}
+      <section className="bg-white">
+        <div className="frame dsec">
+          <Reveal>
+            <div data-reveal className="pharma-badge" style={{ background: `${ACCENT}14`, border: `1px solid ${ACCENT}40`, color: ACCENT }}>
+              <span style={{ width: 6, height: 6, borderRadius: 6, background: ACCENT, display: "inline-block" }} />
+              Our first product
             </div>
-
-            {/* Status badge */}
-            <div
-              data-reveal
-              className="inline-flex items-center"
-              style={{
-                gap: 10,
-                background: "#fff",
-                border: `1px solid ${ACCENT}40`,
-                borderRadius: 32,
-                padding: "8px 18px",
-                marginBottom: 28,
-              }}
-            >
-              <span
-                className="relative inline-flex"
-                style={{ width: 8, height: 8 }}
-              >
-                <span
-                  className="absolute inline-flex animate-ping"
-                  style={{ inset: 0, borderRadius: "50%", background: `${ACCENT}66` }}
-                />
-                <span style={{ width: 8, height: 8, borderRadius: "50%", background: ACCENT }} />
-              </span>
-              <span
-                style={{
-                  fontSize: 12.5,
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: ACCENT,
-                }}
-              >
-                Division in development
-              </span>
-            </div>
-
-            <h1 data-reveal className="div-h1" style={{ maxWidth: 760 }}>
-              Healthcare, held to a higher standard.
-            </h1>
-            <p
-              data-reveal
-              style={{
-                fontSize: 18,
-                lineHeight: 1.6,
-                color: "rgba(0,0,0,0.6)",
-                maxWidth: 620,
-                marginTop: 24,
-              }}
-            >
-              MurliLeela Pharma is being established as the group's healthcare
-              division. We are building the regulatory, quality, and distribution
-              foundations first — because in healthcare, the order of operations
-              matters.
-            </p>
           </Reveal>
+          <div className="pharma-product">
+            {/* Visual */}
+            <Reveal>
+              <div data-reveal className="pharma-product-visual">
+                {/* IMAGE PLACEHOLDER — multivitamin product shot */}
+                <div className="pharma-img-placeholder">
+                  <svg width={64} height={64} viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                    <rect x="3" y="8" width="18" height="13" rx="2" />
+                    <path d="M3 8l3-5h12l3 5M12 12v5M9.5 14.5h5" />
+                  </svg>
+                  <p style={{ fontSize: 13, color: ACCENT, marginTop: 14, fontWeight: 600, letterSpacing: "0.04em" }}>Product image coming soon</p>
+                </div>
+              </div>
+            </Reveal>
+            {/* Copy */}
+            <Reveal stagger={0.08}>
+              <div data-reveal>
+                <p className="dsec-eyebrow" style={{ color: ACCENT }}>MurliLeela Daily Multivitamin</p>
+                <h2 className="dsec-h2">One tablet a day, for the days that ask a lot of you.</h2>
+                <p className="dsec-lead" style={{ marginTop: 16 }}>
+                  Modern life rarely leaves room for a perfectly balanced diet. Our
+                  daily multivitamin is a simple, considered way to help fill the
+                  gaps — a thoughtfully balanced blend of essential vitamins and
+                  minerals to support your energy, immunity and overall wellbeing.
+                </p>
+                <p className="dsec-lead" style={{ marginTop: 14 }}>
+                  It is the first product from MurliLeela Pharma, and it reflects how
+                  we intend to do healthcare: quality first, honest claims, and
+                  nothing on the label we wouldn&apos;t give our own family.
+                </p>
+                <div className="pharma-cta-row" style={{ marginTop: 26 }}>
+                  <a href={CONTACT.whatsappGeneral} target="_blank" rel="noopener noreferrer" className="pharma-btn-primary inline-flex items-center justify-center" style={{ background: ACCENT }}>
+                    Enquire about availability
+                  </a>
+                  <a href={`mailto:${CONTACT.email}?subject=Multivitamin%20Enquiry`} className="pharma-btn-secondary inline-flex items-center justify-center">
+                    Email us
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* FOCUS AREAS */}
-      <section className="bg-white division-section-pad">
+      {/* BENEFITS */}
+      <section className="dband" style={{ background: "#f3f7f7" }}>
         <div className="frame">
-          <Reveal>
-            <div data-reveal style={{ marginBottom: 60, maxWidth: 700 }}>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: 700,
-                  letterSpacing: "0.16em",
-                  color: ACCENT,
-                  textTransform: "uppercase",
-                  margin: 0,
-                  marginBottom: 16,
-                }}
-              >
-                Intended Focus
-              </p>
-              <h2 className="div-h2">Three foundations, laid carefully.</h2>
-            </div>
-          </Reveal>
-          <Reveal stagger={0.08}>
-            <div className="div-grid-3" style={{ gap: 0, border: "1px solid rgba(0,0,0,0.1)" }}>
-              {FOCUS.map((f, i) => (
-                <article
-                  key={f.title}
-                  data-reveal
-                  className="pharma-cell"
-                  style={{
-                    padding: 36,
-                    borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.1)" : undefined,
-                  }}
-                >
-                  <span
-                    className="grid place-items-center"
-                    style={{
-                      width: 52,
-                      height: 52,
-                      borderRadius: 12,
-                      background: `${ACCENT}14`,
-                      color: ACCENT,
-                      marginBottom: 26,
-                    }}
-                  >
-                    <LineIcon name={f.icon} size={24} />
-                  </span>
-                  <h3 style={{ fontSize: 21, fontWeight: 700, letterSpacing: "-0.2px", margin: 0, marginBottom: 12 }}>
-                    {f.title}
-                  </h3>
-                  <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: 0 }}>
-                    {f.body}
-                  </p>
-                </article>
+          <Reveal stagger={0.06}>
+            <p data-reveal className="dsec-eyebrow" style={{ color: ACCENT }}>What it supports</p>
+            <h2 data-reveal className="dsec-h2">Balanced nutrition, everyday benefits.</h2>
+            <div className="pharma-benefits">
+              {BENEFITS.map((b) => (
+                <div key={b.title} data-reveal className="pharma-benefit-card">
+                  <div className="pharma-benefit-icon" style={{ background: `${ACCENT}14`, color: ACCENT }}>
+                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d={b.icon} /></svg>
+                  </div>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: "#0a0a0c", margin: "16px 0 0" }}>{b.title}</h3>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.55, color: "rgba(0,0,0,0.6)", margin: "8px 0 0" }}>{b.body}</p>
+                </div>
               ))}
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ROADMAP — dark clinical */}
-      <section className="division-section-pad" style={{ background: "#0c1717", color: "#fff" }}>
-        <div className="frame">
-          <Reveal stagger={0.08}>
-            <div className="div-grid-2" style={{ gap: 72 }}>
-              <div data-reveal>
-                <p
-                  style={{
-                    fontSize: 13,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "#6fc4c5",
-                    fontWeight: 600,
-                    marginBottom: 20,
-                  }}
-                >
-                  Development Roadmap
-                </p>
-                <h2 className="div-h2" style={{ marginBottom: 20 }}>
-                  Launching when the foundations are ready — not before.
-                </h2>
-                <p style={{ fontSize: 16.5, lineHeight: 1.65, color: "rgba(255,255,255,0.65)", margin: 0 }}>
-                  Healthcare rewards patience and punishes shortcuts. Our roadmap
-                  prioritises licensing, quality systems, and distribution
-                  infrastructure ahead of any product announcement.
-                </p>
-              </div>
-              <div data-reveal>
-                {ROADMAP.map((r, i) => (
-                  <div
-                    key={r.phase}
-                    className="flex items-start"
-                    style={{
-                      gap: 24,
-                      paddingBlock: 26,
-                      borderTop: "1px solid rgba(255,255,255,0.14)",
-                      borderBottom: i === ROADMAP.length - 1 ? "1px solid rgba(255,255,255,0.14)" : undefined,
-                    }}
-                  >
-                    <span
-                      className="font-condensed shrink-0"
-                      style={{ fontSize: 15, letterSpacing: "0.08em", color: "#6fc4c5", width: 76, paddingTop: 3 }}
-                    >
-                      {r.phase}
-                    </span>
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ fontSize: 18, fontWeight: 600, margin: 0, marginBottom: 6 }}>{r.title}</h3>
-                      <span
-                        style={{
-                          fontSize: 12,
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          color: r.status === "In progress" ? "#6fc4c5" : "rgba(255,255,255,0.45)",
-                        }}
-                      >
-                        {r.status}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      {/* FORMULA */}
+      <section className="bg-white">
+        <div className="frame dsec">
+          <Reveal>
+            <p data-reveal className="dsec-eyebrow" style={{ color: ACCENT }}>What&apos;s inside</p>
+            <h2 data-reveal className="dsec-h2">A complete daily blend.</h2>
+            <p data-reveal className="dsec-lead">
+              Twelve essential vitamins and minerals, balanced into a single daily
+              tablet. Full quantities and directions are printed on every pack.
+            </p>
+            <div data-reveal className="pharma-formula">
+              {FORMULA.map((f) => (
+                <div key={f} className="pharma-formula-chip" style={{ borderColor: `${ACCENT}33` }}>
+                  <span style={{ width: 6, height: 6, borderRadius: 6, background: ACCENT, display: "inline-block", flexShrink: 0 }} />
+                  {f}
+                </div>
+              ))}
+            </div>
+            <p data-reveal style={{ fontSize: 13, color: "rgba(0,0,0,0.45)", marginTop: 22, maxWidth: 640, lineHeight: 1.5 }}>
+              Food supplement. Not a substitute for a varied, balanced diet and a
+              healthy lifestyle. Do not exceed the recommended daily dose. Consult a
+              physician before use if pregnant, nursing, or under medication.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* STANDARDS */}
+      <section className="bg-white">
+        <div className="frame dsec">
+          <Reveal stagger={0.06}>
+            <p data-reveal className="dsec-eyebrow" style={{ color: ACCENT }}>How we make it</p>
+            <h2 data-reveal className="dsec-h2">Standards before scale.</h2>
+            <div className="pharma-standards">
+              {STANDARDS.map((s) => (
+                <div key={s.title} data-reveal className="pharma-standard">
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#0a0a0c", margin: 0 }}>{s.title}</h3>
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "10px 0 0" }}>{s.body}</p>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="division-section-pad" style={{ background: CLINICAL }}>
+      {/* MORE COMING */}
+      <section className="dband" style={{ background: "#0e1f1f", marginBottom: 0 }}>
         <div className="frame">
-          <Reveal>
-            <div data-reveal style={{ textAlign: "center", maxWidth: 620, marginInline: "auto" }}>
-              <h2 className="div-h2" style={{ marginBottom: 18 }}>
-                Be the first to know.
-              </h2>
-              <p style={{ fontSize: 16.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", marginBottom: 36 }}>
-                For partnership enquiries, supplier discussions, or launch updates,
-                contact the group office and reference the Pharma division.
+          <div className="pharma-soon">
+            <div>
+              <p className="dsec-eyebrow" style={{ color: "#7fd4d5" }}>What&apos;s next</p>
+              <h2 className="dsec-h2" style={{ color: "#fff" }}>A growing range, built one careful product at a time.</h2>
+              <p className="dsec-lead" style={{ color: "rgba(255,255,255,0.65)" }}>
+                The multivitamin is just the start. We are building our healthcare
+                range deliberately — adding products only when we can stand behind
+                their quality completely. For partnership, distribution or stocking
+                enquiries, our team is one message away.
               </p>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center transition-transform hover:-translate-y-0.5"
-                style={{
-                  background: "#000",
-                  color: "#fff",
-                  borderRadius: 8,
-                  height: 50,
-                  paddingInline: 32,
-                  fontSize: 16,
-                  fontWeight: 600,
-                }}
-              >
-                Contact the group office
-              </Link>
             </div>
-          </Reveal>
+            <div className="pharma-soon-cta">
+              <a href={CONTACT.whatsappGeneral} target="_blank" rel="noopener noreferrer" className="pharma-btn-primary inline-flex items-center justify-center" style={{ background: ACCENT, width: "100%" }}>
+                Talk to our team
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
