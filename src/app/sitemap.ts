@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pharma",
     "/agriculture",
     "/careers",
+    "/investor",
+    "/annual-reports",
+    "/press-releases",
+    "/terms",
+    "/privacy",
   ];
 
   const now = new Date();

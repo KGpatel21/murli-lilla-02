@@ -101,7 +101,7 @@ const config: DivisionConfig = {
     description:
       "Reach out to discuss specific properties, development opportunities, or our rental management programme — we respond within one business day.",
     primaryLabel: "Contact real estate team",
-    primaryHref: "/#contact",
+    primaryHref: "/careers#enquiry",
     secondaryLabel: "Explore divisions",
     secondaryHref: "/#business",
   },

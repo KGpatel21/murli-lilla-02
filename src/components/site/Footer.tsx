@@ -17,7 +17,7 @@ const BUSINESS = [
 const COMPANY = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/#about" },
-  { label: "Investor relations", href: "/#investor" },
+  { label: "Investor relations", href: "/investor" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/careers#enquiry" },
 ];
@@ -159,8 +159,8 @@ export default function Footer() {
             © 2026 MurliLeela Private Limited. All rights reserved.
           </p>
           <div className="flex items-center" style={{ gap: 28, fontSize: 15, color: "rgba(255,255,255,0.6)" }}>
-            <Link href="#" className="footer-link" style={{ whiteSpace: "nowrap" }}>Terms of use</Link>
-            <Link href="#" className="footer-link" style={{ whiteSpace: "nowrap" }}>Privacy policy</Link>
+            <Link href="/terms" className="footer-link" style={{ whiteSpace: "nowrap" }}>Terms of use</Link>
+            <Link href="/privacy" className="footer-link" style={{ whiteSpace: "nowrap" }}>Privacy policy</Link>
           </div>
           <div className="flex items-center" style={{ gap: 26 }}>
             {SOCIALS.map((s) => (
@@ -238,8 +238,8 @@ export default function Footer() {
             © 2026 MurliLeela Private Limited. All rights reserved.
           </p>
           <div className="flex items-center justify-center" style={{ gap: 20, fontSize: 13, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>
-            <Link href="#" className="footer-link">Terms of use</Link>
-            <Link href="#" className="footer-link">Privacy policy</Link>
+            <Link href="/terms" className="footer-link">Terms of use</Link>
+            <Link href="/privacy" className="footer-link">Privacy policy</Link>
           </div>
         </div>
       </div>

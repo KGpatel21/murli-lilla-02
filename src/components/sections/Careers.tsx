@@ -4,10 +4,10 @@ import Image from "next/image";
 import Reveal from "@/components/anim/Reveal";
 
 const CARDS = [
-  { title: "Job Opportunities", img: "/figma/career-1.png" },
-  { title: "Job Value", img: "/figma/career-2.png" },
-  { title: "Life at MurliLeela", img: "/figma/career-3.png" },
-  { title: "Learn more", img: "/figma/career-4.png" },
+  { title: "Job Opportunities", img: "/figma/career-1.png", href: "/careers#enquiry" },
+  { title: "Job Value", img: "/figma/career-2.png", href: "/careers" },
+  { title: "Life at MurliLeela", img: "/figma/career-3.png", href: "/careers" },
+  { title: "Learn more", img: "/figma/career-4.png", href: "/careers#enquiry" },
 ];
 
 export default function Careers() {
@@ -69,7 +69,7 @@ export default function Careers() {
           {CARDS.map((c) => (
             <a
               key={c.title}
-              href="#"
+              href={c.href}
               data-reveal
               className="careers-card group relative block overflow-hidden"
             >

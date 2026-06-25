@@ -4,38 +4,113 @@ import { useState } from "react";
 import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
-const FIELD =
-  "career-field-light h-[52px] w-full rounded-[10px] border px-4 text-[16px] text-ink outline-none transition-all placeholder:text-black/35";
-const FIELD_STYLE = { borderColor: "rgba(0,0,0,0.14)", background: "#ffffff" } as const;
-const LABEL = { fontSize: 13, letterSpacing: "0.04em", color: "rgba(0,0,0,0.55)", fontWeight: 600 } as const;
+type FormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  area: string;
+  message: string;
+};
+
+type Errors = Partial<Record<keyof FormState, string>>;
+
+const EMPTY: FormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  area: "",
+  message: "",
+};
+
+const AREAS = [
+  "Petroleum & Bitumen Trading",
+  "Furniture & Export",
+  "Real Estate",
+  "Technology & AI",
+  "Education (Kidzys)",
+  "Pharma",
+  "Agriculture",
+  "Finance & Operations",
+  "Design & Marketing",
+  "Internship",
+];
+
+function validate(values: FormState): Errors {
+  const errors: Errors = {};
+  if (!values.firstName.trim()) errors.firstName = "Please enter your first name.";
+  if (!values.lastName.trim()) errors.lastName = "Please enter your last name.";
+  if (!values.email.trim()) {
+    errors.email = "Please enter your email address.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
+    errors.email = "Enter a valid email, e.g. you@example.com.";
+  }
+  if (values.phone.trim() && !/^[+\d][\d\s-]{7,15}$/.test(values.phone.trim())) {
+    errors.phone = "Enter a valid phone number.";
+  }
+  if (!values.area) errors.area = "Select an area of interest.";
+  return errors;
+}
 
 export default function CareerEnquiry() {
+  const [values, setValues] = useState<FormState>(EMPTY);
+  const [errors, setErrors] = useState<Errors>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
   const [submitted, setSubmitted] = useState(false);
 
+  const setField = (key: keyof FormState, value: string) => {
+    setValues((prev) => {
+      const next = { ...prev, [key]: value };
+      // Live re-validate a field that already has an error so it clears as they fix it
+      if (touched[key] || errors[key]) {
+        setErrors(validate(next));
+      }
+      return next;
+    });
+  };
+
+  const onBlur = (key: keyof FormState) => {
+    setTouched((prev) => ({ ...prev, [key]: true }));
+    setErrors(validate(values));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs = validate(values);
+    setErrors(errs);
+    setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      phone: true,
+      area: true,
+      message: true,
+    });
+    if (Object.keys(errs).length === 0) {
+      setSubmitted(true);
+    } else {
+      // focus the first invalid field
+      const first = Object.keys(errs)[0];
+      const el = document.querySelector<HTMLElement>(`[data-field="${first}"]`);
+      el?.focus();
+    }
+  };
+
+  const fieldClass = (key: keyof FormState) =>
+    `cf-input${errors[key] ? " cf-input-error" : ""}`;
+
   return (
-    <section
-      id="enquiry"
-      className="relative overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, #f6f1ea 0%, #f1ebe2 100%)",
-        paddingTop: 96,
-        paddingBottom: 104,
-      }}
-    >
+    <section id="enquiry" className="cf-section">
       {/* Soft brand accent glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute"
-        style={{ right: -180, top: -160, width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle, rgba(163,0,0,0.07), transparent 68%)" }}
-      />
+      <div aria-hidden className="cf-glow" />
+
       <div className="frame relative">
         <div className="career-enquiry-grid">
           {/* Left intro */}
           <Reveal>
             <div data-reveal>
-              <p style={{ fontSize: 13, letterSpacing: "0.18em", textTransform: "uppercase", color: "#a30000", fontWeight: 700, marginBottom: 16 }}>
-                Submit Your Interest
-              </p>
+              <p className="cf-eyebrow">Submit Your Interest</p>
               <h2 className="div-h2" style={{ marginBottom: 20, color: "#0a0a0c" }}>
                 Tell us about yourself.
               </h2>
@@ -44,88 +119,145 @@ export default function CareerEnquiry() {
                 a role, an internship, or a partnership, our team will get back to you.
               </p>
 
-              <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 14 }}>
-                <div className="flex items-center" style={{ gap: 12 }}>
-                  <span style={{ width: 36, height: 36, borderRadius: 8, background: "#fff", border: "1px solid rgba(0,0,0,0.08)", display: "grid", placeItems: "center", flexShrink: 0 }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a30000" strokeWidth="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6" strokeLinecap="round" strokeLinejoin="round"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+              <div className="cf-contacts">
+                <a href={`mailto:${CONTACT.email}`} className="cf-contact">
+                  <span className="cf-contact-ic">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a30000" strokeWidth="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
-                  <span style={{ fontSize: 15, color: "rgba(0,0,0,0.7)" }}>careers@murlileela.com</span>
-                </div>
-                <div className="flex items-center" style={{ gap: 12 }}>
-                  <span style={{ width: 36, height: 36, borderRadius: 8, background: "#fff", border: "1px solid rgba(0,0,0,0.08)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                  <span>{CONTACT.email}</span>
+                </a>
+                <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className="cf-contact">
+                  <span className="cf-contact-ic">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a30000" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
-                  <span style={{ fontSize: 15, color: "rgba(0,0,0,0.7)" }}>+91 14841 42299</span>
-                </div>
+                  <span>{CONTACT.phoneDisplay}</span>
+                </a>
               </div>
             </div>
           </Reveal>
 
           {/* Form card */}
           <Reveal stagger={0.05}>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-              data-reveal
-              className="career-form-card"
-            >
-              <div className="career-form grid">
-                <label className="block">
-                  <span className="mb-2.5 block" style={LABEL}>FIRST NAME</span>
-                  <input className={FIELD} style={FIELD_STYLE} placeholder="John" required />
-                </label>
-                <label className="block">
-                  <span className="mb-2.5 block" style={LABEL}>LAST NAME</span>
-                  <input className={FIELD} style={FIELD_STYLE} placeholder="Patel" required />
-                </label>
-                <label className="col-span-2 block">
-                  <span className="mb-2.5 block" style={LABEL}>EMAIL ADDRESS</span>
-                  <input type="email" className={FIELD} style={FIELD_STYLE} placeholder="you@email.com" required />
-                </label>
-                <label className="col-span-2 block">
-                  <span className="mb-2.5 block" style={LABEL}>AREA OF INTEREST</span>
-                  <select className={`${FIELD} appearance-none`} style={FIELD_STYLE} required defaultValue="">
-                    <option value="" disabled>Select an area</option>
-                    <option>Petroleum &amp; Bitumen Trading</option>
-                    <option>Furniture &amp; Export</option>
-                    <option>Real Estate</option>
-                    <option>Technology &amp; AI</option>
-                    <option>Education (Kidzys)</option>
-                    <option>Finance &amp; Operations</option>
-                    <option>Design &amp; Marketing</option>
-                    <option>Internship</option>
-                  </select>
-                </label>
-                <label className="col-span-2 block">
-                  <span className="mb-2.5 block" style={LABEL}>MESSAGE</span>
-                  <textarea
-                    rows={3}
-                    className="career-field-light w-full resize-none rounded-[10px] border px-4 py-3 text-[16px] text-ink outline-none transition-all placeholder:text-black/35"
-                    style={{ ...FIELD_STYLE, height: 96 }}
-                    placeholder="Tell us briefly about your background or interest..."
-                  />
-                </label>
-                <div className="col-span-2 mt-[4px] flex flex-wrap items-center" style={{ gap: 14 }}>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center transition-colors"
-                    style={{ minWidth: 170, height: 48, borderRadius: 8, fontSize: 16, fontWeight: 600, paddingInline: 24, background: "#a30000", color: "#fff" }}
-                  >
-                    {submitted ? "Thank you — we'll be in touch" : "Submit Interest"}
-                  </button>
-                  <a
-                    href={CONTACT.whatsappCareers}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center transition-colors hover:bg-black/[0.04]"
-                    style={{ minWidth: 150, height: 48, borderRadius: 8, border: "1px solid rgba(0,0,0,0.18)", fontSize: 16, paddingInline: 24, color: "#0a0a0c" }}
-                  >
+            <form onSubmit={handleSubmit} data-reveal className="career-form-card" noValidate>
+              {submitted ? (
+                <div className="cf-success" role="status">
+                  <div className="cf-success-ic">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a7f4b" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </div>
+                  <h3 style={{ fontSize: 22, fontWeight: 700, color: "#0a0a0c", margin: "16px 0 0" }}>Thank you!</h3>
+                  <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "rgba(0,0,0,0.6)", margin: "10px 0 0", maxWidth: 360 }}>
+                    We&apos;ve received your interest and our team will get back to you
+                    shortly. For anything urgent, message us on WhatsApp.
+                  </p>
+                  <a href={CONTACT.whatsappCareers} target="_blank" rel="noopener noreferrer" className="cf-btn-secondary" style={{ marginTop: 22, display: "inline-flex" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.5 11.5 0 0 0 3.7 19.1L3 22l3-.8A11.5 11.5 0 1 0 20.5 3.5ZM12 20.4a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2 .5.5-2-.2-.3A8.4 8.4 0 1 1 12 20.4Z" /></svg>
                     WhatsApp us
                   </a>
                 </div>
-              </div>
+              ) : (
+                <div className="career-form grid">
+                  <label className="cf-label-wrap">
+                    <span className="cf-label">First name</span>
+                    <input
+                      data-field="firstName"
+                      className={fieldClass("firstName")}
+                      placeholder="John"
+                      value={values.firstName}
+                      onChange={(e) => setField("firstName", e.target.value)}
+                      onBlur={() => onBlur("firstName")}
+                      aria-invalid={!!errors.firstName}
+                    />
+                    {errors.firstName && <span className="cf-error">{errors.firstName}</span>}
+                  </label>
+
+                  <label className="cf-label-wrap">
+                    <span className="cf-label">Last name</span>
+                    <input
+                      data-field="lastName"
+                      className={fieldClass("lastName")}
+                      placeholder="Patel"
+                      value={values.lastName}
+                      onChange={(e) => setField("lastName", e.target.value)}
+                      onBlur={() => onBlur("lastName")}
+                      aria-invalid={!!errors.lastName}
+                    />
+                    {errors.lastName && <span className="cf-error">{errors.lastName}</span>}
+                  </label>
+
+                  <label className="cf-label-wrap col-span-2">
+                    <span className="cf-label">Email address</span>
+                    <input
+                      data-field="email"
+                      type="email"
+                      className={fieldClass("email")}
+                      placeholder="you@email.com"
+                      value={values.email}
+                      onChange={(e) => setField("email", e.target.value)}
+                      onBlur={() => onBlur("email")}
+                      aria-invalid={!!errors.email}
+                    />
+                    {errors.email && <span className="cf-error">{errors.email}</span>}
+                  </label>
+
+                  <label className="cf-label-wrap col-span-2">
+                    <span className="cf-label">Phone <span className="cf-optional">(optional)</span></span>
+                    <input
+                      data-field="phone"
+                      type="tel"
+                      className={fieldClass("phone")}
+                      placeholder={CONTACT.phoneDisplay}
+                      value={values.phone}
+                      onChange={(e) => setField("phone", e.target.value)}
+                      onBlur={() => onBlur("phone")}
+                      aria-invalid={!!errors.phone}
+                    />
+                    {errors.phone && <span className="cf-error">{errors.phone}</span>}
+                  </label>
+
+                  <label className="cf-label-wrap col-span-2">
+                    <span className="cf-label">Area of interest</span>
+                    <div className="cf-select-wrap">
+                      <select
+                        data-field="area"
+                        className={`${fieldClass("area")} cf-select`}
+                        value={values.area}
+                        onChange={(e) => setField("area", e.target.value)}
+                        onBlur={() => onBlur("area")}
+                        aria-invalid={!!errors.area}
+                      >
+                        <option value="" disabled>Select an area</option>
+                        {AREAS.map((a) => (
+                          <option key={a} value={a}>{a}</option>
+                        ))}
+                      </select>
+                      <svg className="cf-select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    {errors.area && <span className="cf-error">{errors.area}</span>}
+                  </label>
+
+                  <label className="cf-label-wrap col-span-2">
+                    <span className="cf-label">Message <span className="cf-optional">(optional)</span></span>
+                    <textarea
+                      data-field="message"
+                      rows={3}
+                      className="cf-input cf-textarea"
+                      placeholder="Tell us briefly about your background or interest..."
+                      value={values.message}
+                      onChange={(e) => setField("message", e.target.value)}
+                    />
+                  </label>
+
+                  <div className="col-span-2 cf-actions">
+                    <button type="submit" className="cf-btn-primary">
+                      Submit Interest
+                    </button>
+                    <a href={CONTACT.whatsappCareers} target="_blank" rel="noopener noreferrer" className="cf-btn-secondary">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.5 11.5 0 0 0 3.7 19.1L3 22l3-.8A11.5 11.5 0 1 0 20.5 3.5ZM12 20.4a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2 .5.5-2-.2-.3A8.4 8.4 0 1 1 12 20.4Z" /></svg>
+                      WhatsApp us
+                    </a>
+                  </div>
+                </div>
+              )}
             </form>
           </Reveal>
         </div>

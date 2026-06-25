@@ -488,7 +488,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
                     style={{ gap: 18, marginTop: 44 }}
                   >
                     <Link
-                      href="/#contact"
+                      href="/careers#enquiry"
                       className="inline-flex items-center justify-center"
                       style={{
                         background: "#fff",
@@ -710,7 +710,7 @@ export default function DivisionPage({ config }: { config: DivisionConfig }) {
                 </div>
                 <div className="division-cta-btns">
                   <Link
-                    href={config.cta.primaryHref || "/#contact"}
+                    href={config.cta.primaryHref || "/careers#enquiry"}
                     className="inline-flex items-center justify-center"
                     style={{
                       background: config.accent,

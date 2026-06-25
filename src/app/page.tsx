@@ -43,7 +43,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }}
       />
-      <Header initialBg="#ffffff" position="fixed" />
+      <Header initialBg="#ffffff" position="absolute" />
       <main>
         <Hero />
         <About />

@@ -27,6 +27,9 @@ consistent, professional, high-resolution standard.
   not place anything important at the far left or far right edge.
 
   HERO RESOLUTION: 3840 × 2160 (16:9) minimum. Landscape.
+  NOTE: each business hero fills the ENTIRE screen (full viewport height) on the
+  live site — it is intentionally large/full-bleed, so a high-resolution 16:9
+  image is required for it to stay crisp on big monitors.
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION A — 8 BUSINESS HERO IMAGES (top banner of each division page)

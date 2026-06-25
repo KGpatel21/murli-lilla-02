@@ -47,11 +47,11 @@ const NAV: NavItem[] = [
   },
   {
     label: "Investor",
-    href: "/#investor",
+    href: "/investor",
     variant: "mini",
     items: [
-      { label: "Annual Reports", href: "/#investor", description: "Year-by-year financial summaries" },
-      { label: "Press Releases", href: "/#investor", description: "Latest announcements" },
+      { label: "Annual Reports", href: "/annual-reports", description: "Year-by-year growth and performance" },
+      { label: "Press Releases", href: "/press-releases", description: "Latest announcements" },
     ],
   },
   { label: "Careers", href: "/#careers" },
