@@ -23,7 +23,7 @@ export type HeroSlide = {
 
 const SLIDES: HeroSlide[] = [
   {
-    image: "/figma/hero/petro.jpg",
+    image: "/figma/hero-home/petro.jpg",
     eyebrow: "Pratik Petro · Energy & Bitumen",
     headline: "Energy That Moves\na Nation's Industry.",
     description:
@@ -32,7 +32,7 @@ const SLIDES: HeroSlide[] = [
     link: "/pratik-petro",
   },
   {
-    image: "/figma/hero/furniture.jpg",
+    image: "/figma/hero-home/furniture.jpg",
     eyebrow: "Furniture · Manufacturing & Export",
     headline: "Crafted in India,\nFurnishing the World.",
     description:
@@ -41,7 +41,7 @@ const SLIDES: HeroSlide[] = [
     link: "/furniture",
   },
   {
-    image: "/figma/hero/realestate.jpg",
+    image: "/figma/hero-home/realestate.jpg",
     eyebrow: "Real Estate · Development & Assets",
     headline: "Building Addresses\nof Lasting Value.",
     description:
@@ -50,7 +50,7 @@ const SLIDES: HeroSlide[] = [
     link: "/real-estate",
   },
   {
-    image: "/figma/hero/technology.jpg",
+    image: "/figma/hero-home/technology.jpg",
     eyebrow: "Technology · Enterprise Solutions",
     headline: "Enterprise Technology,\nEngineered with Discipline.",
     description:
@@ -59,7 +59,7 @@ const SLIDES: HeroSlide[] = [
     link: "/technology",
   },
   {
-    image: "/figma/hero/education.jpg",
+    image: "/figma/hero-home/education.jpg",
     eyebrow: "Education · Early Learning Network",
     headline: "Strong Foundations\nfor Young Learners.",
     description:
@@ -68,7 +68,7 @@ const SLIDES: HeroSlide[] = [
     link: "/education",
   },
   {
-    image: "/figma/hero/trust.jpg",
+    image: "/figma/hero-home/trust.jpg",
     eyebrow: "Trust & Charity · MurliLila Foundation",
     headline: "Business Gives the Means.\nCommunity Gives the Reason.",
     description:
@@ -77,7 +77,7 @@ const SLIDES: HeroSlide[] = [
     link: "/trust-charity",
   },
   {
-    image: "/figma/hero/pharma.jpg",
+    image: "/figma/hero-home/pharma.jpg",
     eyebrow: "Pharma · Healthcare Division",
     headline: "Healthcare, Held to\na Higher Standard.",
     description:
@@ -86,7 +86,7 @@ const SLIDES: HeroSlide[] = [
     link: "/pharma",
   },
   {
-    image: "/figma/hero/agriculture.jpg",
+    image: "/figma/hero-home/agriculture.jpg",
     eyebrow: "Agriculture · Farm to Market",
     headline: "Agriculture, Grown\nfor the Long Term.",
     description:
