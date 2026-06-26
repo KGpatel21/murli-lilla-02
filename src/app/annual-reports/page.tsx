@@ -97,7 +97,7 @@ export default function AnnualReportsPage() {
                 Our <strong>technology</strong> arm is building enterprise software,
                 AI and automation capabilities that increasingly support both clients
                 and our own group operations. In <strong>education</strong>, our
-                Kidzys early-learning franchise is preparing to open in Zundal,
+                Kidzee early-learning franchise is preparing to open in Zundal,
                 Ahmedabad. Our <strong>pharma</strong> division has introduced its
                 first product — a daily multivitamin — and our{" "}
                 <strong>agriculture</strong> initiative is in active planning, with a
@@ -117,7 +117,7 @@ export default function AnnualReportsPage() {
               <h2>Looking ahead</h2>
               <p>
                 The year ahead is about turning momentum into footprint — opening our
-                first Kidzys centre, growing our technology and pharma offerings, and
+                first Kidzee centre, growing our technology and pharma offerings, and
                 advancing our agriculture plans from blueprint to reality. As always,
                 we will grow at the pace that lets us do things <em>well</em>, not
                 merely fast. We are grateful to our customers, partners and team for

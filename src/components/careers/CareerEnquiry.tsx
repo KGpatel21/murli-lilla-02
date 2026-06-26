@@ -29,7 +29,7 @@ const AREAS = [
   "Furniture & Export",
   "Real Estate",
   "Technology & AI",
-  "Education (Kidzys)",
+  "Education (Kidzee)",
   "Pharma",
   "Agriculture",
   "Finance & Operations",

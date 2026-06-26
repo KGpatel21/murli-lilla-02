@@ -109,7 +109,7 @@ export default function Footer() {
           {/* Brand block */}
           <div style={{ maxWidth: 400 }}>
             <p style={{ fontWeight: 700, fontSize: 28, color: "#ffffff", lineHeight: 1.2, letterSpacing: "-0.02em", margin: 0, marginBottom: 18 }}>
-              MurliLila Private Limited
+              MurliLila<sup className="tm">™</sup> Private Limited
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,0.55)", margin: 0 }}>
               A diversified Indian enterprise with operations spanning petroleum,
@@ -156,7 +156,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="footer-bottom" style={{ paddingTop: 22, paddingBottom: 26 }}>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", margin: 0, whiteSpace: "nowrap" }}>
-            © 2026 MurliLila Private Limited. All rights reserved.
+            © 2026 MurliLila™ Private Limited. All rights reserved.
           </p>
           <div className="flex items-center" style={{ gap: 28, fontSize: 15, color: "rgba(255,255,255,0.6)" }}>
             <Link href="/terms" className="footer-link" style={{ whiteSpace: "nowrap" }}>Terms of use</Link>
@@ -179,7 +179,7 @@ export default function Footer() {
         {/* Brand block */}
         <div className="footer-mobile-brand">
           <p style={{ fontWeight: 700, fontSize: 22, color: "#ffffff", lineHeight: 1.2, letterSpacing: "-0.02em", margin: 0, marginBottom: 10 }}>
-            MurliLila Private Limited
+            MurliLila<sup className="tm">™</sup> Private Limited
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.5)", margin: 0 }}>
             A diversified Indian enterprise spanning petroleum, furniture, real estate, technology, education, and community development.
@@ -235,7 +235,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="footer-mobile-bottom">
           <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", margin: 0, textAlign: "center" }}>
-            © 2026 MurliLila Private Limited. All rights reserved.
+            © 2026 MurliLila™ Private Limited. All rights reserved.
           </p>
           <div className="flex items-center justify-center" style={{ gap: 20, fontSize: 13, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>
             <Link href="/terms" className="footer-link">Terms of use</Link>

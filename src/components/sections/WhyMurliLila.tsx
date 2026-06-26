@@ -93,7 +93,7 @@ export default function WhyMurliLila() {
                 <span className="why-eco-center">
                   <span className="why-eco-center-pulse" />
                   <span className="why-eco-center-text font-sans">
-                    MurliLila
+                    MurliLila<sup className="tm">™</sup>
                   </span>
                   <span className="why-eco-center-sub">One Group · Many Industries</span>
                 </span>

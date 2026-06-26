@@ -14,7 +14,7 @@ const FUTURE = [
   "Furniture manufacturing and international export",
   "Real estate development and asset management",
   "Technology, automation, and AI engineering",
-  "Early-childhood education (Kidzys ecosystem)",
+  "Early-childhood education (Kidzee ecosystem)",
   "Foundation and community development programmes",
 ];
 

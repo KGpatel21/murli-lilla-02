@@ -166,18 +166,31 @@ export default function Header({
       >
         <div
           className="header-bar relative mx-auto flex items-center"
-          style={{ height: 56, maxWidth: 1440 }}
+          style={{ height: 56, width: "100%" }}
         >
           {/* Logo */}
-          <Link href="/" aria-label="MurliLila home" className="flex items-center">
+          <Link href="/" aria-label="MurliLila home" className="flex items-start">
             <Image
               src="/figma/logo.png"
               alt="MurliLila"
-              width={118}
-              height={52}
+              width={284}
+              height={100}
               priority
-              style={{ width: 92, height: 40.5, objectFit: "cover" }}
+              style={{ height: 44, width: "auto", objectFit: "contain" }}
             />
+            <sup
+              aria-hidden
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                lineHeight: 1,
+                marginTop: 2,
+                marginLeft: 1,
+                color: onDark ? "rgba(255,255,255,0.85)" : "rgba(0,0,0,0.6)",
+              }}
+            >
+              ™
+            </sup>
           </Link>
 
           {/* Desktop nav */}
@@ -404,10 +417,9 @@ export default function Header({
               }}
             >
               <div
-                className="mx-auto"
+                className="header-bar"
                 style={{
-                  maxWidth: 1440,
-                  paddingInline: 120,
+                  width: "100%",
                   paddingTop: 32,
                   paddingBottom: 40,
                 }}
@@ -536,9 +548,9 @@ export default function Header({
             <Image
               src="/figma/logo.png"
               alt="MurliLila"
-              width={118}
-              height={52}
-              style={{ height: 40, width: "auto" }}
+              width={284}
+              height={100}
+              style={{ height: 40, width: "auto", objectFit: "contain" }}
             />
             <button
               aria-label="Close menu"

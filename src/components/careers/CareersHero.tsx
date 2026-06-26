@@ -34,7 +34,7 @@ export default function CareersHero() {
               fontWeight: 600,
             }}
           >
-            Careers at MurliLila
+            Careers at MurliLila<sup className="tm">™</sup>
           </p>
           <h1 data-reveal className="div-h1" style={{ color: "#fff", maxWidth: 780 }}>
             Build a career across industries that matter.

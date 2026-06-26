@@ -82,7 +82,7 @@ export default function About() {
                     Pratik Gaur
                   </p>
                   <p style={{ fontSize: 15, lineHeight: 1.5, color: "rgba(0,0,0,0.6)" }}>
-                    MurliLila Private Limited
+                    MurliLila<sup className="tm">™</sup> Private Limited
                   </p>
                   <a
                     href={CONTACT.linkedinCeo}

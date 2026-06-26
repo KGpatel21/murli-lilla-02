@@ -29,8 +29,8 @@ const RELEASES = [
   {
     tag: "Education",
     date: "Upcoming",
-    title: "Kidzys early-learning centre preparing to open in Zundal, Ahmedabad",
-    body: "MurliLila Education is bringing the Kidzys preschool experience to Zundal, Ahmedabad. Admissions enquiries are now open for our founding batch, offering families a safe, joyful and modern early-learning environment for young children.",
+    title: "Kidzee early-learning centre preparing to open in Zundal, Ahmedabad",
+    body: "MurliLila Education is bringing the Kidzee preschool experience to Zundal, Ahmedabad. Admissions enquiries are now open for our founding batch, offering families a safe, joyful and modern early-learning environment for young children.",
   },
   {
     tag: "Real Estate",
