@@ -7,12 +7,12 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Investor Relations | MurliLeela",
+  title: "Investor Relations | MurliLila",
   description:
-    "Investor relations at MurliLeela Private Limited — annual reports, press releases, and how to get in touch with our team about partnership and investment.",
+    "Investor relations at MurliLila Private Limited — annual reports, press releases, and how to get in touch with our team about partnership and investment.",
   alternates: { canonical: "https://murli-lila1.netlify.app/investor" },
   openGraph: {
-    title: "Investor Relations | MurliLeela",
+    title: "Investor Relations | MurliLila",
     description: "Annual reports, press releases and investor enquiries.",
     url: "https://murli-lila1.netlify.app/investor",
     type: "website",
@@ -42,7 +42,7 @@ export default function InvestorPage() {
       <PageHero
         eyebrow="Investor Relations"
         heading={<>Building lasting value, together.</>}
-        subheading="MurliLeela grows with discipline and a long-term view. Explore our reports and announcements, or reach out to discuss partnership and investment."
+        subheading="MurliLila grows with discipline and a long-term view. Explore our reports and announcements, or reach out to discuss partnership and investment."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Investor" },

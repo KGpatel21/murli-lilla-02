@@ -69,10 +69,10 @@ const SLIDES: HeroSlide[] = [
   },
   {
     image: "/figma/hero/trust.jpg",
-    eyebrow: "Trust & Charity · MurliLeela Foundation",
+    eyebrow: "Trust & Charity · MurliLila Foundation",
     headline: "Business Gives the Means.\nCommunity Gives the Reason.",
     description:
-      "The MurliLeela Foundation — structured initiatives in education access, community health, and rural livelihood.",
+      "The MurliLila Foundation — structured initiatives in education access, community health, and rural livelihood.",
     cta: "Know More",
     link: "/trust-charity",
   },

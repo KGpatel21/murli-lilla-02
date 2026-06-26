@@ -6,14 +6,14 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Annual Reports — Growth & Performance | MurliLeela",
+  title: "Annual Reports — Growth & Performance | MurliLila",
   description:
-    "An overview of MurliLeela Private Limited's growth, performance and direction across its diversified businesses — petroleum & bitumen, furniture export, real estate, technology, education, pharma and agriculture.",
+    "An overview of MurliLila Private Limited's growth, performance and direction across its diversified businesses — petroleum & bitumen, furniture export, real estate, technology, education, pharma and agriculture.",
   alternates: { canonical: "https://murli-lila1.netlify.app/annual-reports" },
   openGraph: {
-    title: "Annual Reports — Growth & Performance | MurliLeela",
+    title: "Annual Reports — Growth & Performance | MurliLila",
     description:
-      "An overview of MurliLeela's growth and direction across its diversified businesses.",
+      "An overview of MurliLila's growth and direction across its diversified businesses.",
     url: "https://murli-lila1.netlify.app/annual-reports",
     type: "website",
   },
@@ -34,7 +34,7 @@ export default function AnnualReportsPage() {
       <PageHero
         eyebrow="Investor · Annual Reports"
         heading={<>Growth, measured and deliberate.</>}
-        subheading="A clear view of how MurliLeela is performing, where it is investing, and the direction we are building toward across every division."
+        subheading="A clear view of how MurliLila is performing, where it is investing, and the direction we are building toward across every division."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Investor" },
@@ -62,7 +62,7 @@ export default function AnnualReportsPage() {
             <div data-reveal className="page-prose">
               <h2>A year of steady, intentional growth</h2>
               <p>
-                MurliLeela Private Limited continues to grow the way it always has —
+                MurliLila Private Limited continues to grow the way it always has —
                 steadily, deliberately, and with a long-term view. Rather than chasing
                 rapid expansion, we focus on entering each industry with discipline,
                 building strong foundations, and earning trust before we scale. That

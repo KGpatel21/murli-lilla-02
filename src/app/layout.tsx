@@ -20,14 +20,14 @@ const robotoCondensed = Roboto_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL("https://murli-lila1.netlify.app"),
   title: {
-    default: "MurliLeela Private Limited — Diversified Indian Enterprise",
-    template: "%s | MurliLeela",
+    default: "MurliLila Private Limited — Diversified Indian Enterprise",
+    template: "%s | MurliLila",
   },
   description:
-    "MurliLeela Private Limited is a diversified Indian enterprise based in Ahmedabad & Jodhpur, spanning bitumen & petroleum trading, premium furniture export, real estate, enterprise technology, early-childhood education, pharma, agriculture, and community trust initiatives.",
+    "MurliLila Private Limited is a diversified Indian enterprise based in Ahmedabad & Jodhpur, spanning bitumen & petroleum trading, premium furniture export, real estate, enterprise technology, early-childhood education, pharma, agriculture, and community trust initiatives.",
   keywords: [
-    "MurliLeela",
-    "MurliLeela Private Limited",
+    "MurliLila",
+    "MurliLila Private Limited",
     "diversified Indian enterprise",
     "Ahmedabad business group",
     "bitumen supplier India",
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     "real estate Rajasthan",
     "enterprise technology India",
   ],
-  authors: [{ name: "MurliLeela Private Limited" }],
+  authors: [{ name: "MurliLila Private Limited" }],
   alternates: { canonical: "https://murli-lila1.netlify.app/" },
   openGraph: {
     type: "website",
-    siteName: "MurliLeela Private Limited",
-    title: "MurliLeela Private Limited — Diversified Indian Enterprise",
+    siteName: "MurliLila Private Limited",
+    title: "MurliLila Private Limited — Diversified Indian Enterprise",
     description:
       "A diversified Indian enterprise spanning bitumen & petroleum, furniture export, real estate, technology, education, pharma, agriculture and community trust initiatives.",
     url: "https://murli-lila1.netlify.app/",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MurliLeela Private Limited — Diversified Indian Enterprise",
+    title: "MurliLila Private Limited — Diversified Indian Enterprise",
     description:
       "A diversified Indian enterprise spanning bitumen & petroleum, furniture export, real estate, technology, education, pharma, agriculture and community trust.",
   },

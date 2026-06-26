@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | MurliLeela",
+  title: "Terms of Use | MurliLila",
   description:
-    "The terms of use governing access to and use of the MurliLeela Private Limited website.",
+    "The terms of use governing access to and use of the MurliLila Private Limited website.",
   alternates: { canonical: "https://murli-lila1.netlify.app/terms" },
   robots: { index: true, follow: true },
 };
@@ -33,8 +33,8 @@ export default function TermsPage() {
           <Reveal>
             <div data-reveal className="page-prose">
               <p>
-                Welcome to the website of <strong>MurliLeela Private Limited</strong>{" "}
-                (&ldquo;MurliLeela&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+                Welcome to the website of <strong>MurliLila Private Limited</strong>{" "}
+                (&ldquo;MurliLila&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
                 &ldquo;our&rdquo;). These Terms of Use govern your access to and use of
                 this website. By accessing or using the site, you agree to be bound by
                 these terms. If you do not agree, please do not use the site.
@@ -42,11 +42,11 @@ export default function TermsPage() {
 
               <h2>1. Use of the website</h2>
               <p>
-                This website is provided for general information about MurliLeela and
+                This website is provided for general information about MurliLila and
                 its businesses. You may use it for lawful, personal and informational
                 purposes only. You agree not to misuse the site, attempt to gain
                 unauthorised access, disrupt its operation, or use it in any way that
-                could harm MurliLeela or any other party.
+                could harm MurliLila or any other party.
               </p>
 
               <h2>2. Information and content</h2>
@@ -64,7 +64,7 @@ export default function TermsPage() {
               <h2>3. Intellectual property</h2>
               <p>
                 All content on this website — including text, graphics, logos, images,
-                and design — is the property of MurliLeela or its licensors and is
+                and design — is the property of MurliLila or its licensors and is
                 protected by applicable intellectual property laws. You may not copy,
                 reproduce, distribute, or create derivative works from any part of this
                 site without our prior written permission.
@@ -80,7 +80,7 @@ export default function TermsPage() {
 
               <h2>5. Limitation of liability</h2>
               <p>
-                To the fullest extent permitted by law, MurliLeela shall not be liable
+                To the fullest extent permitted by law, MurliLila shall not be liable
                 for any direct, indirect, incidental or consequential damages arising
                 from your use of, or inability to use, this website or any information
                 contained on it.
@@ -101,7 +101,7 @@ export default function TermsPage() {
 
               <div className="page-note">
                 These terms are provided for general informational purposes and do not
-                constitute legal advice. MurliLeela Private Limited, {CONTACT.addressLine1},{" "}
+                constitute legal advice. MurliLila Private Limited, {CONTACT.addressLine1},{" "}
                 {CONTACT.addressCity}.
               </div>
             </div>

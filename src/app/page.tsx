@@ -3,14 +3,14 @@ import Footer from "@/components/site/Footer";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Verticals from "@/components/sections/Verticals";
-import WhyMurliLeela from "@/components/sections/WhyMurliLeela";
+import WhyMurliLila from "@/components/sections/WhyMurliLila";
 import Careers from "@/components/sections/Careers";
 import { CONTACT } from "@/lib/contact";
 
 const ORG_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "MurliLeela Private Limited",
+  name: "MurliLila Private Limited",
   url: "https://murli-lila1.netlify.app/",
   description:
     "A diversified Indian enterprise spanning bitumen & petroleum trading, furniture export, real estate, technology, education, pharma, agriculture and community trust initiatives.",
@@ -48,7 +48,7 @@ export default function Home() {
         <Hero />
         <About />
         <Verticals />
-        <WhyMurliLeela />
+        <WhyMurliLila />
         <Careers />
       </main>
       <Footer />

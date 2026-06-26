@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLeela",
+  title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLila",
   description:
-    "MurliLeela Pharma introduces its first product — a daily multivitamin tablet formulated for everyday wellness, energy and immunity. Quality-driven, made to high manufacturing standards for the Indian market.",
+    "MurliLila Pharma introduces its first product — a daily multivitamin tablet formulated for everyday wellness, energy and immunity. Quality-driven, made to high manufacturing standards for the Indian market.",
   keywords: [
     "multivitamin tablet India",
     "daily multivitamin supplement",
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "immunity multivitamin",
     "pharmaceutical products Ahmedabad",
     "health supplement manufacturer",
-    "MurliLeela pharma",
+    "MurliLila pharma",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/pharma" },
   openGraph: {
-    title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLeela",
+    title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLila",
     description:
       "Our first product: a daily multivitamin tablet for everyday wellness, energy and immunity.",
     url: "https://murli-lila1.netlify.app/pharma",
@@ -56,7 +56,7 @@ export default function PharmaPage() {
 
       <DivisionHero
         image="/figma/hero/pharma.jpg"
-        imageAlt="MurliLeela Pharma — clean pharmaceutical quality-control laboratory"
+        imageAlt="MurliLila Pharma — clean pharmaceutical quality-control laboratory"
         eyebrow="Pharma · Healthcare Division"
         heading={<>Healthcare, held to<br />a higher standard.</>}
         subheading="We are entering healthcare the way we enter everything — carefully. Our first product is a daily multivitamin built for everyday wellness."
@@ -94,7 +94,7 @@ export default function PharmaPage() {
             {/* Copy */}
             <Reveal stagger={0.08}>
               <div data-reveal>
-                <p className="dsec-eyebrow" style={{ color: ACCENT }}>MurliLeela Daily Multivitamin</p>
+                <p className="dsec-eyebrow" style={{ color: ACCENT }}>MurliLila Daily Multivitamin</p>
                 <h2 className="dsec-h2">One tablet a day, for the days that ask a lot of you.</h2>
                 <p className="dsec-lead" style={{ marginTop: 16 }}>
                   Modern life rarely leaves room for a perfectly balanced diet. Our
@@ -103,7 +103,7 @@ export default function PharmaPage() {
                   minerals to support your energy, immunity and overall wellbeing.
                 </p>
                 <p className="dsec-lead" style={{ marginTop: 14 }}>
-                  It is the first product from MurliLeela Pharma, and it reflects how
+                  It is the first product from MurliLila Pharma, and it reflects how
                   we intend to do healthcare: quality first, honest claims, and
                   nothing on the label we wouldn&apos;t give our own family.
                 </p>

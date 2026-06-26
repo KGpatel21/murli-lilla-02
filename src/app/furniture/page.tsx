@@ -8,9 +8,9 @@ import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title:
-    "Furniture Export India — Handcrafted Solid Wood Furniture | MurliLeela",
+    "Furniture Export India — Handcrafted Solid Wood Furniture | MurliLila",
   description:
-    "MurliLeela exports premium handcrafted Indian furniture — solid sheesham & teak sofas, beds, dining sets, wardrobes and accent pieces — to Canada, Europe, the US and across India. Crafted by India's finest artisans since 2014. Showroom coming soon in Ahmedabad.",
+    "MurliLila exports premium handcrafted Indian furniture — solid sheesham & teak sofas, beds, dining sets, wardrobes and accent pieces — to Canada, Europe, the US and across India. Crafted by India's finest artisans since 2014. Showroom coming soon in Ahmedabad.",
   keywords: [
     "furniture export India",
     "Indian furniture manufacturer",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/furniture" },
   openGraph: {
-    title: "Furniture Export India — Handcrafted Solid Wood Furniture | MurliLeela",
+    title: "Furniture Export India — Handcrafted Solid Wood Furniture | MurliLila",
     description:
       "Premium handcrafted Indian furniture exported worldwide since 2014. Showroom coming soon in Ahmedabad.",
     url: "https://murli-lila1.netlify.app/furniture",
@@ -154,7 +154,7 @@ export default function FurniturePage() {
         {/* ── CRAFTSMANSHIP ── */}
         <section className="furn2-craft-band">
           <div className="frame">
-            <p className="furn2-eyebrow" style={{ color: "#e7b3b3" }}>Why MurliLeela furniture</p>
+            <p className="furn2-eyebrow" style={{ color: "#e7b3b3" }}>Why MurliLila furniture</p>
             <h2 className="furn2-h2" style={{ color: "#fff" }}>Built to be kept, not replaced.</h2>
             <div className="furn2-craft-grid">
               {CRAFT.map((c) => (
@@ -212,7 +212,7 @@ export default function FurniturePage() {
           <div className="furn2-showroom">
             <div className="furn2-showroom-badge">Coming soon</div>
             <h2 style={{ fontSize: "clamp(24px, 3.4vw, 34px)", fontWeight: 800, color: "#0a0a0c", letterSpacing: "-0.02em", margin: "16px 0 0" }}>
-              A MurliLeela furniture showroom in Ahmedabad
+              A MurliLila furniture showroom in Ahmedabad
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(0,0,0,0.62)", margin: "14px 0 0", maxWidth: 640 }}>
               We&apos;re opening a dedicated experience space in Ahmedabad where you

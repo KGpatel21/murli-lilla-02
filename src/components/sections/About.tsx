@@ -62,11 +62,16 @@ export default function About() {
                 the ground we build on, to the homes we furnish, and the futures
                 we educate.
               </p>
+              <p className="about-quote-body about-quote-body-2">
+                We don&apos;t chase quick wins. We build businesses that last,
+                relationships that compound, and a reputation our partners can
+                stake their own on — across every sector we enter.
+              </p>
               <div className="about-quote-foot">
                 <div className="about-quote-img relative overflow-hidden">
                   <Image
                     src="/figma/founder.jpg"
-                    alt="MurliLeela leadership"
+                    alt="MurliLila leadership"
                     fill
                     sizes="220px"
                     className="object-cover object-top"
@@ -77,7 +82,7 @@ export default function About() {
                     Pratik Gaur
                   </p>
                   <p style={{ fontSize: 15, lineHeight: 1.5, color: "rgba(0,0,0,0.6)" }}>
-                    MurliLeela Private Limited
+                    MurliLila Private Limited
                   </p>
                   <a
                     href={CONTACT.linkedinCeo}
@@ -103,7 +108,7 @@ export default function About() {
               A Legacy of Diversified Excellence
             </h2>
             <p data-reveal className="about-intro mt-[24px]">
-              MurliLeela Private Limited is a forward-thinking Indian conglomerate
+              MurliLila Private Limited is a forward-thinking Indian conglomerate
               headquartered in Rajasthan, with operations spanning petroleum
               trading, premium furniture export, real estate, cutting-edge IT
               solutions, child education, and social welfare.

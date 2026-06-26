@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | MurliLeela",
+  title: "Privacy Policy | MurliLila",
   description:
-    "How MurliLeela Private Limited collects, uses and protects the personal information you share through our website.",
+    "How MurliLila Private Limited collects, uses and protects the personal information you share through our website.",
   alternates: { canonical: "https://murli-lila1.netlify.app/privacy" },
   robots: { index: true, follow: true },
 };
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <Reveal>
             <div data-reveal className="page-prose">
               <p>
-                <strong>MurliLeela Private Limited</strong> (&ldquo;MurliLeela&rdquo;,
+                <strong>MurliLila Private Limited</strong> (&ldquo;MurliLila&rdquo;,
                 &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) respects your
                 privacy and is committed to protecting the personal information you
                 share with us. This Privacy Policy explains what we collect, how we use
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
 
               <div className="page-note">
                 This policy is provided for general informational purposes and does not
-                constitute legal advice. MurliLeela Private Limited, {CONTACT.addressLine1},{" "}
+                constitute legal advice. MurliLila Private Limited, {CONTACT.addressLine1},{" "}
                 {CONTACT.addressCity}.
               </div>
             </div>

@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Education — Kidzys Preschool, Opening Soon in Zundal | MurliLeela",
+  title: "Education — Kidzys Preschool, Opening Soon in Zundal | MurliLila",
   description:
-    "MurliLeela Education brings the Kidzys early-learning experience to Zundal, Ahmedabad — a joyful, safe and modern preschool opening soon. Admissions enquiries now open. College & university programmes planned for the future.",
+    "MurliLila Education brings the Kidzys early-learning experience to Zundal, Ahmedabad — a joyful, safe and modern preschool opening soon. Admissions enquiries now open. College & university programmes planned for the future.",
   keywords: [
     "Kidzys preschool Zundal",
     "preschool Ahmedabad",
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     "kindergarten Zundal",
     "best preschool Ahmedabad admission",
     "nursery school Zundal",
-    "MurliLeela education",
+    "MurliLila education",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/education" },
   openGraph: {
-    title: "Education — Kidzys Preschool, Opening Soon in Zundal | MurliLeela",
+    title: "Education — Kidzys Preschool, Opening Soon in Zundal | MurliLila",
     description:
       "A joyful, safe and modern Kidzys preschool opening soon in Zundal, Ahmedabad. Admissions enquiries open.",
     url: "https://murli-lila1.netlify.app/education",
@@ -52,10 +52,10 @@ export default function EducationPage() {
 
       <DivisionHero
         image="/figma/hero/education.jpg"
-        imageAlt="MurliLeela Education — happy children at a modern preschool"
+        imageAlt="MurliLila Education — happy children at a modern preschool"
         eyebrow="Education · Kidzys Preschool"
         heading={<>Where little minds<br />begin big journeys.</>}
-        subheading="MurliLeela Education brings Kidzys — a joyful, modern early-learning experience — to Zundal, Ahmedabad. Opening soon, and now welcoming admission enquiries."
+        subheading="MurliLila Education brings Kidzys — a joyful, modern early-learning experience — to Zundal, Ahmedabad. Opening soon, and now welcoming admission enquiries."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Businesses", href: "/#business" },
@@ -188,7 +188,7 @@ export default function EducationPage() {
               <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.72)", margin: "14px 0 0", maxWidth: 680 }}>
                 Kidzys is our first step into education — but our ambition runs the
                 full length of a learning journey. Schools, colleges and a university
-                are part of the long-term MurliLeela Education vision. Great
+                are part of the long-term MurliLila Education vision. Great
                 institutions are built patiently, and we&apos;re building for
                 generations to come.
               </p>

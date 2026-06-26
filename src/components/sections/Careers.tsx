@@ -6,7 +6,7 @@ import Reveal from "@/components/anim/Reveal";
 const CARDS = [
   { title: "Job Opportunities", img: "/figma/career-1.jpg", href: "/careers#enquiry" },
   { title: "Job Value", img: "/figma/career-2.jpg", href: "/careers" },
-  { title: "Life at MurliLeela", img: "/figma/career-3.jpg", href: "/careers" },
+  { title: "Life at MurliLila", img: "/figma/career-3.jpg", href: "/careers" },
   { title: "Learn more", img: "/figma/career-4.jpg", href: "/careers#enquiry" },
 ];
 
@@ -49,7 +49,7 @@ export default function Careers() {
                   maxWidth: 640,
                 }}
               >
-                Discover your next professional chapter at MurliLeela. We bring
+                Discover your next professional chapter at MurliLila. We bring
                 together passionate minds across tech, trade, education, and
                 beyond to build solutions that matter.
               </p>

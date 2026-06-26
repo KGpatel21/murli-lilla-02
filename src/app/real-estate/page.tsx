@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DivisionPage, { type DivisionConfig } from "@/components/site/DivisionPage";
 
 export const metadata: Metadata = {
-  title: "Real Estate — Property Development & Land | MurliLeela",
+  title: "Real Estate — Property Development & Land | MurliLila",
   description:
-    "MurliLeela Real Estate handles residential and commercial property sales, acquisitions, land sourcing, and rental management across Jodhpur, Rajasthan and Ahmedabad, Gujarat. Property built on trust, valuation built on transparency, on a turnover-sharing model.",
+    "MurliLila Real Estate handles residential and commercial property sales, acquisitions, land sourcing, and rental management across Jodhpur, Rajasthan and Ahmedabad, Gujarat. Property built on trust, valuation built on transparency, on a turnover-sharing model.",
   keywords: [
     "real estate Jodhpur",
     "property dealer Rajasthan",
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "property rental management India",
     "real estate investment Rajasthan",
     "property acquisition Gujarat",
-    "MurliLeela real estate",
+    "MurliLila real estate",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/real-estate" },
   openGraph: {
-    title: "Real Estate — Property Development & Land | MurliLeela",
+    title: "Real Estate — Property Development & Land | MurliLila",
     description: "Residential & commercial property development and rental management across Rajasthan and Gujarat.",
     url: "https://murli-lila1.netlify.app/real-estate",
     type: "website",
@@ -31,7 +31,7 @@ const config: DivisionConfig = {
     "Properties built on trust, valuation built on transparency, partnerships built to last — across Jodhpur, Rajasthan, and growing.",
   heroIcon: "realestate",
   heroImage: "/figma/hero/realestate.jpg",
-  heroImageAlt: "MurliLeela Real Estate — premium waterfront residential and commercial towers at dusk",
+  heroImageAlt: "MurliLila Real Estate — premium waterfront residential and commercial towers at dusk",
   heroEyebrow: "Real Estate · Property & Land",
   headerBg: "#0c1420",
   accent: "#374e6b",

@@ -70,7 +70,7 @@ export default function Contact() {
                   letterSpacing: "0.01em",
                 }}
               >
-                Ready to Partner with MurliLeela?
+                Ready to Partner with MurliLila?
               </h2>
               <p
                 data-reveal

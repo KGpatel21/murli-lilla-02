@@ -6,14 +6,14 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Press Releases — News & Announcements | MurliLeela",
+  title: "Press Releases — News & Announcements | MurliLila",
   description:
-    "The latest news and announcements from MurliLeela Private Limited — new divisions, product launches, and milestones across petroleum, furniture, real estate, technology, education, pharma and agriculture.",
+    "The latest news and announcements from MurliLila Private Limited — new divisions, product launches, and milestones across petroleum, furniture, real estate, technology, education, pharma and agriculture.",
   alternates: { canonical: "https://murli-lila1.netlify.app/press-releases" },
   openGraph: {
-    title: "Press Releases — News & Announcements | MurliLeela",
+    title: "Press Releases — News & Announcements | MurliLila",
     description:
-      "The latest news and announcements from across MurliLeela's businesses.",
+      "The latest news and announcements from across MurliLila's businesses.",
     url: "https://murli-lila1.netlify.app/press-releases",
     type: "website",
   },
@@ -23,14 +23,14 @@ const RELEASES = [
   {
     tag: "Pharma",
     date: "Recent",
-    title: "MurliLeela Pharma introduces its first product: a daily multivitamin",
+    title: "MurliLila Pharma introduces its first product: a daily multivitamin",
     body: "Our healthcare division has launched its first product — a thoughtfully balanced daily multivitamin designed to support everyday energy, immunity and overall wellbeing. It marks the careful first step of a quality-first healthcare division, with more products to follow as we expand the range deliberately.",
   },
   {
     tag: "Education",
     date: "Upcoming",
     title: "Kidzys early-learning centre preparing to open in Zundal, Ahmedabad",
-    body: "MurliLeela Education is bringing the Kidzys preschool experience to Zundal, Ahmedabad. Admissions enquiries are now open for our founding batch, offering families a safe, joyful and modern early-learning environment for young children.",
+    body: "MurliLila Education is bringing the Kidzys preschool experience to Zundal, Ahmedabad. Admissions enquiries are now open for our founding batch, offering families a safe, joyful and modern early-learning environment for young children.",
   },
   {
     tag: "Real Estate",
@@ -41,14 +41,14 @@ const RELEASES = [
   {
     tag: "Agriculture",
     date: "In planning",
-    title: "MurliLeela announces plans for a sustainable agriculture division",
+    title: "MurliLila announces plans for a sustainable agriculture division",
     body: "We are in the planning stages of a new agriculture division focused on sustainable cultivation, fair producer economics and transparent farm-to-market supply chains. We are building it deliberately, and we look forward to sharing more as the vision takes shape.",
   },
   {
     tag: "Technology",
     date: "Ongoing",
     title: "Technology division expands AI and automation capabilities",
-    body: "MurliLeela Technology continues to grow its expertise across custom software, AI and GenAI, intelligent automation and full-stack development — building digital systems for clients and strengthening the group's own operations.",
+    body: "MurliLila Technology continues to grow its expertise across custom software, AI and GenAI, intelligent automation and full-stack development — building digital systems for clients and strengthening the group's own operations.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function PressReleasesPage() {
       <PageHero
         eyebrow="Investor · Press Releases"
         heading={<>News from across the group.</>}
-        subheading="Announcements, launches and milestones as MurliLeela continues to grow across its diversified businesses."
+        subheading="Announcements, launches and milestones as MurliLila continues to grow across its diversified businesses."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Investor" },

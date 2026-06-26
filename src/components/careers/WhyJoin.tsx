@@ -42,7 +42,7 @@ export default function WhyJoin() {
               marginBottom: 16,
             }}
           >
-            Why Join MurliLeela
+            Why Join MurliLila
           </p>
           <h2 data-reveal className="div-h2" style={{ color: "#000", maxWidth: 640, marginBottom: 56 }}>
             A workplace built for people who want to grow.

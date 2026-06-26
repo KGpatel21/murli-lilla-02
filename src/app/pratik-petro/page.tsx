@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLeela",
+  title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLila",
   description:
-    "MurliLeela's Pratik Petro supplies and trades high-grade bitumen, damar (dammar), VG-10/VG-30/VG-40 grades, bitumen emulsion, and petroleum products for road construction, waterproofing and industrial use across India. Reliable bulk bitumen supplier and dammar trader.",
+    "MurliLila's Pratik Petro supplies and trades high-grade bitumen, damar (dammar), VG-10/VG-30/VG-40 grades, bitumen emulsion, and petroleum products for road construction, waterproofing and industrial use across India. Reliable bulk bitumen supplier and dammar trader.",
   keywords: [
     "bitumen supplier India",
     "bitumen trader",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/pratik-petro" },
   openGraph: {
-    title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLeela",
+    title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLila",
     description: "Bitumen, damar (dammar) and petroleum products trading & supply across India.",
     url: "https://murli-lila1.netlify.app/pratik-petro",
     type: "website",
@@ -104,7 +104,7 @@ export default function PratikPetroPage() {
               A trusted name in bitumen and petroleum trading.
             </h2>
             <p data-reveal className="dsec-lead">
-              Pratik Petro, MurliLeela&apos;s petroleum division, specialises in the
+              Pratik Petro, MurliLila&apos;s petroleum division, specialises in the
               trading, supply and distribution of high-grade bitumen, damar (dammar)
               and petroleum products for road construction, waterproofing and
               industrial applications across India. From VG-grade paving bitumen to

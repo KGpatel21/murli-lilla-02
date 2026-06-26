@@ -136,7 +136,7 @@ export default function Header({
   };
   const scheduleClose = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    closeTimerRef.current = setTimeout(() => setOpenItem(null), 180);
+    closeTimerRef.current = setTimeout(() => setOpenItem(null), 280);
   };
 
   return (
@@ -169,10 +169,10 @@ export default function Header({
           style={{ height: 56, maxWidth: 1440 }}
         >
           {/* Logo */}
-          <Link href="/" aria-label="MurliLeela home" className="flex items-center">
+          <Link href="/" aria-label="MurliLila home" className="flex items-center">
             <Image
               src="/figma/logo.png"
-              alt="MurliLeela"
+              alt="MurliLila"
               width={118}
               height={52}
               priority
@@ -249,13 +249,30 @@ export default function Header({
                     )}
                   </Link>
 
+                  {/* Invisible hover bridge — spans the gap between the nav
+                      item and the dropdown so the cursor never leaves the hover
+                      zone while moving down to the menu. */}
+                  {hasMenu && isOpen && (
+                    <div
+                      aria-hidden
+                      style={{
+                        position: "absolute",
+                        top: "100%",
+                        left: -16,
+                        right: -16,
+                        height: 22,
+                        background: "transparent",
+                      }}
+                    />
+                  )}
+
                   {/* Mini dropdown (About Us, Investor) */}
                   {hasMenu && item.variant === "mini" && (
                     <div
                       role="menu"
                       className="absolute"
                       style={{
-                        top: "calc(100% + 18px)",
+                        top: "calc(100% + 14px)",
                         left: -16,
                         minWidth: 320,
                         background: "#fff",
@@ -518,7 +535,7 @@ export default function Header({
           >
             <Image
               src="/figma/logo.png"
-              alt="MurliLeela"
+              alt="MurliLila"
               width={118}
               height={52}
               style={{ height: 40, width: "auto" }}

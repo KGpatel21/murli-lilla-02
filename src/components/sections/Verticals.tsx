@@ -50,7 +50,7 @@ const VERTICALS: Vertical[] = [
   {
     n: "07",
     title: "Trust & Charity",
-    body: "The MurliLeela Foundation — structured initiatives in education access, community health, and rural livelihood.",
+    body: "The MurliLila Foundation — structured initiatives in education access, community health, and rural livelihood.",
     href: "/trust-charity",
   },
   {
@@ -197,7 +197,7 @@ export default function Verticals() {
                 className="mt-[14px]"
                 style={{ fontSize: 14, lineHeight: 1.55, letterSpacing: "-0.01em", color: "rgba(255,255,255,0.7)" }}
               >
-                New industries are on our horizon. As MurliLeela grows, so does
+                New industries are on our horizon. As MurliLila grows, so does
                 the breadth of what we build — guided by the same trust and
                 long-term thinking.
               </p>

@@ -1,10 +1,10 @@
 // ──────────────────────────────────────────────────────────────────────────
-// Central source of truth for all MurliLeela contact + brand info.
+// Central source of truth for all MurliLila contact + brand info.
 // Update here once; Footer, Contact, Careers, and metadata all read from this.
 // ──────────────────────────────────────────────────────────────────────────
 
 export const CONTACT = {
-  company: "MurliLeela Private Limited",
+  company: "MurliLila Private Limited",
 
   // Phone — used for tel: and WhatsApp. Digits only for wa.me / tel href.
   phoneDisplay: "+91 97844 87346",
@@ -33,14 +33,14 @@ export const CONTACT = {
   // Convenience pre-filled WhatsApp links
   whatsappGeneral:
     "https://wa.me/919784487346?text=" +
-    encodeURIComponent("Hi MurliLeela, I'd like to know more about your services."),
+    encodeURIComponent("Hi MurliLila, I'd like to know more about your services."),
   whatsappFurniture:
     "https://wa.me/919784487346?text=" +
-    encodeURIComponent("Hi MurliLeela, I'm interested in your furniture collection."),
+    encodeURIComponent("Hi MurliLila, I'm interested in your furniture collection."),
   whatsappRealEstate:
     "https://wa.me/919784487346?text=" +
-    encodeURIComponent("Hi MurliLeela, I'd like to discuss a real estate enquiry."),
+    encodeURIComponent("Hi MurliLila, I'd like to discuss a real estate enquiry."),
   whatsappCareers:
     "https://wa.me/919784487346?text=" +
-    encodeURIComponent("Hi MurliLeela, I'd like to enquire about career opportunities."),
+    encodeURIComponent("Hi MurliLila, I'd like to enquire about career opportunities."),
 } as const;

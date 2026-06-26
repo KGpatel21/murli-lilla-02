@@ -34,7 +34,7 @@ export default function CareersHero() {
               fontWeight: 600,
             }}
           >
-            Careers at MurliLeela
+            Careers at MurliLila
           </p>
           <h1 data-reveal className="div-h1" style={{ color: "#fff", maxWidth: 780 }}>
             Build a career across industries that matter.
@@ -50,7 +50,7 @@ export default function CareersHero() {
             }}
           >
             From petroleum and furniture export to technology, education, and
-            community development — MurliLeela offers the rare chance to grow
+            community development — MurliLila offers the rare chance to grow
             across a genuinely diversified enterprise.
           </p>
           <div data-reveal style={{ marginTop: 36 }}>

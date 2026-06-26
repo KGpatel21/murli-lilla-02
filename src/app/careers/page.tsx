@@ -8,9 +8,9 @@ import GrowthOpportunities from "@/components/careers/GrowthOpportunities";
 import CareerEnquiry from "@/components/careers/CareerEnquiry";
 
 export const metadata: Metadata = {
-  title: "Careers — Build Your Future with MurliLeela",
+  title: "Careers — Build Your Future with MurliLila",
   description:
-    "Join MurliLeela Private Limited, a diversified Indian enterprise spanning petroleum, furniture export, real estate, technology, education, and community development. Explore careers and submit your interest.",
+    "Join MurliLila Private Limited, a diversified Indian enterprise spanning petroleum, furniture export, real estate, technology, education, and community development. Explore careers and submit your interest.",
 };
 
 export default function CareersPage() {

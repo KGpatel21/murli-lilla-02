@@ -6,9 +6,9 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Agriculture — A Farm-to-Market Vision in the Making | MurliLeela",
+  title: "Agriculture — A Farm-to-Market Vision in the Making | MurliLila",
   description:
-    "MurliLeela Agriculture is an upcoming division focused on sustainable farm-to-market supply chains, modern farming practices and fair producer economics across India. Currently in planning — building deliberately.",
+    "MurliLila Agriculture is an upcoming division focused on sustainable farm-to-market supply chains, modern farming practices and fair producer economics across India. Currently in planning — building deliberately.",
   keywords: [
     "agriculture company India",
     "farm to market supply chain",
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "sustainable farming India",
     "agribusiness Gujarat",
     "agricultural supply chain",
-    "MurliLeela agriculture",
+    "MurliLila agriculture",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/agriculture" },
   openGraph: {
-    title: "Agriculture — A Farm-to-Market Vision in the Making | MurliLeela",
+    title: "Agriculture — A Farm-to-Market Vision in the Making | MurliLila",
     description:
       "An upcoming division built on sustainable cultivation and fair producer economics. In planning.",
     url: "https://murli-lila1.netlify.app/agriculture",
@@ -51,10 +51,10 @@ export default function AgriculturePage() {
 
       <DivisionHero
         image="/figma/hero/agriculture.jpg"
-        imageAlt="MurliLeela Agriculture — fertile farmland at sunrise"
+        imageAlt="MurliLila Agriculture — fertile farmland at sunrise"
         eyebrow="Agriculture · In Development"
         heading={<>Growing something<br />worth waiting for.</>}
-        subheading="Agriculture is the next chapter for MurliLeela. We are still in the planning stage — and we would rather build it right than build it fast."
+        subheading="Agriculture is the next chapter for MurliLila. We are still in the planning stage — and we would rather build it right than build it fast."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Businesses", href: "/#business" },
@@ -75,7 +75,7 @@ export default function AgriculturePage() {
               We don&apos;t have fields in the ground yet. We have something better at this stage — a clear intention.
             </h2>
             <p data-reveal className="dsec-lead">
-              MurliLeela has always grown by entering industries with patience and
+              MurliLila has always grown by entering industries with patience and
               purpose. Agriculture is no different. Right now this division is a
               vision in formation: we are studying the landscape, shaping the model,
               and deciding exactly where we can add real, lasting value. When we

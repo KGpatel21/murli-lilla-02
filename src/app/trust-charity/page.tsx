@@ -6,11 +6,11 @@ import Reveal from "@/components/anim/Reveal";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Trust & Charity — The MurliLeela Foundation | MurliLeela",
+  title: "Trust & Charity — The MurliLila Foundation | MurliLila",
   description:
-    "The MurliLeela Foundation is the social conscience of the group — working with dignity and purpose across education, healthcare and rural livelihood in Gujarat and Rajasthan. Business gives the means; community gives the reason.",
+    "The MurliLila Foundation is the social conscience of the group — working with dignity and purpose across education, healthcare and rural livelihood in Gujarat and Rajasthan. Business gives the means; community gives the reason.",
   keywords: [
-    "MurliLeela Foundation",
+    "MurliLila Foundation",
     "charitable trust Gujarat",
     "CSR initiatives Ahmedabad",
     "education access NGO India",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/trust-charity" },
   openGraph: {
-    title: "Trust & Charity — The MurliLeela Foundation | MurliLeela",
+    title: "Trust & Charity — The MurliLila Foundation | MurliLila",
     description:
       "Working with dignity across education, healthcare and rural livelihood. Business gives the means; community gives the reason.",
     url: "https://murli-lila1.netlify.app/trust-charity",
@@ -62,10 +62,10 @@ export default function TrustCharityPage() {
 
       <DivisionHero
         image="/figma/hero/trust.jpg"
-        imageAlt="The MurliLeela Foundation — community outreach in rural India"
-        eyebrow="Trust & Charity · MurliLeela Foundation"
+        imageAlt="The MurliLila Foundation — community outreach in rural India"
+        eyebrow="Trust & Charity · MurliLila Foundation"
         heading={<>Business gives the means.<br />Community gives the reason.</>}
-        subheading="The MurliLeela Foundation is where the group's success comes full circle — a steady commitment to education, health and dignity for the communities that make everything possible."
+        subheading="The MurliLila Foundation is where the group's success comes full circle — a steady commitment to education, health and dignity for the communities that make everything possible."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Businesses", href: "/#business" },
@@ -85,8 +85,8 @@ export default function TrustCharityPage() {
                   Prosperity means little if it isn&apos;t shared.
                 </h2>
                 <p className="dsec-lead">
-                  Every enterprise MurliLeela builds is, in the end, about people —
-                  and the MurliLeela Foundation is how we honour that. We believe a
+                  Every enterprise MurliLila builds is, in the end, about people —
+                  and the MurliLila Foundation is how we honour that. We believe a
                   business is only as healthy as the community around it, and that
                   those who have the means carry a quiet duty to lift others. Our work
                   is not seasonal generosity; it is a long, patient commitment to
@@ -177,7 +177,7 @@ export default function TrustCharityPage() {
                 remember that no one succeeds alone.&rdquo;
               </p>
               <footer style={{ marginTop: 22, fontSize: 15, color: "#cda86f", fontWeight: 600, letterSpacing: "0.04em" }}>
-                — The MurliLeela Foundation
+                — The MurliLila Foundation
               </footer>
             </blockquote>
           </Reveal>
@@ -200,7 +200,7 @@ export default function TrustCharityPage() {
               <a href={CONTACT.whatsappGeneral} target="_blank" rel="noopener noreferrer" className="trust-btn-primary inline-flex items-center justify-center" style={{ background: ACCENT }}>
                 Get in touch
               </a>
-              <a href={`mailto:${CONTACT.email}?subject=MurliLeela%20Foundation`} className="trust-btn-secondary inline-flex items-center justify-center">
+              <a href={`mailto:${CONTACT.email}?subject=MurliLila%20Foundation`} className="trust-btn-secondary inline-flex items-center justify-center">
                 Email the Foundation
               </a>
             </div>

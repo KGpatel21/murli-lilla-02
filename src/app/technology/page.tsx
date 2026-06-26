@@ -7,9 +7,9 @@ import CountUp from "@/components/anim/CountUp";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Technology — Software, AI, Automation & Full-Stack | MurliLeela",
+  title: "Technology — Software, AI, Automation & Full-Stack | MurliLila",
   description:
-    "MurliLeela Technology builds custom software, AI & GenAI solutions, intelligent automation, full-stack web & mobile apps, and cloud platforms. Java, Spring Boot, React, Node, Python, and AI engineering for businesses across India and worldwide.",
+    "MurliLila Technology builds custom software, AI & GenAI solutions, intelligent automation, full-stack web & mobile apps, and cloud platforms. Java, Spring Boot, React, Node, Python, and AI engineering for businesses across India and worldwide.",
   keywords: [
     "custom software development India",
     "AI development company India",
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "Java Spring Boot development",
     "React Node development Ahmedabad",
     "enterprise software partner",
-    "MurliLeela technology",
+    "MurliLila technology",
   ],
   alternates: { canonical: "https://murli-lila1.netlify.app/technology" },
   openGraph: {
-    title: "Technology — Software, AI, Automation & Full-Stack | MurliLeela",
+    title: "Technology — Software, AI, Automation & Full-Stack | MurliLila",
     description:
       "Custom software, AI & GenAI, automation, full-stack and cloud — engineered with discipline.",
     url: "https://murli-lila1.netlify.app/technology",
@@ -112,10 +112,10 @@ export default function TechnologyPage() {
 
       <DivisionHero
         image="/figma/hero/technology.jpg"
-        imageAlt="MurliLeela Technology — software engineers collaborating in a modern office"
+        imageAlt="MurliLila Technology — software engineers collaborating in a modern office"
         eyebrow="Technology · Software, AI & Automation"
         heading={<>Enterprise technology,<br />engineered with discipline.</>}
-        subheading="Custom software, AI & GenAI, automation, full-stack and cloud — built with the same rigour MurliLeela applies across its industrial operations."
+        subheading="Custom software, AI & GenAI, automation, full-stack and cloud — built with the same rigour MurliLila applies across its industrial operations."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Businesses", href: "/#business" },
@@ -151,7 +151,7 @@ export default function TechnologyPage() {
               If it can be built with software, we can build it.
             </h2>
             <p data-reveal className="dsec-lead">
-              MurliLeela Technology is a full-spectrum engineering team. We design and
+              MurliLila Technology is a full-spectrum engineering team. We design and
               operate the digital systems that run modern businesses — and with AI now
               woven through everything we do, the range of what we can deliver is
               wider than ever. From a single automation to a complete platform, we
