@@ -319,9 +319,10 @@ export default function Header({
 
             <Link
               href="/careers#enquiry"
-              className="enquire-btn hidden items-center justify-center text-white sm:inline-flex"
+              className="enquire-btn hidden items-center justify-center sm:inline-flex"
+              data-ondark={onDark ? "true" : "false"}
               style={{
-                transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}, background-color 200ms ${EASE}`,
+                transition: `transform 200ms ${EASE}, box-shadow 200ms ${EASE}, background-color 200ms ${EASE}, color 200ms ${EASE}`,
                 willChange: "transform",
               }}
               onMouseEnter={(e) => {

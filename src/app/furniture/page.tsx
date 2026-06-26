@@ -35,11 +35,11 @@ const ACCENT = "#a30000";
 
 /* Category tiles — link to the showcase filter below */
 const CATEGORIES = [
-  { name: "Sofas & Seating", img: "/figma/354/sofa.png", note: "Living room" },
-  { name: "Beds & Wardrobes", img: "/figma/354/bed.png", note: "Bedroom" },
+  { name: "Sofas & Seating", img: "/figma/354/sofa.jpg", note: "Living room" },
+  { name: "Beds & Wardrobes", img: "/figma/354/bed.jpg", note: "Bedroom" },
   { name: "Dining Sets", img: "/figma/354/dining-table.png", note: "Dining" },
-  { name: "Accent Chairs", img: "/figma/354/chair.png", note: "Living room" },
-  { name: "Storage & Wardrobes", img: "/figma/354/wardrobe.png", note: "Bedroom" },
+  { name: "Accent Chairs", img: "/figma/354/chair.jpg", note: "Living room" },
+  { name: "Storage & Wardrobes", img: "/figma/354/wardrobe.jpg", note: "Bedroom" },
   { name: "Dining Chairs", img: "/figma/354/dining-chairs.png", note: "Dining" },
 ];
 

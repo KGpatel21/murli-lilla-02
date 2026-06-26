@@ -12,10 +12,10 @@ export type Product = {
 };
 
 const PRODUCTS: Product[] = [
-  { title: "Sofa Set", subtitle: "Living Room Collection", img: "/figma/354/sofa.png", category: "Living Room" },
-  { title: "Accent Chair", subtitle: "Living Room Collection", img: "/figma/354/chair.png", category: "Living Room" },
-  { title: "King Bed Frame", subtitle: "Bedroom Collection", img: "/figma/354/bed.png", category: "Bedroom" },
-  { title: "Wardrobe", subtitle: "Bedroom Collection", img: "/figma/354/wardrobe.png", category: "Bedroom" },
+  { title: "Sofa Set", subtitle: "Living Room Collection", img: "/figma/354/sofa.jpg", category: "Living Room" },
+  { title: "Accent Chair", subtitle: "Living Room Collection", img: "/figma/354/chair.jpg", category: "Living Room" },
+  { title: "King Bed Frame", subtitle: "Bedroom Collection", img: "/figma/354/bed.jpg", category: "Bedroom" },
+  { title: "Wardrobe", subtitle: "Bedroom Collection", img: "/figma/354/wardrobe.jpg", category: "Bedroom" },
   { title: "Dining Table", subtitle: "Dining Collection", img: "/figma/354/dining-table.png", category: "Dining" },
   { title: "Dining Chair Set", subtitle: "Dining Collection", img: "/figma/354/dining-chairs.png", category: "Dining" },
 ];

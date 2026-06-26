@@ -11,6 +11,34 @@ shots, careers cards, pharma product, trust images) should be regenerated to a
 consistent, professional, high-resolution standard.
 
 ───────────────────────────────────────────────────────────────────────────────
+  ★★★ MOST IMPORTANT RULE — CENTER THE MAIN SUBJECT ★★★
+───────────────────────────────────────────────────────────────────────────────
+  The website crops every hero from the CENTER. On a big monitor you see the
+  full wide 16:9 image; on a phone the sides get cut off and ONLY the middle
+  vertical strip remains. So:
+
+  >> The single most important / meaningful subject of each image MUST sit in the
+     DEAD CENTER of the frame. <<
+
+  If the subject is centered, the image stays meaningful at every screen size —
+  from a huge desktop down to a narrow phone. If the subject drifts to a side,
+  then on mobile the visitor will just see empty wall / sky / floor in the middle
+  and the point of the photo is lost. That is exactly what we must avoid.
+
+  Example of the problem to AVOID: a lab photo where the two scientists are on
+  the right and the left half is an empty wall → on mobile the crop shows mostly
+  empty wall. Instead, put the scientists in the CENTER so the phone crop shows
+  them.
+
+  Practical rule: keep the hero subject inside the centre ~50% of the width, well
+  away from the far-left and far-right edges. The left/right edges can hold
+  secondary background (sky, blur, scenery) that is safe to lose on mobile.
+
+  (Don't worry about leaving empty space for the headline text — the site lays a
+  dark gradient over the image for text legibility, so the subject can be bright
+  and centered.)
+
+───────────────────────────────────────────────────────────────────────────────
   GLOBAL STYLE  (append to EVERY prompt)
 ───────────────────────────────────────────────────────────────────────────────
   GLOBAL STYLE: ultra photorealistic, shot on a full-frame DSLR, sharp focus,
@@ -18,22 +46,18 @@ consistent, professional, high-resolution standard.
   AI-looking, no text, no watermark, no logos, no captions, high detail,
   professional commercial photography, 8k quality.
 
-  COMPOSITION FOR HEROES: cinematic wide shot. Keep the LEFT THIRD calmer / less
-  busy (darker or simpler) because white headline text sits on the left. Main
-  subject centre or centre-right. Leave clean negative space.
+  COMPOSITION FOR HEROES: cinematic wide shot with the MAIN SUBJECT CENTERED in
+  the middle of the frame (centre-weighted), balanced symmetrically so it reads
+  well both as a wide desktop banner and as a centre-cropped mobile image. Keep
+  important detail in the central 50%; let only background fall to the edges.
 
-  RESPONSIVE / PHONE NOTE: on phones these heroes are cropped to a tall/narrow
-  shape, so keep the essential subject within the centre ~60% horizontally — do
-  not place anything important at the far left or far right edge.
-
-  HERO RESOLUTION: 3840 × 2160 (16:9) minimum. Landscape.
-  NOTE: each business hero fills the ENTIRE screen (full viewport height) on the
-  live site — it is intentionally large/full-bleed, so a high-resolution 16:9
-  image is required for it to stay crisp on big monitors.
+  HERO RESOLUTION: 3840 × 2160 (16:9) minimum. Landscape. Each business hero
+  fills the ENTIRE screen on the live site, so a high-resolution 16:9 image is
+  required to stay crisp on big monitors.
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION A — 8 BUSINESS HERO IMAGES (top banner of each division page)
-  Aspect 16:9, 3840×2160.  These are the big screen-height hero backgrounds.
+  Aspect 16:9, 3840×2160.  Full-screen hero backgrounds. SUBJECT CENTERED.
 ═══════════════════════════════════════════════════════════════════════════════
 
 ──────────────────────────────────────────────────────────────────────────────
@@ -42,90 +66,104 @@ consistent, professional, high-resolution standard.
   PROMPT:
   A striking futuristic shot representing artificial intelligence and advanced
   technology: a sleek, realistic humanoid AI robot with softly glowing blue
-  circuitry, standing in a dark high-tech control room or server environment with
-  holographic data screens and abstract neural-network light trails floating in
-  the air. Cinematic teal-and-blue lighting, deep shadows on the left, glowing
-  highlights centre-right. Premium, intelligent, powerful, cutting-edge — feels
-  like a world-class AI company. Photorealistic, not cartoonish.
+  circuitry, positioned in the EXACT CENTER of the frame, facing forward, in a
+  dark high-tech control room or server environment. Holographic data screens and
+  abstract neural-network light trails float symmetrically around it on both
+  sides. Cinematic teal-and-blue lighting, the robot brightly lit and centred as
+  the clear focal point. Premium, intelligent, powerful, cutting-edge — feels
+  like a world-class AI company. Photorealistic, not cartoonish. The robot must
+  remain centred so it stays fully visible when the image is cropped on mobile.
 
   ALT IDEA (if you prefer less robot, more "AI brain"): a glowing 3D holographic
-  human brain made of light and data nodes hovering above a developer's hands in
-  a dark modern studio, blue and cyan tones.
+  human brain made of light and data nodes hovering in the CENTER of a dark
+  modern studio, blue and cyan tones, perfectly centred.
 
 ──────────────────────────────────────────────────────────────────────────────
   A2.  PRATIK PETRO (Bitumen & Petroleum)   →  file: petro
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
   A cinematic wide aerial shot of a large modern bitumen and petroleum storage
-  terminal at golden hour — rows of large industrial storage tanks, pipelines,
-  and tanker trucks, an oil-and-gas refinery silhouette in the background, warm
-  dramatic sky. Industrial, powerful, established. Calm darker sky on the left
-  for text, detailed facility centre and right.
+  terminal at golden hour, composed symmetrically with the main cluster of large
+  industrial storage tanks and pipelines in the CENTER of the frame, tanker
+  trucks and a refinery silhouette around them, warm dramatic sky filling the
+  top edges. Industrial, powerful, established. The central facility is the focal
+  point and stays meaningful when cropped on mobile; only sky/horizon falls to
+  the far left and right.
 
 ──────────────────────────────────────────────────────────────────────────────
   A3.  FURNITURE   →  file: furniture   (also reused as the page banner)
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
   A luxurious, warmly lit interior showcasing premium handcrafted solid-wood
-  Indian furniture — an elegant living room with a beautiful wooden sofa set,
-  carved coffee table and accent chairs, rich textures, large windows with soft
-  daylight. High-end, aspirational, editorial interior photography. Left side
-  slightly calmer for text overlay.
+  Indian furniture — an elegant living room with a beautiful wooden sofa set and
+  carved coffee table placed in the CENTER of the frame as the hero piece,
+  accent chairs and soft lamp-lit decor balanced on either side, large windows
+  with soft daylight. High-end, aspirational, editorial interior photography.
+  The central sofa arrangement must stay fully in view when cropped to a narrow
+  mobile frame.
 
 ──────────────────────────────────────────────────────────────────────────────
   A4.  REAL ESTATE   →  file: realestate
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
-  A cinematic dusk shot of premium modern residential and commercial towers with
-  warm glowing windows, a landscaped waterfront promenade and calm water
-  reflections in the foreground, deep blue twilight sky. Aspirational, upmarket
-  real-estate feel. Darker sky on the left third for headline text.
+  A cinematic dusk shot of a premium modern residential/commercial tower with
+  warm glowing windows standing in the CENTER of the frame as the focal point,
+  a landscaped waterfront promenade and calm water reflections in the foreground,
+  deep blue twilight sky, secondary buildings receding symmetrically to the left
+  and right edges. Aspirational, upmarket real-estate feel. The central tower
+  stays meaningful when the image is cropped on mobile.
 
 ──────────────────────────────────────────────────────────────────────────────
   A5.  EDUCATION (Kidzys preschool)   →  file: education
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
   A warm, bright photograph of happy young Indian preschool children (ages 3–5)
-  in neat uniforms walking into a modern, colourful, friendly school building
-  with a smiling female teacher welcoming them; lush greenery, soft morning
-  light, joyful and safe atmosphere. Wholesome, premium early-education feel.
-  Keep children centre/centre-right, calmer greenery on the left.
+  in neat uniforms with a smiling female teacher, the group positioned in the
+  CENTER of the frame walking toward camera in front of a modern, colourful,
+  friendly school building, lush greenery framing both sides, soft morning light,
+  joyful and safe atmosphere. Wholesome, premium early-education feel. The
+  children must be centred so they remain fully visible in the mobile crop.
 
 ──────────────────────────────────────────────────────────────────────────────
   A6.  PHARMA   →  file: pharma
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
-  A clean, bright modern pharmaceutical laboratory / production environment, two
-  Indian scientists in white coats, hairnets and gloves working with lab
-  equipment and a tablet-packaging line softly blurred behind glass. Clinical,
-  trustworthy, high-quality healthcare feel, cool clean white-and-teal tones.
-  Calmer wall/space on the left for text.
+  A clean, bright modern pharmaceutical laboratory, two Indian scientists in
+  white coats, hairnets, goggles and gloves working together at the CENTER of the
+  frame with lab equipment, a tablet-packaging line softly blurred symmetrically
+  behind glass on both sides. Clinical, trustworthy, high-quality healthcare
+  feel, cool clean white-and-teal tones. IMPORTANT: place the two scientists in
+  the middle of the frame (not off to one side) so that when the image is cropped
+  for mobile you still see the scientists, not an empty wall.
 
 ──────────────────────────────────────────────────────────────────────────────
   A7.  AGRICULTURE   →  file: agriculture
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
-  A breathtaking wide shot of lush green Indian farmland at sunrise — neat rows
-  of healthy crops, a modern irrigation system spraying a fine mist, distant
-  tractors and grain silos, warm golden sky with soft mist. Fertile, hopeful,
-  forward-looking modern agriculture. Calmer sky on the left third for text.
+  A breathtaking wide shot of lush green Indian farmland at sunrise, a central
+  pathway or modern irrigation system running up the MIDDLE of the frame as the
+  focal line, neat rows of healthy crops on both sides leading symmetrically to
+  distant tractors and grain silos, warm golden misty sky at the top. Fertile,
+  hopeful, forward-looking modern agriculture. The central composition keeps it
+  meaningful when cropped on mobile; only sky and far rows fall to the edges.
 
 ──────────────────────────────────────────────────────────────────────────────
   A8.  TRUST & CHARITY   →  file: trust
 ──────────────────────────────────────────────────────────────────────────────
   PROMPT:
   A warm, dignified documentary photograph of an Indian community moment — a
-  female volunteer/field worker showing something on a tablet to smiling rural
-  villagers (a farmer couple), with children studying on a bench in the
-  background near a small solar-powered building, golden-hour light. Hopeful,
-  respectful, NOT pity-driven — people shown with dignity and agency. Calmer
-  area on the left for text.
+  female volunteer/field worker and a smiling rural farmer couple grouped
+  together in the CENTER of the frame looking at a tablet, children studying on a
+  bench softly blurred behind them near a small solar-powered building, golden-
+  hour light, scenery framing both sides. Hopeful, respectful, NOT pity-driven —
+  people shown with dignity and agency. The central group must stay fully visible
+  in the mobile crop.
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION B — FURNITURE PRODUCT IMAGES (category tiles + showcase)
   Aspect 4:3, 1600×1200.  Clean studio product shots on light background.
-  Each shows ONE piece of premium solid-wood Indian furniture, centred, soft
-  studio shadow, light neutral background (warm off-white / beige gradient). No text.
+  Each shows ONE piece of premium solid-wood Indian furniture, perfectly CENTERED,
+  soft studio shadow, light neutral background (warm off-white/beige). No text.
 ═══════════════════════════════════════════════════════════════════════════════
   B1.  sofa            → a premium solid-wood + upholstery 3-seater sofa
   B2.  bed             → an elegant carved solid-wood double bed with bedding
@@ -136,13 +174,15 @@ consistent, professional, high-resolution standard.
 
   PROMPT TEMPLATE (swap in the piece):
   A premium studio product photograph of <PIECE>, handcrafted from rich solid
-  sheesham/teak wood, centred on a clean warm off-white seamless background, soft
-  even studio lighting, subtle natural shadow, fine wood-grain detail, elegant
-  and high-end furniture catalogue style. No text, no props clutter.
+  sheesham/teak wood, the piece perfectly CENTERED on a clean warm off-white
+  seamless background, soft even studio lighting, subtle natural shadow, fine
+  wood-grain detail, elegant high-end furniture catalogue style. No text, no
+  clutter. (Centered so it crops cleanly on every screen.)
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION C — CAREERS CARDS (homepage "Life at MurliLeela" style cards)
   Aspect 3:4 PORTRAIT, 1200×1600.  Authentic, warm corporate-life photography.
+  Subject CENTERED in the portrait frame.
 ═══════════════════════════════════════════════════════════════════════════════
   C1.  career-1  (Job Opportunities) → a confident young Indian professional
        walking through a bright modern office, smiling, holding a laptop/folder.
@@ -154,9 +194,10 @@ consistent, professional, high-resolution standard.
        computer, focused and friendly, professional growth feel.
 
   PROMPT TEMPLATE:
-  A warm, authentic portrait-orientation photograph of <SCENE>, natural office
-  lighting, modern Indian corporate workplace, genuine expressions, premium
-  editorial corporate photography, shallow depth of field. No text.
+  A warm, authentic portrait-orientation photograph of <SCENE>, the people
+  CENTERED in the frame, natural office lighting, modern Indian corporate
+  workplace, genuine expressions, premium editorial corporate photography,
+  shallow depth of field. No text.
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION D — PHARMA PRODUCT  (first product feature)
@@ -166,38 +207,40 @@ consistent, professional, high-resolution standard.
   PROMPT:
   A premium product photograph of a single daily MULTIVITAMIN supplement bottle,
   clean modern white/amber pharmaceutical bottle with a minimal blank label (no
-  readable text), a few multivitamin tablets arranged neatly beside it on a clean
-  light surface, soft daylight, shallow depth of field, fresh clinical-but-warm
-  teal-and-white palette. Centre-weighted, lots of clean space. Health, wellness,
-  trust. No readable brand text, no hands.
+  readable text), the bottle CENTERED in the frame with a few multivitamin
+  tablets arranged neatly beside it on a clean light surface, soft daylight,
+  shallow depth of field, fresh clinical-but-warm teal-and-white palette. Health,
+  wellness, trust. No readable brand text, no hands. Centre-weighted.
 
 ═══════════════════════════════════════════════════════════════════════════════
   SECTION E — TRUST & CHARITY  (3 focus-area cards)
   Aspect 16:10, 1600×1000.  Warm, dignified, hopeful — never staged poverty.
+  Subject CENTERED.
 ═══════════════════════════════════════════════════════════════════════════════
   E1.  trust-education   →  file: trust/education
        Indian schoolchildren smiling and learning in a bright classroom / rural
-       learning centre, a teacher gently helping. Hopeful, dignified.
+       learning centre, a teacher gently helping, group centred.
 
   E2.  trust-health      →  file: trust/health
        A friendly female health worker checking on a smiling elderly villager or
-       mother & child at a simple rural health camp. Caring, respectful.
+       mother & child at a simple rural health camp, subjects centred.
 
   E3.  trust-livelihood  →  file: trust/livelihood
        Rural Indian artisans / women at a skills-training workshop, or a proud
-       farmer in a green field at golden hour. Self-reliance and dignity.
+       farmer in a green field at golden hour, subject centred.
 
   PROMPT TEMPLATE:
-  A warm, authentic documentary photograph of <SCENE>, natural light, authentic
-  rural/semi-urban India, genuine hopeful expressions, dignity and agency (never
-  pity), editorial NGO-quality photography. No text, no logos.
+  A warm, authentic documentary photograph of <SCENE>, the main people CENTERED
+  in the frame, natural light, authentic rural/semi-urban India, genuine hopeful
+  expressions, dignity and agency (never pity), editorial NGO-quality
+  photography. No text, no logos.
 
 ═══════════════════════════════════════════════════════════════════════════════
   OPTIONAL — ABOUT / FOUNDER
   (You already have founder.jpg. Replace only if you want a higher-res one.)
    founder → a professional, approachable portrait of the company founder /
-   leadership, warm neutral studio or modern office background, confident and
-   trustworthy, business-formal. Portrait orientation, 1200×1500.
+   leadership, centred, warm neutral studio or modern office background,
+   confident and trustworthy, business-formal. Portrait orientation, 1200×1500.
 ═══════════════════════════════════════════════════════════════════════════════
 
 ───────────────────────────────────────────────────────────────────────────────

@@ -479,20 +479,23 @@ html, body {
   display: grid;
   grid-template-columns: 596px 591px;
   gap: 42px;
-  align-items: start;
+  align-items: stretch;
 }
 .about-quote-card {
   position: relative;
   width: 596px;
-  height: 486px;
+  height: 100%;
+  min-height: 486px;
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 36px 36px;
 }
-.about-quote-glyph { position: absolute; top: 40px; left: 50px; font-size: 140px; letter-spacing: -0.02em; }
+.about-quote-glyph { font-size: 120px; line-height: 0.7; letter-spacing: -0.02em; margin-bottom: 8px; }
 .about-quote-body {
-  position: absolute; top: 170px; left: 50px; width: 360px;
-  font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -0.02em; color: rgba(0,0,0,0.66);
+  font-size: 23px; font-weight: 400; line-height: 1.45; letter-spacing: -0.02em; color: rgba(0,0,0,0.7);
 }
-.about-quote-foot { position: absolute; top: 348px; left: 23px; right: 23px; display: flex; gap: 20px; align-items: stretch; }
+.about-quote-foot { margin-top: auto; padding-top: 32px; display: flex; gap: 20px; align-items: stretch; }
 .about-quote-img { width: 220px; height: 190px; flex-shrink: 0; border-radius: 4px; }
 .about-quote-attr { display: flex; flex-direction: column; justify-content: center; }
 .about-h2 { font-size: clamp(26px, 3.2vw, 38px); line-height: 1.12; letter-spacing: -0.01em; }
@@ -515,6 +518,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     height: auto;
+    min-height: 0;
     padding: 36px 32px 32px;
   }
   .about-quote-glyph { position: static; font-size: 96px; }
@@ -1080,22 +1084,23 @@ section:not(.hero-section):not([data-hero]) {
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.85);
+  color: #111;
+  border: 1.5px solid #fff;
   border-radius: 4px;
-  background: transparent;
+  background: #fff;
 }
 .hero-cta:hover {
-  background: #fff;
-  color: #111;
-  border-color: #fff;
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.85);
 }
 
 /* Header "Enquire now" button — black, fluid sizing */
 .enquire-btn {
-  background: #000;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  border: 1.5px solid #fff;
+  border-radius: 4px;
   height: clamp(38px, 2.8vw, 44px);
   padding-inline: clamp(16px, 1.4vw, 22px);
   font-size: clamp(14px, 0.95vw, 15.5px);
@@ -1103,7 +1108,10 @@ section:not(.hero-section):not([data-hero]) {
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-.enquire-btn:hover { background: #1a1a1a; }
+.enquire-btn:hover { background: transparent; color: #fff; border-color: rgba(255,255,255,0.85); }
+/* On light (fixed) headers, invert: dark fill so it stays visible */
+.enquire-btn[data-ondark="false"] { background: #111; color: #fff; border-color: #111; }
+.enquire-btn[data-ondark="false"]:hover { background: transparent; color: #111; border-color: #111; }
 
 /* ════════════════════════════════════════════════════════
    CAREERS ENQUIRY — light theme form (contrasts dark footer)
@@ -2677,3 +2685,89 @@ button, input, textarea, select {
   white-space: nowrap; transition: background 180ms;
 }
 .inv-btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* ════════════════════════════════════════════════════════
+   WHY MURLILEELA — interactive ecosystem nodes
+   ════════════════════════════════════════════════════════ */
+/* Reset button defaults (nodes are now <button>) */
+.why-eco-node {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+}
+.why-eco-node-inner {
+  transition: transform 280ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 280ms ease,
+    background 280ms ease, color 280ms ease;
+}
+/* Hover/focus pop */
+.why-eco-node:hover .why-eco-node-inner,
+.why-eco-node:focus-visible .why-eco-node-inner {
+  transform: scale(1.12);
+  box-shadow: 0 10px 26px rgba(163,0,0,0.28);
+  background: #a30000;
+  color: #fff;
+}
+.why-eco-node:hover .why-eco-node-label,
+.why-eco-node:focus-visible .why-eco-node-label {
+  color: #a30000;
+}
+/* Selected node — filled brand, subtle ring */
+.why-eco-node.is-active .why-eco-node-inner {
+  background: #a30000;
+  color: #fff;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 6px rgba(163,0,0,0.12), 0 10px 26px rgba(163,0,0,0.3);
+  animation: none;
+}
+.why-eco-node.is-active .why-eco-node-label { color: #a30000; font-weight: 700; }
+/* Non-selected nodes fade back while one is active */
+.why-eco-node.is-dimmed { opacity: 0.45; transition: opacity 280ms ease; }
+.why-eco-node.is-dimmed .why-eco-node-inner { animation-play-state: paused; }
+
+/* Center detail mode */
+.why-eco-center.is-detail {
+  background: radial-gradient(circle at 50% 38%, #c01414, #8a0000);
+  box-shadow: 0 16px 46px rgba(163,0,0,0.34);
+}
+.why-eco-center-default,
+.why-eco-center-detail {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  animation: whyCenterIn 360ms cubic-bezier(0.4,0,0.2,1);
+}
+.why-eco-center-ic {
+  display: grid; place-items: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  margin-bottom: 2px;
+}
+.why-eco-center-desc {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.88);
+  max-width: 150px;
+}
+@keyframes whyCenterIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.why-eco-hint {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(0,0,0,0.42);
+}
+@media (max-width: 767px) {
+  .why-eco-center-desc { font-size: 10.5px; max-width: 110px; }
+  .why-eco-center-ic { width: 32px; height: 32px; }
+}
