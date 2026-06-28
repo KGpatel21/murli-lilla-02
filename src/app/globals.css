@@ -2347,24 +2347,25 @@ button, input, textarea, select {
 }
 .cf-optional { font-weight: 400; color: rgba(0,0,0,0.4); }
 .cf-input {
-  height: 52px;
+  height: 54px;
   width: 100%;
-  border-radius: 11px;
-  border: 1.5px solid rgba(0,0,0,0.12);
-  background: #fcfbfa;
-  padding-inline: 15px;
+  border: 0;
+  border-bottom: 2px solid rgba(0,0,0,0.16);
+  border-radius: 12px 12px 5px 5px;
+  background: #f5f1ed;
+  padding: 0 16px;
   font-size: 16px;
   font-family: var(--font-sans);
   color: #0a0a0c;
   outline: none;
-  transition: border-color 180ms, box-shadow 180ms, background 180ms;
+  transition: border-color 200ms, box-shadow 220ms, background 200ms;
 }
 .cf-input::placeholder { color: rgba(0,0,0,0.34); }
-.cf-input:hover { border-color: rgba(0,0,0,0.22); }
+.cf-input:hover { background: #f0ebe6; border-bottom-color: rgba(0,0,0,0.3); }
 .cf-input:focus {
-  border-color: #a30000;
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(163,0,0,0.1);
+  background: #ffffff;
+  border-bottom-color: #a30000;
+  box-shadow: 0 12px 26px -16px rgba(163,0,0,0.5), inset 0 0 0 1px rgba(163,0,0,0.08);
 }
 .cf-textarea {
   height: auto;
@@ -2376,12 +2377,12 @@ button, input, textarea, select {
 }
 /* Error state */
 .cf-input-error {
-  border-color: #d23b3b;
-  background: #fdf6f6;
+  border-bottom-color: #d23b3b;
+  background: #fdf4f4;
 }
 .cf-input-error:focus {
-  border-color: #d23b3b;
-  box-shadow: 0 0 0 4px rgba(210,59,59,0.12);
+  border-bottom-color: #d23b3b;
+  box-shadow: 0 12px 26px -16px rgba(210,59,59,0.5), inset 0 0 0 1px rgba(210,59,59,0.1);
 }
 .cf-error {
   display: flex;

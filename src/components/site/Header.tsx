@@ -61,15 +61,14 @@ const NAV: NavItem[] = [
 const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 export default function Header({
-  initialBg = "#ffffff",
   position = "fixed",
 }: {
   initialBg?: string;
   position?: "fixed" | "absolute" | "sticky";
 }) {
-  // On business pages the header sits over a dark hero image (position absolute):
-  // render logo + nav in light colours for a consistent look everywhere.
-  const onDark = position === "absolute";
+  // Solid white navbar on every page (matches the Careers page) — the logo and nav
+  // links always render in dark colours on white; the header is never transparent.
+  const onDark = false;
   const navColor = onDark ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.78)";
   const navColorActive = onDark ? "#ffffff" : "#000000";
   const [scrolled, setScrolled] = useState(false);
@@ -124,7 +123,9 @@ export default function Header({
     const focusable = drawerRef.current.querySelector<HTMLElement>(
       'a, button, [tabindex]:not([tabindex="-1"])'
     );
-    focusable?.focus();
+    // preventScroll stops the browser from scrolling the (still off-screen) drawer
+    // into view, which otherwise fights the slide-in transition and causes a judder.
+    focusable?.focus({ preventScroll: true });
   }, [mobileOpen]);
 
   const openMenu = (label: string) => {
@@ -148,13 +149,8 @@ export default function Header({
           left: 0,
           right: 0,
           top: 0,
-          // Consistent across all business pages: when the header sits over a
-          // hero image (absolute), use one shared gradient scrim instead of a
-          // per-page solid colour. Fixed headers (homepage) keep their bg.
-          background:
-            position === "absolute"
-              ? "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0) 100%)"
-              : initialBg,
+          // Solid white on every page — never a transparent scrim over the hero.
+          background: "#ffffff",
           boxShadow:
             scrolled && position !== "absolute"
               ? "0 1px 0 rgba(0,0,0,0.06), 0 12px 28px -22px rgba(0,0,0,0.18)"
@@ -173,12 +169,6 @@ export default function Header({
             href="/"
             aria-label="MurliLila home"
             className="flex items-center"
-            style={{
-              background: "#ffffff",
-              borderRadius: 9,
-              padding: "6px 13px",
-              boxShadow: "0 1px 6px rgba(0,0,0,0.10)",
-            }}
           >
             <Image
               src="/figma/logo.png"
@@ -186,7 +176,7 @@ export default function Header({
               width={284}
               height={100}
               priority
-              style={{ height: 40, width: "auto", objectFit: "contain" }}
+              style={{ height: 42, width: "auto", objectFit: "contain" }}
             />
             <sup
               aria-hidden
@@ -549,9 +539,10 @@ export default function Header({
             display: "flex",
             flexDirection: "column",
             overflowY: "auto",
-            transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
+            transform: mobileOpen ? "translate3d(0,0,0)" : "translate3d(100%,0,0)",
             transition: `transform 360ms ${EASE}`,
             willChange: "transform",
+            backfaceVisibility: "hidden",
             boxShadow: "-24px 0 48px -20px rgba(0,0,0,0.25)",
           }}
         >
