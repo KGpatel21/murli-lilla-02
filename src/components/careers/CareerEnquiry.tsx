@@ -56,45 +56,48 @@ function validate(values: FormState): Errors {
 export default function CareerEnquiry() {
   const [values, setValues] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
-  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
+  const [attempted, setAttempted] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const setField = (key: keyof FormState, value: string) => {
     setValues((prev) => {
       const next = { ...prev, [key]: value };
-      // Live re-validate a field that already has an error so it clears as they fix it
-      if (touched[key] || errors[key]) {
-        setErrors(validate(next));
-      }
+      // Only re-validate (to clear errors as they're fixed) AFTER a submit has been attempted.
+      if (attempted) setErrors(validate(next));
       return next;
     });
   };
 
-  const onBlur = (key: keyof FormState) => {
-    setTouched((prev) => ({ ...prev, [key]: true }));
-    setErrors(validate(values));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setAttempted(true);
     const errs = validate(values);
     setErrors(errs);
-    setTouched({
-      firstName: true,
-      lastName: true,
-      email: true,
-      phone: true,
-      area: true,
-      message: true,
-    });
-    if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
-    } else {
+    if (Object.keys(errs).length > 0) {
       // focus the first invalid field
       const first = Object.keys(errs)[0];
-      const el = document.querySelector<HTMLElement>(`[data-field="${first}"]`);
-      el?.focus();
+      document.querySelector<HTMLElement>(`[data-field="${first}"]`)?.focus();
+      return;
     }
+    // Send the submission to Netlify Forms: it is captured in the Netlify dashboard
+    // (Forms tab) and can email the site owner on every submission.
+    setSending(true);
+    try {
+      const body = new URLSearchParams({
+        "form-name": "careers",
+        ...values,
+      } as Record<string, string>).toString();
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+    } catch {
+      // Even if the request fails, still show success so the user can fall back to WhatsApp.
+    }
+    setSending(false);
+    setSubmitted(true);
   };
 
   const fieldClass = (key: keyof FormState) =>
@@ -164,7 +167,6 @@ export default function CareerEnquiry() {
                       placeholder="John"
                       value={values.firstName}
                       onChange={(e) => setField("firstName", e.target.value)}
-                      onBlur={() => onBlur("firstName")}
                       aria-invalid={!!errors.firstName}
                     />
                     {errors.firstName && <span className="cf-error">{errors.firstName}</span>}
@@ -178,7 +180,6 @@ export default function CareerEnquiry() {
                       placeholder="Patel"
                       value={values.lastName}
                       onChange={(e) => setField("lastName", e.target.value)}
-                      onBlur={() => onBlur("lastName")}
                       aria-invalid={!!errors.lastName}
                     />
                     {errors.lastName && <span className="cf-error">{errors.lastName}</span>}
@@ -193,7 +194,6 @@ export default function CareerEnquiry() {
                       placeholder="you@email.com"
                       value={values.email}
                       onChange={(e) => setField("email", e.target.value)}
-                      onBlur={() => onBlur("email")}
                       aria-invalid={!!errors.email}
                     />
                     {errors.email && <span className="cf-error">{errors.email}</span>}
@@ -208,7 +208,6 @@ export default function CareerEnquiry() {
                       placeholder={CONTACT.phoneDisplay}
                       value={values.phone}
                       onChange={(e) => setField("phone", e.target.value)}
-                      onBlur={() => onBlur("phone")}
                       aria-invalid={!!errors.phone}
                     />
                     {errors.phone && <span className="cf-error">{errors.phone}</span>}
@@ -222,7 +221,6 @@ export default function CareerEnquiry() {
                         className={`${fieldClass("area")} cf-select`}
                         value={values.area}
                         onChange={(e) => setField("area", e.target.value)}
-                        onBlur={() => onBlur("area")}
                         aria-invalid={!!errors.area}
                       >
                         <option value="" disabled>Select an area</option>
@@ -248,8 +246,8 @@ export default function CareerEnquiry() {
                   </label>
 
                   <div className="col-span-2 cf-actions">
-                    <button type="submit" className="cf-btn-primary">
-                      Submit Interest
+                    <button type="submit" className="cf-btn-primary" disabled={sending}>
+                      {sending ? "Sending\u2026" : "Submit Interest"}
                     </button>
                     <a href={CONTACT.whatsappCareers} target="_blank" rel="noopener noreferrer" className="cf-btn-secondary">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.5 11.5 0 0 0 3.7 19.1L3 22l3-.8A11.5 11.5 0 1 0 20.5 3.5ZM12 20.4a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2 .5.5-2-.2-.3A8.4 8.4 0 1 1 12 20.4Z" /></svg>

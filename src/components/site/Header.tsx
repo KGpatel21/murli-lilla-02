@@ -169,14 +169,24 @@ export default function Header({
           style={{ height: 56, width: "100%" }}
         >
           {/* Logo */}
-          <Link href="/" aria-label="MurliLila home" className="flex items-start">
+          <Link
+            href="/"
+            aria-label="MurliLila home"
+            className="flex items-center"
+            style={{
+              background: "#ffffff",
+              borderRadius: 9,
+              padding: "6px 13px",
+              boxShadow: "0 1px 6px rgba(0,0,0,0.10)",
+            }}
+          >
             <Image
               src="/figma/logo.png"
               alt="MurliLila"
               width={284}
               height={100}
               priority
-              style={{ height: 44, width: "auto", objectFit: "contain" }}
+              style={{ height: 40, width: "auto", objectFit: "contain" }}
             />
             <sup
               aria-hidden
@@ -186,7 +196,7 @@ export default function Header({
                 lineHeight: 1,
                 marginTop: 2,
                 marginLeft: 1,
-                color: onDark ? "rgba(255,255,255,0.85)" : "rgba(0,0,0,0.6)",
+                color: "#000000",
               }}
             >
               ™
@@ -402,7 +412,7 @@ export default function Header({
               aria-label={`${item.label} navigation`}
               onMouseEnter={() => openMenu(item.label)}
               onMouseLeave={() => scheduleClose()}
-              className="absolute left-0 right-0"
+              className="absolute left-0 right-0 hidden lg:block"
               style={{
                 top: "100%",
                 background: "#fff",
@@ -503,8 +513,12 @@ export default function Header({
         className="lg:hidden"
         style={{
           position: "fixed",
-          inset: 0,
+          top: 0,
+          bottom: 0,
+          left: 0,
+          width: "100%",
           zIndex: 60,
+          overflow: "hidden",
           pointerEvents: mobileOpen ? "auto" : "none",
         }}
       >

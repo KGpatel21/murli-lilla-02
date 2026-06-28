@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form detection</title>
+  </head>
+  <body>
+    <!--
+      This hidden static form lets Netlify detect the "careers" form at build time.
+      The live React form (CareerEnquiry.tsx) submits to it via a POST to "/".
+      Submissions appear in: Netlify dashboard → your site → Forms → "careers".
+      To get an email on every submission: Forms → Settings & notifications →
+      "Add notification" → "Email notification" → enter the owner's email.
+    -->
+    <form name="careers" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="area" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>

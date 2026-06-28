@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import DivisionHero from "@/components/site/DivisionHero";
@@ -238,21 +239,32 @@ export default function EducationPage() {
         <div className="frame dsec">
           <Reveal>
             <div data-reveal className="edu-future">
-              <div className="edu-future-badge">Planned for the future</div>
-              <h2 style={{ fontSize: "clamp(24px,3.4vw,36px)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", margin: "16px 0 0", lineHeight: 1.15 }}>
-                From first classroom to final degree.
-              </h2>
-              <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.72)", margin: "14px 0 0", maxWidth: 680 }}>
-                Kidzee is our first step into education — but our ambition runs the
-                full length of a learning journey. Schools, colleges and a university
-                are part of the long-term MurliLila Education vision. Great
-                institutions are built patiently, and we&apos;re building for
-                generations to come.
-              </p>
-              <div className="edu-future-tags">
-                {["Primary & secondary school", "College", "University"].map((t) => (
-                  <span key={t} className="edu-future-tag">{t} · Coming soon</span>
-                ))}
+              <div className="edu-future-visual">
+                <Image
+                  src="/figma/edu-future.jpg"
+                  alt="Young children learning together with their teacher in a bright classroom — the start of the MurliLila Education journey"
+                  fill
+                  sizes="(max-width: 820px) 100vw, 40vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="edu-future-body">
+                <div className="edu-future-badge">Planned for the future</div>
+                <h2 style={{ fontSize: "clamp(24px,3.4vw,36px)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", margin: "16px 0 0", lineHeight: 1.15 }}>
+                  From first classroom to final degree.
+                </h2>
+                <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.72)", margin: "14px 0 0", maxWidth: 680 }}>
+                  Kidzee is our first step into education — but our ambition runs the
+                  full length of a learning journey. Schools, colleges and a university
+                  are part of the long-term MurliLila Education vision. Great
+                  institutions are built patiently, and we&apos;re building for
+                  generations to come.
+                </p>
+                <div className="edu-future-tags">
+                  {["Primary & secondary school", "College", "University"].map((t) => (
+                    <span key={t} className="edu-future-tag">{t} · Coming soon</span>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>
