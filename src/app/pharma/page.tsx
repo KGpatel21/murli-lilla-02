@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import DivisionHero from "@/components/site/DivisionHero";
@@ -81,13 +82,14 @@ export default function PharmaPage() {
             {/* Visual */}
             <Reveal>
               <div data-reveal className="pharma-product-visual">
-                {/* IMAGE PLACEHOLDER — multivitamin product shot */}
-                <div className="pharma-img-placeholder">
-                  <svg width={64} height={64} viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
-                    <rect x="3" y="8" width="18" height="13" rx="2" />
-                    <path d="M3 8l3-5h12l3 5M12 12v5M9.5 14.5h5" />
-                  </svg>
-                  <p style={{ fontSize: 13, color: ACCENT, marginTop: 14, fontWeight: 600, letterSpacing: "0.04em" }}>Product image coming soon</p>
+                <div className="pharma-product-img">
+                  <Image
+                    src="/figma/pharma/product.jpg"
+                    alt="MurliLila Pharma daily multivitamin tablets"
+                    fill
+                    sizes="(max-width: 860px) 100vw, 50vw"
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
               </div>
             </Reveal>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import DivisionHero from "@/components/site/DivisionHero";
@@ -35,16 +36,19 @@ const FOCUS = [
     title: "Education access",
     body: "Helping children stay in school — through learning support, resources and removing the everyday barriers that keep bright minds out of the classroom.",
     icon: "M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5",
+    image: "/figma/trust/education.jpg",
   },
   {
     title: "Community health",
     body: "Bringing basic healthcare, awareness and preventive care closer to the families and villages that need it most.",
     icon: "M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10zM12 8v6M9 11h6",
+    image: "/figma/trust/community-health.jpg",
   },
   {
     title: "Rural livelihood",
     body: "Supporting skills, self-reliance and dignified work — so progress takes root in communities and lasts well beyond a single gift.",
     icon: "M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6",
+    image: "/figma/trust/livelihood.jpg",
   },
 ];
 
@@ -129,14 +133,15 @@ export default function TrustCharityPage() {
             <div className="trust-focus">
               {FOCUS.map((f) => (
                 <div key={f.title} data-reveal className="trust-focus-card">
-                  {/* IMAGE PLACEHOLDER */}
+                  {/* Focus image */}
                   <div className="trust-focus-img">
-                    <div className="trust-img-ph">
-                      <svg width={40} height={40} viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
-                        <path d={f.icon} />
-                      </svg>
-                      <span style={{ fontSize: 12, color: ACCENT, marginTop: 10, fontWeight: 600 }}>Image coming soon</span>
-                    </div>
+                    <Image
+                      src={f.image}
+                      alt={f.title}
+                      fill
+                      sizes="(max-width: 760px) 100vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                   <div style={{ padding: "22px 22px 24px" }}>
                     <h3 style={{ fontSize: 19, fontWeight: 700, color: "#0a0a0c", margin: 0 }}>{f.title}</h3>
