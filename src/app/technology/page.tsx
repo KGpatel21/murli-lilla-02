@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "enterprise software partner",
     "MurliLila technology",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/technology" },
+  alternates: { canonical: "https://www.murlila.com/technology" },
   openGraph: {
     title: "Technology — Software, AI, Automation & Full-Stack | MurliLila",
     description:
       "Custom software, AI & GenAI, automation, full-stack and cloud — engineered with discipline.",
-    url: "https://murli-lila1.netlify.app/technology",
+    url: "https://www.murlila.com/technology",
     type: "website",
   },
 };

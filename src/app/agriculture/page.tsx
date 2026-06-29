@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "agricultural supply chain",
     "MurliLila agriculture",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/agriculture" },
+  alternates: { canonical: "https://www.murlila.com/agriculture" },
   openGraph: {
     title: "Agriculture — A Farm-to-Market Vision in the Making | MurliLila",
     description:
       "An upcoming division built on sustainable cultivation and fair producer economics. In planning.",
-    url: "https://murli-lila1.netlify.app/agriculture",
+    url: "https://www.murlila.com/agriculture",
     type: "website",
   },
 };

@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     "health supplement manufacturer",
     "MurliLila pharma",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/pharma" },
+  alternates: { canonical: "https://www.murlila.com/pharma" },
   openGraph: {
     title: "Pharma — Daily Multivitamin, Held to a Higher Standard | MurliLila",
     description:
       "Our first product: a daily multivitamin tablet for everyday wellness, energy and immunity.",
-    url: "https://murli-lila1.netlify.app/pharma",
+    url: "https://www.murlila.com/pharma",
     type: "website",
   },
 };

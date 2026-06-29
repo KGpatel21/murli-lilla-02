@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     "bulk bitumen supplier Gujarat",
     "Pratik Petro",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/pratik-petro" },
+  alternates: { canonical: "https://www.murlila.com/pratik-petro" },
   openGraph: {
     title: "Pratik Petro — Bitumen & Petroleum Trading | MurliLila",
     description: "Bitumen, damar (dammar) and petroleum products trading & supply across India.",
-    url: "https://murli-lila1.netlify.app/pratik-petro",
+    url: "https://www.murlila.com/pratik-petro",
     type: "website",
   },
 };

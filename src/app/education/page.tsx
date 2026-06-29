@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "nursery school Zundal",
     "MurliLila education",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/education" },
+  alternates: { canonical: "https://www.murlila.com/education" },
   openGraph: {
     title: "Education — Kidzee Preschool, Opening Soon in Zundal | MurliLila",
     description:
       "A joyful, safe and modern Kidzee preschool opening soon in Zundal, Ahmedabad. Admissions enquiries open.",
-    url: "https://murli-lila1.netlify.app/education",
+    url: "https://www.murlila.com/education",
     type: "website",
   },
 };

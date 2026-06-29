@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Terms of Use | MurliLila",
   description:
     "The terms of use governing access to and use of the MurliLila Private Limited website.",
-  alternates: { canonical: "https://murli-lila1.netlify.app/terms" },
+  alternates: { canonical: "https://www.murlila.com/terms" },
   robots: { index: true, follow: true },
 };
 

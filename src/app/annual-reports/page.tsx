@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Annual Reports — Growth & Performance | MurliLila",
   description:
     "An overview of MurliLila Private Limited's growth, performance and direction across its diversified businesses — petroleum & bitumen, furniture export, real estate, technology, education, pharma and agriculture.",
-  alternates: { canonical: "https://murli-lila1.netlify.app/annual-reports" },
+  alternates: { canonical: "https://www.murlila.com/annual-reports" },
   openGraph: {
     title: "Annual Reports — Growth & Performance | MurliLila",
     description:
       "An overview of MurliLila's growth and direction across its diversified businesses.",
-    url: "https://murli-lila1.netlify.app/annual-reports",
+    url: "https://www.murlila.com/annual-reports",
     type: "website",
   },
 };

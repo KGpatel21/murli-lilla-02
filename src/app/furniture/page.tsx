@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "wholesale furniture supplier India",
     "premium furniture Ahmedabad",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/furniture" },
+  alternates: { canonical: "https://www.murlila.com/furniture" },
   openGraph: {
     title: "Furniture Export India — Handcrafted Solid Wood Furniture | MurliLila",
     description:
       "Premium handcrafted Indian furniture exported worldwide since 2014. Showroom coming soon in Ahmedabad.",
-    url: "https://murli-lila1.netlify.app/furniture",
+    url: "https://www.murlila.com/furniture",
     type: "website",
   },
 };

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://murli-lila1.netlify.app";
+const BASE = "https://www.murlila.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

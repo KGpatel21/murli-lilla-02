@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     "community health initiatives India",
     "social welfare Rajasthan",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/trust-charity" },
+  alternates: { canonical: "https://www.murlila.com/trust-charity" },
   openGraph: {
     title: "Trust & Charity — The MurliLila Foundation | MurliLila",
     description:
       "Working with dignity across education, healthcare and rural livelihood. Business gives the means; community gives the reason.",
-    url: "https://murli-lila1.netlify.app/trust-charity",
+    url: "https://www.murlila.com/trust-charity",
     type: "website",
   },
 };

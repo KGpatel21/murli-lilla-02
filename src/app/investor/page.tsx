@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Investor Relations | MurliLila",
   description:
     "Investor relations at MurliLila Private Limited — annual reports, press releases, and how to get in touch with our team about partnership and investment.",
-  alternates: { canonical: "https://murli-lila1.netlify.app/investor" },
+  alternates: { canonical: "https://www.murlila.com/investor" },
   openGraph: {
     title: "Investor Relations | MurliLila",
     description: "Annual reports, press releases and investor enquiries.",
-    url: "https://murli-lila1.netlify.app/investor",
+    url: "https://www.murlila.com/investor",
     type: "website",
   },
 };

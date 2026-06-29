@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Press Releases — News & Announcements | MurliLila",
   description:
     "The latest news and announcements from MurliLila Private Limited — new divisions, product launches, and milestones across petroleum, furniture, real estate, technology, education, pharma and agriculture.",
-  alternates: { canonical: "https://murli-lila1.netlify.app/press-releases" },
+  alternates: { canonical: "https://www.murlila.com/press-releases" },
   openGraph: {
     title: "Press Releases — News & Announcements | MurliLila",
     description:
       "The latest news and announcements from across MurliLila's businesses.",
-    url: "https://murli-lila1.netlify.app/press-releases",
+    url: "https://www.murlila.com/press-releases",
     type: "website",
   },
 };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | MurliLila",
   description:
     "How MurliLila Private Limited collects, uses and protects the personal information you share through our website.",
-  alternates: { canonical: "https://murli-lila1.netlify.app/privacy" },
+  alternates: { canonical: "https://www.murlila.com/privacy" },
   robots: { index: true, follow: true },
 };
 

@@ -11,7 +11,7 @@ const ORG_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "MurliLila Private Limited",
-  url: "https://murli-lila1.netlify.app/",
+  url: "https://www.murlila.com/",
   description:
     "A diversified Indian enterprise spanning bitumen & petroleum trading, furniture export, real estate, technology, education, pharma, agriculture and community trust initiatives.",
   email: CONTACT.email,

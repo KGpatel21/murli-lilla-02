@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://murli-lila1.netlify.app/sitemap.xml",
+    sitemap: "https://www.murlila.com/sitemap.xml",
   };
 }

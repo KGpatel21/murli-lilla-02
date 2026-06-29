@@ -18,7 +18,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://murli-lila1.netlify.app"),
+  metadataBase: new URL("https://www.murlila.com"),
   title: {
     default: "MurliLila Private Limited — Diversified Indian Enterprise",
     template: "%s | MurliLila",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     "enterprise technology India",
   ],
   authors: [{ name: "MurliLila Private Limited" }],
-  alternates: { canonical: "https://murli-lila1.netlify.app/" },
+  alternates: { canonical: "https://www.murlila.com/" },
   openGraph: {
     type: "website",
     siteName: "MurliLila Private Limited",
     title: "MurliLila Private Limited — Diversified Indian Enterprise",
     description:
       "A diversified Indian enterprise spanning bitumen & petroleum, furniture export, real estate, technology, education, pharma, agriculture and community trust initiatives.",
-    url: "https://murli-lila1.netlify.app/",
+    url: "https://www.murlila.com/",
     locale: "en_IN",
   },
   twitter: {

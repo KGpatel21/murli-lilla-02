@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "property acquisition Gujarat",
     "MurliLila real estate",
   ],
-  alternates: { canonical: "https://murli-lila1.netlify.app/real-estate" },
+  alternates: { canonical: "https://www.murlila.com/real-estate" },
   openGraph: {
     title: "Real Estate — Property Development & Land | MurliLila",
     description: "Residential & commercial property development and rental management across Rajasthan and Gujarat.",
-    url: "https://murli-lila1.netlify.app/real-estate",
+    url: "https://www.murlila.com/real-estate",
     type: "website",
   },
 };
