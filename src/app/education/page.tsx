@@ -36,10 +36,15 @@ const ACCENT = "#e8682c";
 const KIDZEE_PHONE_DISPLAY = "+91 98986 62917";
 const KIDZEE_PHONE_DIGITS = "919898662917";
 const KIDZEE_WA = "https://wa.me/919898662917?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Kidzee%20admissions";
-const KIDZEE_ADDRESS_LINES = ["Kidzee Pre-School", "Shop 1, 2 & 3", "IMPERIA GRACE, Zundal"];
-// Map embed centred near Zundal (exact pin to be updated once provided)
+const KIDZEE_ADDRESS_LINES = [
+  "Kidzee Pre-School",
+  "Shop No. 1, 2 & 3, Imperia Grace",
+  "Near Omkar Lifestyle, Zundal",
+  "Ahmedabad – 382 421",
+];
+// Map embed centred on the Kidzee Zundal pin
 const KIDZEE_MAP_SRC =
-  "https://www.google.com/maps?q=IMPERIA%20GRACE%2C%20Zundal%2C%20Ahmedabad&output=embed";
+  "https://maps.google.com/maps?q=23.138654,72.572027&z=16&output=embed";
 
 const PILLARS = [
   { title: "Play-based learning", body: "Children learn best when they're having fun. Our days are built around curiosity, play and discovery.", icon: "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3", emoji: "🎨" },
@@ -96,6 +101,16 @@ export default function EducationPage() {
                 <p className="dsec-lead" style={{ marginTop: 14 }}>
                   Admissions enquiries are open now. Be among the first families to
                   join our founding batch.
+                </p>
+                {/* Programme + brand details (from the Kidzee centre banner) */}
+                <p style={{ marginTop: 22, fontSize: 13, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: ACCENT, margin: "22px 0 0" }}>
+                  India&apos;s widely present preschool
+                </p>
+                <p style={{ fontSize: 16, fontWeight: 600, color: "#0a0a0c", margin: "10px 0 0" }}>
+                  Playgroup&nbsp; · &nbsp;Nursery&nbsp; · &nbsp;Jr. KG&nbsp; · &nbsp;Sr. KG
+                </p>
+                <p style={{ fontSize: 13.5, color: "rgba(0,0,0,0.55)", margin: "10px 0 0" }}>
+                  Powered by the Pentemind learning programme · A Zee Learn brand
                 </p>
               </div>
             </Reveal>
