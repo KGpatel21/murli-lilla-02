@@ -21,7 +21,7 @@ export default function WhyMurliLila() {
             className="font-sans"
             style={{ fontSize: 18, fontWeight: 700, letterSpacing: "0.01em", color: "rgba(0,0,0,0.7)" }}
           >
-            WHY MURLILEELA
+            WHY MURLILILA
           </p>
         </Reveal>
 

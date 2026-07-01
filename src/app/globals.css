@@ -2415,6 +2415,34 @@ button, input, textarea, select {
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E") center/contain no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E") center/contain no-repeat;
 }
+/* File upload (résumé) */
+.cf-file {
+  width: 100%;
+  font-size: 14px;
+  color: rgba(0,0,0,0.6);
+  padding: 12px 14px;
+  border: 1.5px dashed rgba(0,0,0,0.22);
+  border-radius: 12px;
+  background: #faf8f6;
+  cursor: pointer;
+  transition: border-color 200ms, background 200ms;
+}
+.cf-file:hover { border-color: rgba(163,0,0,0.4); background: #f6f2ef; }
+.cf-file::-webkit-file-upload-button,
+.cf-file::file-selector-button {
+  margin-right: 12px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 8px;
+  background: #a30000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+.cf-file-name { margin-top: 8px; font-size: 13px; color: #1a7f37; font-weight: 600; }
+
 @keyframes cfErrorIn {
   from { opacity: 0; transform: translateY(-3px); }
   to { opacity: 1; transform: translateY(0); }

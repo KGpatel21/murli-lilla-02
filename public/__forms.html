@@ -12,13 +12,14 @@
       To get an email on every submission: Forms → Settings & notifications →
       "Add notification" → "Email notification" → enter the owner's email.
     -->
-    <form name="careers" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="careers" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
       <input type="text" name="firstName" />
       <input type="text" name="lastName" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
       <input type="text" name="area" />
       <textarea name="message"></textarea>
+      <input type="file" name="resume" />
       <input type="text" name="bot-field" />
     </form>
   </body>
