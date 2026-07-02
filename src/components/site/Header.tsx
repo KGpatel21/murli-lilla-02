@@ -142,6 +142,7 @@ export default function Header({
 
   return (
     <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <header
         className="z-50"
         style={{

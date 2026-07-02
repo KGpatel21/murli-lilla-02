@@ -76,7 +76,7 @@ const PROCESS = [
 
 export default function FurniturePage() {
   return (
-    <main className="relative bg-white" style={{ width: "100%", overflowX: "clip" }}>
+    <main id="main-content" className="relative bg-white" style={{ width: "100%", overflowX: "clip" }}>
       <Header initialBg="#1a0606" position="absolute" />
 
       <DivisionHero
@@ -129,7 +129,7 @@ export default function FurniturePage() {
                 <div className="furn2-cat-meta">
                   <div>
                     <p style={{ fontSize: 17, fontWeight: 600, color: "#0a0a0c", margin: 0 }}>{c.name}</p>
-                    <p style={{ fontSize: 13, color: "rgba(0,0,0,0.5)", margin: "3px 0 0" }}>{c.note}</p>
+                    <p style={{ fontSize: 13, color: "rgba(0,0,0,0.62)", margin: "3px 0 0" }}>{c.note}</p>
                   </div>
                   <span className="furn2-cat-arrow" aria-hidden>
                     <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>

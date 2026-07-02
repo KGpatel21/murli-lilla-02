@@ -111,7 +111,11 @@ export default function About() {
               MurliLila Private Limited is a forward-thinking Indian conglomerate
               headquartered in Rajasthan, with operations spanning petroleum
               trading, premium furniture export, real estate, cutting-edge IT
-              solutions, child education, and social welfare.
+              solutions, child education, and social welfare. Formally
+              incorporated in 2026, the group brings together businesses with a
+              longer track record &mdash; its furniture export arm has served
+              international markets since 2014 &mdash; under one forward-looking
+              umbrella.
             </p>
 
             <ul className="about-pillars mt-[40px]" style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}>

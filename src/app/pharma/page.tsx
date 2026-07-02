@@ -52,7 +52,7 @@ const STANDARDS = [
 
 export default function PharmaPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#0e1f1f" position="absolute" />
 
       <DivisionHero

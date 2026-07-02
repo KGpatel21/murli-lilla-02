@@ -70,7 +70,7 @@ const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 export default function DivisionPage({ config }: { config: DivisionConfig }) {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       {config.heroImage ? (
         <>
           <Header initialBg={config.headerBg || "#0a0a0a"} position="absolute" />

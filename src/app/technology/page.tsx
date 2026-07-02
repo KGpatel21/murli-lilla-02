@@ -107,7 +107,7 @@ const PROCESS = [
 
 export default function TechnologyPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#0b1018" position="absolute" />
 
       <DivisionHero
@@ -133,7 +133,7 @@ export default function TechnologyPage() {
                 <p className="font-numeric" style={{ fontSize: "clamp(30px,4vw,46px)", fontWeight: 800, color: "#0a0a0c", margin: 0, lineHeight: 1, letterSpacing: "-0.02em" }}>
                   <CountUp to={m.value} suffix={m.suffix} />
                 </p>
-                <p style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(0,0,0,0.5)", marginTop: 10 }}>
+                <p style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(0,0,0,0.62)", marginTop: 10 }}>
                   {m.label}
                 </p>
               </div>

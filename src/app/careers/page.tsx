@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#ffffff" position="fixed" />
       <CareersHero />
       <WhyJoin />

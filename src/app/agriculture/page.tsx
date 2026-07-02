@@ -46,7 +46,7 @@ const FOCUS = [
 
 export default function AgriculturePage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#13210f" position="absolute" />
 
       <DivisionHero

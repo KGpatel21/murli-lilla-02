@@ -5,9 +5,9 @@ import Reveal from "@/components/anim/Reveal";
 
 const STATS = [
   { value: 7, suffix: "+", label: "Business Verticals" },
-  { value: 10, suffix: "+", label: "Years of Trust" },
+  { value: 10, suffix: "+", label: "Years in Business" },
   { value: 3, suffix: "+", label: "Export Markets" },
-  { value: 2026, suffix: "", label: "Foundation Est." },
+  { value: 2026, suffix: "", label: "Group Incorporated" },
 ];
 
 export default function AboutStats() {

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ACCENT = "#5aa6a8";
+const ACCENT = "#1f7275"; // deepened from #5aa6a8 for WCAG AA contrast
 
 const CAPABILITIES = [
   "Bulk bitumen supply for national highway projects",
@@ -78,7 +78,7 @@ const WHY = [
 
 export default function PratikPetroPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#0c1a1a" position="absolute" />
 
       <DivisionHero

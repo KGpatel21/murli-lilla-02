@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ACCENT = "#9a6b2f";
+const ACCENT = "#7d5323"; // deepened from #9a6b2f for WCAG AA contrast
 
 const FOCUS = [
   {
@@ -61,7 +61,7 @@ const VALUES = [
 
 export default function TrustCharityPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#1f1608" position="absolute" />
 
       <DivisionHero

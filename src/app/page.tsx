@@ -44,7 +44,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }}
       />
       <Header initialBg="#ffffff" position="absolute" />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Verticals />

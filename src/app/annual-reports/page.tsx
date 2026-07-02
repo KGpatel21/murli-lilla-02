@@ -28,7 +28,7 @@ const HIGHLIGHTS = [
 
 export default function AnnualReportsPage() {
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Header initialBg="#0c1320" position="absolute" />
 
       <PageHero
